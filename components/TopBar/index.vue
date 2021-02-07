@@ -20,7 +20,7 @@
 						<a @click="quit()">{{i18n.topBar.index.quit}}</a>
 					</div>
 					<div class="ls-dlzc fl islogin" v-else>
-						<nuxt-link class="link" active-class="active" to="/index/login">
+						<nuxt-link class="link" active-class="active" :to="{name:'login'}">
 							<a class="userinfo">{{i18n.topBar.index.login}}</a>
 						</nuxt-link>
 						<router-link to="/reg" class="red">{{i18n.topBar.index.reg}}</router-link>
@@ -192,16 +192,13 @@
 			Regions
 		},
 		created() {
+			let that = this
+			 that.getPayConfig();
 			if(process.client) {
 				this.postCode = "" || getLocation().label[getLocation().label.length - 1]
-	 			this.region = getLocation().label.join(",") 
+				 this.region = getLocation().label.join(",") 
+				 that.$emit("site",getLocation());
 			}
-			
-			this.getPayConfig();
-			this.$emit("site",getLocation());
-			let that = this
-		    that.getPayConfig();
-			that.$emit("site",getLocation());
 			if (that.user != null) {
 				if (that.user.nickname != '') {
 					that.nickname = that.user.nickname

@@ -23,10 +23,10 @@
 				<div class="right-sidebar p">
 					<div class="usertpshop">
 						<div class="head_index">
-							<router-link :to="{ name: 'user_index'}" target="_blank">
+							<nuxt-link :to="{ name: 'user_index'}" target="_blank">
 								<img class="head_pic" src="@/static/images/default.png" alt v-if="!user" />
 								<img class="head_pic" :src="user.head_pic" alt v-else />
-							</router-link>
+							</nuxt-link>
 						</div>
 						<p class="welcome islogin" v-if="user">
 							<img src="@/static/images/members.png" alt />&nbsp;Hi，
@@ -37,23 +37,23 @@
 							<!-- <span class="userinfo">{{i18n.index.welcometo}}{{shop_info.store_name || i18n.index.store}}！</span> -->
 						</p>
 						<div class="login_index" v-if="user">
-							<router-link :to="{name:'user_index'}" target="_blank">{{i18n.index.member_center}}</router-link>
-							<router-link class="islogin add_newperson" :to="{name:'login'}" target="_blank">{{i18n.index.logout}}</router-link>
+							<nuxt-link :to="{name:'user_index'}" target="_blank">{{i18n.index.member_center}}</nuxt-link>
+							<nuxt-link class="islogin add_newperson" :to="{name:'login'}" target="_blank">{{i18n.index.logout}}</nuxt-link>
 							<a class="islogin add_newperson" @click="quit()">{{i18n.index.logout}}</a>
 						</div>
 						<div class="login_index" v-else>
-							<router-link :to="{name:'login'}" target="_blank">{{i18n.index.pleaselog}}</router-link>
-							<router-link class="islogin add_newperson" :to="{name:'login'}" target="_blank">{{i18n.index.couple_polite}}</router-link>
+							<nuxt-link :to="{name:'login'}" target="_blank">{{i18n.index.pleaselog}}</nuxt-link>
+							<nuxt-link class="islogin add_newperson" :to="{name:'login'}" target="_blank">{{i18n.index.couple_polite}}</nuxt-link>
 						</div>
 					</div>
 					<div class="bulletin">
 						<div class="content box_ad_content">
 							<div class="gome_news">
 								<h2 class="gome_news_title">{{i18n.index.flash}}</h2>
-								<router-link :to="{name:'article-detail'}" target="_blank">
+								<nuxt-link :to="{name:'article-detail'}" target="_blank">
 									{{i18n.index.more}}
 									<span></span>
-								</router-link>
+								</nuxt-link>
 							</div>
 							<div class="swiper-container swiper-container30">
 								<div style="transition-duration:0ms !important" class="swiper-wrapper swiper-no-swiping">
@@ -61,9 +61,9 @@
 										<div class="content-slide">
 											<div class="cont4-box">
 												<template v-for="(item,index) in articles">
-													<router-link target="_blank" :to="{path:'/article/detail',query:{id:item.article_id}}" :key="index">
+													<nuxt-link target="_blank" :to="{path:'/article/detail',query:{id:item.article_id}}" :key="index">
 														<p>{{item.title}}</p>
-													</router-link>
+													</nuxt-link>
 												</template>
 											</div>
 										</div>
@@ -78,52 +78,52 @@
 									<tr>
 										<td>
 											<div class="access">
-												<router-link :to="{name:'user-visit_log'}" target="_blank">
+												<nuxt-link :to="{name:'user-visit_log'}" target="_blank">
 													<i class="mybrowse"></i>
 													<span>{{i18n.index.browse}}</span>
-												</router-link>
+												</nuxt-link>
 											</div>
 										</td>
 										<td>
 											<div class="access">
-												<router-link :to="{name:'goods_collect'}" target="_blank">
+												<nuxt-link :to="{name:'goods_collect'}" target="_blank">
 													<i class="mycollect"></i>
 													<span>{{i18n.index.collect}}</span>
-												</router-link>
+												</nuxt-link>
 											</div>
 										</td>
 										<td class="lastcol">
 											<div class="access">
-												<router-link :to="{name:'order_list'}" target="_blank">
+												<nuxt-link :to="{name:'order_list'}" target="_blank">
 													<i class="myorders"></i>
 													<span>{{i18n.index.indent}}</span>
-												</router-link>
+												</nuxt-link>
 											</div>
 										</td>
 									</tr>
 									<tr class="lastcow">
 										<td>
 											<div class="access">
-												<router-link :to="{name:'safety_settings'}" target="_blank">
+												<nuxt-link :to="{name:'safety_settings'}" target="_blank">
 													<i class="account_security"></i>
 													<span>{{i18n.index.account_security}}</span>
-												</router-link>
+												</nuxt-link>
 											</div>
 										</td>
 										<td>
 											<div class="access">
-												<router-link :to="{name:'recharge'}" target="_blank">
+												<nuxt-link :to="{name:'recharge'}" target="_blank">
 													<i class="myshares"></i>
 													<span>{{i18n.index.balance}}</span>
-												</router-link>
+												</nuxt-link>
 											</div>
 										</td>
 										<td class="lastcol">
 											<div class="access">
-												<router-link :to="{name:'newjoin'}" target="_blank">
+												<nuxt-link :to="{name:'newjoin'}" target="_blank">
 													<i class="seller_enter"></i>
 													<span>{{i18n.index.merchant_enter}}</span>
-												</router-link>
+												</nuxt-link>
 											</div>
 										</td>
 									</tr>
@@ -137,10 +137,10 @@
 				<div class="w1224">
 					<div class="wbox gm_guess" v-if="$store.state.shop_config && $store.state.shop_config.index_format_pc == '1'">
 						<div class="top">
-							<!-- <router-link :to="{name:'visit_log'}">
+							<!-- <nuxt-link :to="{name:'visit_log'}">
 								<p>精品推荐</p>
 								<span>甄选优质好物</span>
-							</router-link> -->
+							</nuxt-link> -->
 						</div>
 						<div class="guess_main" style="display: flex; height: 356px;">
 							<!-- <div class="cont1-box"> -->
@@ -152,13 +152,13 @@
 									<ul style="width: 1024px;height: 356px;">
 										<template v-for="(item,index) in recommendGoodsList">
 											<li v-if="Math.floor(index / 5) == pageIndex" :key="index" style="width: 20%;">
-												<router-link :to="{ name: 'goodsInfo', query:{id:item.goods_id}}" style="height: 100%;">
+												<nuxt-link :to="{ name: 'goods-goodsInfo-id', query:{id:item.goods_id}}" style="height: 100%;">
 													<img :src="apiHead + '/mall/goods/thumb_image?width=500&height=500&goods_id=' + item.goods_id" />
 													<p class="guess_title">{{item.goods_name}}</p>
 													<p class="guess_price">
 														<span class="yuan">{{i18nCommon.symbol}}</span>{{item.shop_price.toFixed(2)}}
 													</p>
-												</router-link>
+												</nuxt-link>
 											</li>
 										</template>
 									</ul>
@@ -177,13 +177,13 @@
 								<ul style="width: 1024px;height: 356px;">
 									<template v-for="(item,index) in newGoodsList">
 										<li v-if="Math.floor(index / 5) == pageIndex" :key="index" style="width: 20%;">
-											<router-link :to="{ name: 'goodsInfo', query:{id:item.goods_id}}">
+											<nuxt-link :to="{ name: 'goods-goodsInfo-id', query:{id:item.goods_id}}">
 												<img :src="apiHead + '/mall/goods/thumb_image?width=500&height=500&goods_id=' + item.goods_id" />
 												<p class="guess_title">{{item.goods_name}}</p>
 												<p class="guess_price">
 													<span class="yuan">{{i18nCommon.symbol}}</span>{{item.shop_price.toFixed(2)}}
 												</p>
-											</router-link>
+											</nuxt-link>
 										</li>
 									</template>
 								</ul>
@@ -194,10 +194,10 @@
 					<!--&lt;!&ndash;精品推荐&ndash;&gt;-->
 					<div class="goods_carousel conditions top_content" v-if="$store.state.shop_config && $store.state.shop_config.index_format_pc == 0">
 						<div class="top">
-							<router-link :to="{name:'visit_log'}">
+							<nuxt-link :to="{name:'visit_log'}">
 								<p>{{i18n.index.recommendation}}</p>
 								<span>{{i18n.index.selection_goodthings}}</span>
-							</router-link>
+							</nuxt-link>
 						</div>
 						<el-carousel indicator-position="outside">
 							<el-carousel-item v-for="(page,pageIndex) in Math.ceil(recommendGoodsListSize / 3)" :key="pageIndex">
@@ -209,11 +209,11 @@
 											<ul>
 												<template v-for="(item,index) in recommendGoodsList">
 													<li :key="index" v-if="Math.floor(index / 3) == pageIndex">
-														<router-link :to="{ name: 'goodsInfo', query:{id:item.goods_id}}">
+														<nuxt-link :to="{ name: 'goods-goodsInfo-id', query:{id:item.goods_id}}">
 															<img :src="apiHead + '/mall/goods/thumb_image?width=500&height=500&goods_id=' + item.goods_id" alt="">
 															<p class="goodname"> {{item.goods_name}} </p>
 															<p><span>{{i18nCommon.symbol}}</span><span class="price">{{item.shop_price | beforePrice}}</span><span>.{{item.shop_price | afterPrice}}</span></p>
-														</router-link>
+														</nuxt-link>
 													</li>
 												</template>
 											</ul>
@@ -234,11 +234,11 @@
 							  <el-carousel-item v-for="(page,index) in Math.ceil(newGoodsList.length / 4)" :key="index">
 								<ul>
 									<li v-for="(item,index) in newGoodsList.slice((page-1)*4,page*4)" :key="index">
-										<router-link :to="{name:'goodsInfo', query:{id:item.goods_id}}">
+										<nuxt-link :to="{name:'goods-goodsInfo-id', query:{id:item.goods_id}}">
 											<img :src="apiHead + '/mall/goods/thumb_image?width=500&height=500&goods_id=' + item.goods_id" alt />
 											<p>{{item.goods_name}}</p>
 											<p></p>
-										</router-link>
+										</nuxt-link>
 									</li>
 								</ul>
 							  </el-carousel-item>
@@ -249,10 +249,10 @@
 					<!--领券中心-->
 					<div class="goods_carousel coupon top_content" v-if="$store.state.shop_config && $store.state.shop_config.index_format_pc == '0'">
 						<div class="top">
-							<router-link :to="{name:'coupon_list'}">
+							<nuxt-link :to="{name:'coupon_list'}">
 								<p>{{i18n.index.redemption_centre}}</p>
 								<img src="@/static/images/right.png" alt />
-							</router-link>
+							</nuxt-link>
 
 							<span>{{i18n.index.buysave_much}}</span>
 						</div>
@@ -263,14 +263,14 @@
 										<ul>
 											<template v-for="(item,index) in couponList">
 												<li v-if="Math.floor(index / 3) == pageIndex" :key="index">
-													<router-link :to="{name:'newjoin'}" target="_blank">
+													<nuxt-link :to="{name:'newjoin'}" target="_blank">
 														<img src="@/static/images/coupon_1.png">
 														<div>
 															<p><span>{{i18nCommon.symbol}}</span>{{item.money.toFixed(2)}} </p>
 															<p>{{i18n.index.full}}{{item.condition.toFixed(2)}}{{i18n.index.available}}</p>
 															<p>{{item.limit_store}}</p>
 														</div>
-													</router-link>
+													</nuxt-link>
 												</li>
 											</template>
 										</ul>
@@ -300,13 +300,13 @@
 									<ul style="height: 300px;">
 										<template v-for="(item,index) in guessYoulikeGoodsList">
 											<li v-if="Math.floor(index / 6) == pageIndex" :key="index">
-												<router-link :to="{ name: 'goodsInfo', query:{id:item.goods_id}}">
+												<nuxt-link :to="{ name: 'goods-goodsInfo-id', query:{id:item.goods_id}}">
 													<img :src="apiHead + '/mall/goods/thumb_image?width=500&height=500&goods_id=' + item.goods_id" />
 													<p class="guess_title">{{item.goods_name}}</p>
 													<p class="guess_price">
 														<span class="yuan">{{i18nCommon.symbol}}</span>{{item.shop_price.toFixed(2)}}
 													</p>
-												</router-link>
+												</nuxt-link>
 											</li>
 										</template>
 									</ul>

@@ -106,25 +106,12 @@ export default ({ app, store }) => {
   // This way we can use it in middleware and pages asyncData/fetch
   app.i18n = new VueI18n({
     locale:'zh_CN',
-    fallbackLocale: locale, // 语言环境中不存在相应massage键时回退到指定语言
+    fallbackLocale: 'zh_CN', // 语言环境中不存在相应massage键时回退到指定语言
     messages: {
 		en_US: EN,
 		zh_CN: ZH,
 		cf_CN: CF,
 	}
   })
+  ElementLocale.i18n((key,value)=>app.i18n.t(key,value))
 }
-
-
-
-
-const i18n = new VueI18n({
-	// locale: localStorage.getItem('language') || 'zh_CN',
-	messages: {
-		en_US: EN,
-		zh_CN: ZH,
-		cf_CN: CF,
-	}
-})
-ElementLocale.i18n((key,value)=>i18n.t(key,value))
-
