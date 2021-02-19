@@ -962,7 +962,7 @@ export default {
     AddCartPop,
   },
   computed: {
-    ...mapState(["shop_basic"]),
+    ...mapState(["shop_basic",'token']),
     i18n() {
       this.config.wechatQrcodeTitle = this.$t("goods.goodsInfo.wechat_scan");
       this.config.wechatQrcodeHelper = this.$t(
@@ -1487,7 +1487,6 @@ export default {
       }
     },
     addCart() {
-      ga('send', 'event', 'ecommerce', 'add product to cart');
       var that = this;
       // if (!this.isSelectSpecAll()) {
       // 	this.$message({
@@ -1565,6 +1564,12 @@ export default {
       // this.$router.push({name: "login"})
     },
     buyNow() {
+	  if(getUser() == null) {
+		  this.$router.push({
+			  name:"login"
+		  })
+		  return false
+	  }
       var that = this;
       getCartBill({
         goods_id: that.goods.goods_id,
@@ -1578,7 +1583,7 @@ export default {
           });
         } else {
           that.$router.push({
-            name: "cart2",
+            name: "cart/cart2/id",
             query: {
               goods_id: that.goods.goods_id,
               item_id: that.itemId,

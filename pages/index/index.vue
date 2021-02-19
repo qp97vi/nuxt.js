@@ -152,7 +152,7 @@
 									<ul style="width: 1024px;height: 356px;">
 										<template v-for="(item,index) in recommendGoodsList">
 											<li v-if="Math.floor(index / 5) == pageIndex" :key="index" style="width: 20%;">
-												<nuxt-link :to="{ name: 'goods-goodsInfo-id', query:{id:item.goods_id}}" style="height: 100%;">
+												<nuxt-link :to="{ name: 'goods/goodsInfo/id', query:{id:item.goods_id}}" style="height: 100%;">
 													<img :src="apiHead + '/mall/goods/thumb_image?width=500&height=500&goods_id=' + item.goods_id" />
 													<p class="guess_title">{{item.goods_name}}</p>
 													<p class="guess_price">
@@ -177,7 +177,7 @@
 								<ul style="width: 1024px;height: 356px;">
 									<template v-for="(item,index) in newGoodsList">
 										<li v-if="Math.floor(index / 5) == pageIndex" :key="index" style="width: 20%;">
-											<nuxt-link :to="{ name: 'goods-goodsInfo-id', query:{id:item.goods_id}}">
+											<nuxt-link :to="{ name: 'goods/goodsInfo/id', query:{id:item.goods_id}}">
 												<img :src="apiHead + '/mall/goods/thumb_image?width=500&height=500&goods_id=' + item.goods_id" />
 												<p class="guess_title">{{item.goods_name}}</p>
 												<p class="guess_price">
@@ -209,7 +209,7 @@
 											<ul>
 												<template v-for="(item,index) in recommendGoodsList">
 													<li :key="index" v-if="Math.floor(index / 3) == pageIndex">
-														<nuxt-link :to="{ name: 'goods-goodsInfo-id', query:{id:item.goods_id}}">
+														<nuxt-link :to="{ name: 'goods/goodsInfo/id', query:{id:item.goods_id}}">
 															<img :src="apiHead + '/mall/goods/thumb_image?width=500&height=500&goods_id=' + item.goods_id" alt="">
 															<p class="goodname"> {{item.goods_name}} </p>
 															<p><span>{{i18nCommon.symbol}}</span><span class="price">{{item.shop_price | beforePrice}}</span><span>.{{item.shop_price | afterPrice}}</span></p>
@@ -234,7 +234,7 @@
 							  <el-carousel-item v-for="(page,index) in Math.ceil(newGoodsList.length / 4)" :key="index">
 								<ul>
 									<li v-for="(item,index) in newGoodsList.slice((page-1)*4,page*4)" :key="index">
-										<nuxt-link :to="{name:'goods-goodsInfo-id', query:{id:item.goods_id}}">
+										<nuxt-link :to="{name:'goods/goodsInfo/id', query:{id:item.goods_id}}">
 											<img :src="apiHead + '/mall/goods/thumb_image?width=500&height=500&goods_id=' + item.goods_id" alt />
 											<p>{{item.goods_name}}</p>
 											<p></p>
@@ -300,7 +300,7 @@
 									<ul style="height: 300px;">
 										<template v-for="(item,index) in guessYoulikeGoodsList">
 											<li v-if="Math.floor(index / 6) == pageIndex" :key="index">
-												<nuxt-link :to="{ name: 'goods-goodsInfo-id', query:{id:item.goods_id}}">
+												<nuxt-link :to="{ name: 'goods/goodsInfo/id', query:{id:item.goods_id}}">
 													<img :src="apiHead + '/mall/goods/thumb_image?width=500&height=500&goods_id=' + item.goods_id" />
 													<p class="guess_title">{{item.goods_name}}</p>
 													<p class="guess_price">

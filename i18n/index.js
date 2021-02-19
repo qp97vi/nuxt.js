@@ -105,7 +105,7 @@ export default ({ app, store }) => {
   // Set i18n instance on app
   // This way we can use it in middleware and pages asyncData/fetch
   app.i18n = new VueI18n({
-    locale:'zh_CN',
+    locale:store.state.locale, //'zh_CN',
     fallbackLocale: 'zh_CN', // 语言环境中不存在相应massage键时回退到指定语言
     messages: {
 		en_US: EN,

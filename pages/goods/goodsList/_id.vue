@@ -34,7 +34,7 @@ $Author: soubao-java 2020-07-22 $ */
                   <ul>
                     <li v-for="(item, index) in firstArr.data" :key="index">
                       <!-- <a href="javascript:void(0)" @click="changeData(item.id)">{{ item.name }}ww</a> -->
-                       <nuxt-link :to="{name:'goods-goodsList-id',query:{cat_id:item.id}}">{{ item.name }}ww</nuxt-link> 
+                       <nuxt-link :to="{name:'goods/goodsList/id',query:{cat_id:item.id}}">{{ item.name }}ww</nuxt-link> 
                     </li>
                   </ul>
                 </div>
@@ -328,12 +328,12 @@ $Author: soubao-java 2020-07-22 $ */
           </div>
           <div class="tjhot-shoplist" id="ajax_hot_goods" v-if="hotGoods && hotGoods.length > 0">
             <div class="alone-shop" v-for="(item, index) in hotGoods" :key="index" v-if="index < 5">
-              <router-link :to="{ name: 'goods-goodsInfo-id', query: { id: item.goods_id } }">
+              <router-link :to="{ name: 'goods/goodsInfo/id', query: { id: item.goods_id } }">
                 <img class="lazy" :src="item.original_img" style="display: inline" />
               </router-link>
               <p class="line-two-hidd">
                 <router-link
-                  :to="{ name: 'goods-goodsInfo-id', query: { id: item.goods_id } }"
+                  :to="{ name: 'goods/goodsInfo/id', query: { id: item.goods_id } }"
                 >{{ item.goods_name }}</router-link>
               </p>
               <p class="price-tag">
@@ -342,7 +342,7 @@ $Author: soubao-java 2020-07-22 $ */
               </p>
               <p class="store-alone">
                 <router-link
-                  :to="{ name: 'goods-goodsInfo-id', query: { id: item.goods_id } }"
+                  :to="{ name: 'goods/goodsInfo/id', query: { id: item.goods_id } }"
                 >{{ item.goods_name }}</router-link>
               </p>
             </div>
@@ -359,12 +359,12 @@ $Author: soubao-java 2020-07-22 $ */
               v-if="index < 5"
             >
               <div class="alone-shop">
-                <router-link :to="{ name: 'goods-goodsInfo-id', query: { id: item.goods_id } }">
+                <router-link :to="{ name: 'goods/goodsInfo/id', query: { id: item.goods_id } }">
                   <img class="lazy" :src="item.original_img" style="display: inline" />
                 </router-link>
                 <p class="line-two-hidd">
                   <router-link
-                    :to="{ name: 'goods-goodsInfo-id', query: { id: item.goods_id } }"
+                    :to="{ name: 'goods/goodsInfo/id', query: { id: item.goods_id } }"
                   >{{ item.goods_name }}</router-link>
                 </p>
                 <p class="price-tag">
@@ -429,7 +429,7 @@ $Author: soubao-java 2020-07-22 $ */
               <li v-for="(item, index) in goodsData" :key="index">
                 <div class="s_xsall">
                   <div class="xs_img">
-                    <router-link :to="{ name: 'goods-goodsInfo-id', query: { id: item.goods_id } }">
+                    <router-link :to="{ name: 'goods/goodsInfo/id', query: { id: item.goods_id } }">
                       <img class="lazy-list" :src="item.original_img" style="display: inline" />
                     </router-link>
                   </div>
@@ -463,7 +463,7 @@ $Author: soubao-java 2020-07-22 $ */
                   <div v-else style="height: 21px;"></div>
                   <div class="shop_name2">
                     <router-link
-                      :to="{ name: 'goods-goodsInfo-id', query: { id: item.goods_id } }"
+                      :to="{ name: 'goods/goodsInfo/id', query: { id: item.goods_id } }"
                     >{{ item.goods_name }}</router-link>
                   </div>
                   <div class="shop_name2">
@@ -541,7 +541,7 @@ $Author: soubao-java 2020-07-22 $ */
             <div class="pad">
               <router-link
                 :to="{
-                  name: 'goods-goodsInfo-id',
+                  name: 'goods/goodsInfo/id',
                   query: { id: guessYoulikeGoodsList[index].goods_id },
                 }"
               >
@@ -554,7 +554,7 @@ $Author: soubao-java 2020-07-22 $ */
               <div class="shop_name2">
                 <router-link
                   :to="{
-                    name: 'goods-goodsInfo-id',
+                    name: 'goods/goodsInfo/id',
                     query: { id: guessYoulikeGoodsList[index].goods_id },
                   }"
                 >{{ guessYoulikeGoodsList[index].goods_name }}</router-link>
@@ -1175,7 +1175,7 @@ export default {
       if (type == "price") {
       }
       this.$router.push({
-        name: 'goods-goodsList-id',
+        name: 'goods/goodsList/id',
         query: newQuery
       });
     },
@@ -1225,7 +1225,7 @@ export default {
         newQuery.end_price = this.goodsFilter.filter_price[index].endPrice;
       }
       this.$router.push({
-        name: 'goods-goodsList-id',
+        name: 'goods/goodsList/id',
         query: newQuery
       });
     },
@@ -1276,7 +1276,7 @@ export default {
         }
       });
       that.$router.push({
-        name: 'goods-goodsList-id',
+        name: 'goods/goodsList/id',
         query: newQuery
       });
       // let data=e.split("&");
@@ -1309,7 +1309,7 @@ export default {
       newQuery.start_price = this.start_price;
       newQuery.end_price = this.end_price;
       that.$router.push({
-        name: 'goods-goodsList-id',
+        name: 'goods/goodsList/id',
         query: newQuery
       });
     },
@@ -1379,7 +1379,7 @@ export default {
       // let params = {}
       // that.getGoodsList(params)
       // that.$router.push({
-      //   name: 'goods-goodsList-id',
+      //   name: 'goods/goodsList/id',
       //   query: newQuery
       // });
     },
@@ -1391,7 +1391,7 @@ export default {
       }
       newQuery.cat_id = id;
       this.$router.push({
-        name: 'goods-goodsList-id',
+        name: 'goods/goodsList/id',
         query: newQuery
       });
       console.log("跳转")
@@ -1411,7 +1411,7 @@ export default {
       }
 
       this.$router.push({
-        name: 'goods-goodsList-id',
+        name: 'goods/goodsList/id',
         query: newQuery
       });
     },
@@ -1427,7 +1427,7 @@ export default {
         }
       }
       this.$router.push({
-        name: 'goods-goodsList-id',
+        name: 'goods/goodsList/id',
         query: newQuery
       });
     },
@@ -1438,7 +1438,7 @@ export default {
       let newQuery = JSON.parse(JSON.stringify(query));
       newQuery.p = e;
       this.$router.push({
-        name: 'goods-goodsList-id',
+        name: 'goods/goodsList/id',
         query: newQuery
       });
     },
@@ -1449,7 +1449,7 @@ export default {
       let newQuery = JSON.parse(JSON.stringify(query));
       newQuery.size = e;
       this.$router.push({
-        name: 'goods-goodsList-id',
+        name: 'goods/goodsList/id',
         query: newQuery
       });
     },
@@ -1467,7 +1467,7 @@ export default {
         }
         // newQuery.id = val;
         this.$router.push({
-          name: 'goods-goodsList-id',
+          name: 'goods/goodsList/id',
           query: newQuery
         });
       }
@@ -1481,7 +1481,7 @@ export default {
           newQuery.p--;
         }
         this.$router.push({
-          name: 'goods-goodsList-id',
+          name: 'goods/goodsList/id',
           query: newQuery
         });
       }

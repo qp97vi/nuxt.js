@@ -34,7 +34,7 @@
 						<div class="keyword">
 							<ul>
 								<li v-for="(item,index) in keywords" :key="index">
-									<router-link :style="item==words?'color: #e83632 !important;':''" :to="{name: 'goods-goodsList-id', query: {words: item, searchType: 1}}" target="_blank">{{item}}</router-link>
+									<router-link :style="item==words?'color: #e83632 !important;':''" :to="{name: 'goods/goodsList/id', query: {words: item, searchType: 1}}" target="_blank">{{item}}</router-link>
 								</li>
 							</ul>
 						</div>
@@ -126,8 +126,8 @@
 								<div class="item fore1" v-for="(node,node_index) in goodsCategoryTree" :key="node_index">
 									<div class="item-left">
 										<div class="cata-nav-name">
-											<router-link :to="{name: 'goods-goodsList-id',query:{cat_id:node.id}}" target="_blank">{{node.name}}</router-link>
-											<router-link :to="{name: 'goods-goodsList-id',query:{cat_id:node.id}}" target="_blank" v-for="(child,child_index) in node.children"
+											<router-link :to="{name: 'goods/goodsList/id',query:{cat_id:node.id}}" target="_blank">{{node.name}}</router-link>
+											<router-link :to="{name: 'goods/goodsList/id',query:{cat_id:node.id}}" target="_blank" v-for="(child,child_index) in node.children"
 											 :key="child_index">
 												<em></em>
 												{{child.name}}
@@ -142,13 +142,13 @@
 											<div class="subitems">
 												<dl v-for="(child,child_index) in node.children" :key="child_index">
 													<dt>
-														<router-link :to="{name: 'goods-goodsList-id',query:{cat_id:child.id}}" target="_blank">
+														<router-link :to="{name: 'goods/goodsList/id',query:{cat_id:child.id}}" target="_blank">
 															{{child.name}}
 															<i>&gt;</i>
 														</router-link>
 													</dt>
 													<dd>
-														<router-link :to="{name: 'goods-goodsList-id',query:{cat_id:grandson.id}}" target="_blank" v-for="(grandson,grandson_index) in child.children"
+														<router-link :to="{name: 'goods/goodsList/id',query:{cat_id:grandson.id}}" target="_blank" v-for="(grandson,grandson_index) in child.children"
 														 :key="grandson_index">{{grandson.name}}</router-link>
 													</dd>
 												</dl>
@@ -162,7 +162,7 @@
 											<div class="item-brands">
 												<ul>
 													<li v-for="(brand,brand_index) in node.brands" :key="brand_index">
-														<router-link :to="{name: 'goods-goodsList-id',query:{brand_ids:brand.id}}" target="_blank" :title="brand.name">
+														<router-link :to="{name: 'goods/goodsList/id',query:{brand_ids:brand.id}}" target="_blank" :title="brand.name">
 															<img :src="brand.logo" width="91" height="40" />
 														</router-link>
 													</li>

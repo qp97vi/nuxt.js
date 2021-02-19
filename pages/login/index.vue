@@ -99,8 +99,6 @@
 
 <script>
 import { setToken, setUser, getUser } from "@/utils/auth.js";
-
-// import md5 from "@/utils/md5.js";
 import md5 from 'md5';
 import { getVerifyImage, login, getBaseInfo, getShopConfig, getBindInfo,addCartList } from "@/utils/api";
 import Adv from "@/components/Adv/index.vue";

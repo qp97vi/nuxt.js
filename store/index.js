@@ -85,6 +85,8 @@ export const state = () => ({
 	shop_basic: null,
 	shop_list:[],
 	sellerUrl: process.env.VUE_APP_SELLER_NAME,
+	locale:'zh_CN',
+	locales: ['zh_CN', 'en_US','cf_CN'],
 })
 
 export const getters = {
@@ -111,6 +113,11 @@ export const mutations = {
 	shopList(state,list){
 		state.shop_list.push(list)
 	},
+	SET_LANG (state, locale) { //修改语言
+		if (state.locales.includes(locale)) {
+			state.locale = locale
+		}
+	}
 }
 
 export const actions = {

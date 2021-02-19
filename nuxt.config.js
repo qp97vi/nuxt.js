@@ -26,9 +26,11 @@ export default {
 	  	{src:'@/plugins/element-ui',ssr:true,},
 		{src:'@/plugins/vuex-persistedstate',ssr:false},
 		{src:'@/utils/md5.js',ssr:false},
-		{src:'@/i18n/index'}
+		{src:'@/i18n/index'},
 	],
-
+	router: {
+		routeNameSplitter: '/'
+	},
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 

@@ -29,7 +29,7 @@
                         <ul>
                             <li v-for="item in item.goods_category_list" :key="item.id">
                                 <router-link
-                                    :to="{name:'goods-goodsList-id',query:{cat_id:item.id}}"
+                                    :to="{name:'goods/goodsList/id',query:{cat_id:item.id}}"
                                     target="_blank"
                                 >{{item.name}}</router-link>
                             </li>
@@ -52,7 +52,7 @@
                     <ul>
                         <li  v-for="item in item.floor_blocks" :key="item.goods_id">
                             <dl v-for="item in item.goods_list" :key="item.goods_id">
-                                <router-link :to="{ name: 'goods-goodsInfo-id', query:{id:item.goods_id}}">
+                                <router-link :to="{ name: 'goods/goodsInfo/id', query:{id:item.goods_id}}">
                                     <dt>
                                         <a href=""><img :src="item.original_img" alt=""></a>
                                     </dt>
@@ -67,7 +67,7 @@
             <div v-if="item.brands.length>0" class="brands">
                 <ul>
                     <li v-for="item in item.brands" :key="item.id">
-                        <router-link :to="{name:'goods-goodsList-id',query:{brand_ids:item.id}}"
+                        <router-link :to="{name:'goods/goodsList/id',query:{brand_ids:item.id}}"
                         target="_blank"
                         :title="item.name">
                             <img :src="item.logo" alt="">
