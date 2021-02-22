@@ -184,31 +184,31 @@
 							</li>
 							<!-- 限时抢购 -->
 							<!-- <li>
-								<router-link :class="routerName == 'flash_sale_list'?'selected':''" :to="{ name: 'flash_sale_list'}">{{i18n.SearchBox.flash_sale}}</router-link>
+								<router-link :class="routerName == 'activity/flash_sale_list/id'?'selected':''" :to="{ name: 'activity/flash_sale_list/id'}">{{i18n.SearchBox.flash_sale}}</router-link>
 							</li> -->
-							<!-- 团购 -->
+							<!-- 团购 --> 
 							<li>
-								<router-link :class="routerName == 'group_list'?'selected':''" :to="{ name: 'group_list'}">{{i18n.SearchBox.group_purchase}}</router-link>
+								<router-link :class="routerName == 'activity/group_list/id'?'selected':''" :to="{ name: 'activity/group_list/id'}">{{i18n.SearchBox.group_purchase}}</router-link>
 							</li>
 							<!-- 促销活动 -->
 							<li>
-								<router-link :class="routerName == 'promoteList'?'selected':''" :to="{ name: 'promoteList'}">{{i18n.SearchBox.sales_promotion}}</router-link>
+								<router-link :class="routerName == 'activity/promoteList/id'?'selected':''" :to="{ name: 'activity/promoteList/id'}">{{i18n.SearchBox.sales_promotion}}</router-link>
 							</li>
 							<!-- 预售 -->
 							<li>
-								<router-link :class="routerName == 'pre_sell_list'?'selected':''" :to="{ name: 'pre_sell_list'}">{{i18n.SearchBox.presell}}</router-link>
+								<router-link :class="routerName == 'activity/pre_sell_list/id'?'selected':''" :to="{ name: 'activity/pre_sell_list/id'}">{{i18n.SearchBox.presell}}</router-link>
 							</li>
 							<!-- 店铺街 -->
 							<!-- <li>
-								<router-link :class="routerName == 'street'?'selected':''" :to="{ name: 'street'}">{{i18n.SearchBox.depot_island}}</router-link>
+								<router-link :class="routerName == 'index/street'?'selected':''" :to="{ name: 'index/street'}">{{i18n.SearchBox.depot_island}}</router-link>
 							</li> -->
 							<!-- 积分商城 -->
 							<!-- <li>
-								<router-link :class="routerName == 'integralMall'?'selected':''" :to="{ name: 'integralMall'}">{{i18n.SearchBox.integral}}</router-link>
+								<router-link :class="routerName == 'goods/integralMall'?'selected':''" :to="{ name: 'goods/integralMall'}">{{i18n.SearchBox.integral}}</router-link>
 							</li> -->
 							<!-- 试用中心 -->
 							<li>
-								<router-link :class="routerName == 'trycenter'?'selected':''" :to="{ name: 'all_try'}">试用中心</router-link>
+								<router-link :class="routerName == 'trycenter'?'selected':''" :to="{ name: 'trycenter'}">试用中心</router-link>
 							</li>
 							<li>
 								<router-link :class="routerName == 'publish_list'?'selected':''" :to="{ name: 'publish_list'}">动态列表</router-link>
