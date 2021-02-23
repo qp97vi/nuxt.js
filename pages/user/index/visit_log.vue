@@ -145,6 +145,14 @@ export default {
       weekDay:["星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]
     };
   },
+  head() {
+	  return {
+		   title: "我的足迹",
+		   meta: [
+				{ hid: 'description', name: 'description', content: 'Home page description' }
+			],
+	  }
+  },
   computed:{
     week(){
       var data = new Date()
@@ -251,6 +259,7 @@ export default {
 </script>
 
 <style scoped>
+@import "@/static/css/myaccount.css";
 .paging {
   text-align: center;
 }

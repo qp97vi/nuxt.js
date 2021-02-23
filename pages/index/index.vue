@@ -78,7 +78,7 @@
 									<tr>
 										<td>
 											<div class="access">
-												<nuxt-link :to="{name:'user-visit_log'}" target="_blank">
+												<nuxt-link :to="{name:'user/index/visit_log'}" target="_blank">
 													<i class="mybrowse"></i>
 													<span>{{i18n.index.browse}}</span>
 												</nuxt-link>

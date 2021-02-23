@@ -14,13 +14,16 @@
     <top-bar></top-bar>
     <top-info></top-info>
     <div class="home-index-middle">
+		<div class="w1224">
+			<div class="g-crumbs">
+				<router-link :to="{ name: 'user_index'}">
+				{{i18n.index.mymall}}
+				</router-link>
+				<span v-if="routerName!='user_index'">&nbsp;>&nbsp; {{$route.meta.title}}</span>
+			</div>
+		</div>
       <div class="w1224">
-        <div class="g-crumbs">
-         <router-link :to="{ name: 'user_index'}">
-           {{i18n.index.mymall}}
-         </router-link>
-         <span v-if="routerName!='user_index'">&nbsp;>&nbsp;  {{$route.meta.title}}</span>
-        </div>
+       
         <div class="home-main">
           <div class="le-menu fl">
             <div class="menu-ul">
@@ -132,6 +135,11 @@ export default {
   data() {
     return {};
   },
+  asyncData ({ app, query, params}) {
+	  console.log(app,query,params)
+		query.key
+		params.id
+ },
   created() {},
   computed:{
     routerName:function(){
@@ -149,12 +157,15 @@ export default {
 </script>
 
 <style scoped>
-@import "../../static/css/myaccount.css";
+@import "@/static/css/myaccount.css";
 .home-index-middle {
   background: #f5f5f5;
 }
 .menu_check{
     color: #e23435;
     font-weight: bold;
+}
+.g-crumbs{
+	display: inline-table;
 }
 </style>
