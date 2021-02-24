@@ -28,9 +28,9 @@
             </ul>
           </div>
         </div>
-        <div class="order-alone-li">
+        <div class="order-alone-li" v-if="pagingData.length!=0">
           <table width="100%" border cellspacing cellpadding>
-            <tbody v-for="(item,index) in pagingData" :key="item.expose_id">
+            <tbody v-for="item in pagingData" :key="item.expose_id">
               <tr class="time_or">
                 <td colspan="6">
                   <div class="fl_ttmm">
@@ -73,6 +73,7 @@
             </tbody>
           </table>
         </div>
+        <div class="ncyekjl" v-else>{{i18n.norecord}}!</div>
         <div class="operating fixed" id="bottom">
           <!-- 分页 -->
           <div class="paging">

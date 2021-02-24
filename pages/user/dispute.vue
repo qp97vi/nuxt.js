@@ -225,7 +225,7 @@
                     </div>
                     <div v-else>
                       <img
-                        src="../../static/images/icon_goods_thumb_empty_300.png"
+                        @/static/images/icon_goods_thumb_empty_300.png"
                         style="width:60px;height:60px;"
                       />
                       <router-link

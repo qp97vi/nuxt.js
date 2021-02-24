@@ -72,19 +72,20 @@
               <li class="sx6">{{i18n.income.returns_time}}</li>
             </ul>
           </div>
-          <div class="book-tit book_content p">
-            <ul v-for="(item,index) in pagingData" :key="item.order_id">
+          <div v-if="pagingData.length > 0" class="book-tit book_content p">
+            <ul v-for="item in pagingData" :key="item.order_id">
               <li class="sx3">{{item.order_sn}}</li>
               <li class="sx1">{{item.goods_price}}</li>
               <li class="sx4">{{item.create_time_desc}}</li>
               <li class="sx5">{{item.nickname}}</li>
               <li class="sx6">{{item.money}}</li>
               <li class="sx6">
-				<span v-if="item.confirm_time > 0">{{item.confirm_time_desc}}</span>
-				<span v-else>---</span>
-			  </li>
+                <span v-if="item.confirm_time > 0">{{item.confirm_time_desc}}</span>
+                <span v-else>---</span>
+              </li>
             </ul>
           </div>
+          <div class="ncyekjl" v-else>{{i18n.norecord}}!</div>
           <!-- 分页 -->
           <div class="paging">
             <div class="block">

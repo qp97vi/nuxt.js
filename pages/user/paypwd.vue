@@ -101,7 +101,7 @@
       <div class="oversuccen" v-if="bool == 2">
         <div class="zaiebox">
           <div class="fljair">
-            <img src="../../static/images/flj.png" />
+            <img @/static/images/flj.png" />
           </div>
           <div class="fljfon">
             <p>{{i18n.paypwd.successfully_set}}</p>

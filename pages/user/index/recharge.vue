@@ -523,7 +523,7 @@ export default {
 </script>
 
 <style scoped>
-@import "../../static/css/jh.css";
+@import "@/static/css/jh.css";
 .active {
   display: block;
 }
@@ -609,7 +609,7 @@ export default {
 }
 .m-tagbox .tptig {
   display: inline-block;
-  background-image: url(../../static/images/sprite-operate.png);
+  background-image: url(../../../static/images/sprite-operate.png);
   background-repeat: no-repeat;
 }
 .orde-sjyy {

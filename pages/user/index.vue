@@ -32,17 +32,17 @@
                   <i class="account-acc1"></i>{{i18n.index.trading_center}}
                 </li>
                 <li>
-                  <router-link :class="routerName == 'order_list'?'menu_check':''" :to="{ name: 'order_list'}">{{i18n.index.myorder}}</router-link>
+                  <router-link :class="routerName == 'user/index/order_list'?'menu_check':''" :to="{ name: 'user/index/order_list'}">{{i18n.index.myorder}}</router-link>
                 </li>
                 <!-- <li>
                   <router-link :class="routerName == 'virtual_list'?'menu_check':''" :to="{ name: 'virtual_list'}">虚拟订单</router-link>
                 </li> -->
                 <!--给钱才能解开封印 -->
                 <li>
-                  <router-link :class="routerName == 'comment'?'menu_check':''" :to="{ name: 'comment'}">{{i18n.index.myrating}}</router-link>
+                  <router-link :class="routerName == 'user/index/comment'?'menu_check':''" :to="{ name: 'user/index/comment'}">{{i18n.index.myrating}}</router-link>
                 </li>
                 <li>
-                  <router-link :class="routerName == 'my_trial'?'menu_check':''" :to="{ name: 'my_trial'}">试用单</router-link>
+                  <router-link :class="routerName == 'user/index/my_trial'?'menu_check':''" :to="{ name: 'user/index/my_trial'}">试用单</router-link>
                 </li>
               </ul>
               <ul>
@@ -50,13 +50,13 @@
                   <i class="account-acc2"></i>{{i18n.index.assethub}}
                 </li>
                 <li>
-                  <router-link :class="routerName == 'coupon'?'menu_check':''" :to="{ name: 'coupon'}">{{i18n.index.mycoupons}}</router-link>
+                  <router-link :class="routerName == 'user/index/coupon'?'menu_check':''" :to="{ name: 'user/index/coupon'}">{{i18n.index.mycoupons}}</router-link>
                 </li>
                 <li>
-                  <router-link :class="routerName == 'recharge'?'menu_check':''"  :to="{ name: 'recharge'}">{{i18n.index.account_balance}}</router-link>
+                  <router-link :class="routerName == 'user/index/recharge'?'menu_check':''"  :to="{ name: 'user/index/recharge'}">{{i18n.index.account_balance}}</router-link>
                 </li>
                 <li>
-                  <router-link :class="routerName == 'account'?'menu_check':''" :to="{ name: 'account'}">{{i18n.index.myintegral}}</router-link>
+                  <router-link :class="routerName == 'user/index/account'?'menu_check':''" :to="{ name: 'user/index/account'}">{{i18n.index.myintegral}}</router-link>
                 </li>
               </ul>
               <ul>
@@ -64,11 +64,11 @@
                   <i class="account-acc3"></i>{{i18n.index.focus_center}}
                 </li>
                 <li>
-                  <router-link :class="routerName == 'goods_collect'?'menu_check':''" :to="{ name: 'goods_collect'}">{{i18n.index.myfavorite}}</router-link>
+                  <router-link :class="routerName == 'user/index/goods_collect'?'menu_check':''" :to="{ name: 'user/index/goods_collect'}">{{i18n.index.myfavorite}}</router-link>
                 </li>
                 <!--<li><a href="">曾经购买</a></li>-->
                 <li>
-                  <router-link :class="routerName == 'visit_log'?'menu_check':''" :to="{ name: 'visit_log'}">{{i18n.index.mytracks}}</router-link>
+                  <router-link :class="routerName == 'user/index/visit_log'?'menu_check':''" :to="{ name: 'user/index/visit_log'}">{{i18n.index.mytracks}}</router-link>
                 </li>
               </ul>
               <ul>
@@ -76,16 +76,16 @@
                   <i class="account-acc4"></i>{{i18n.index.personal_center}}
                 </li>
                 <li>
-                  <router-link :class="routerName == 'info'?'menu_check':''" :to="{ name: 'info'}">{{i18n.index.personal_details}}</router-link>
+                  <router-link :class="routerName == 'user/index/info'?'menu_check':''" :to="{ name: 'user/index/info'}">{{i18n.index.personal_details}}</router-link>
                 </li>
                 <!-- <li>
-                  <router-link :class="routerName == 'bind_auth'?'menu_check':''" :to="{ name: 'bind_auth'}">账号绑定</router-link>
+                  <router-link :class="routerName == 'user/index/bind_auth'?'menu_check':''" :to="{ name: 'user/index/bind_auth'}">账号绑定</router-link>
                 </li> -->
                 <li>
-                  <router-link :class="routerName == 'address_list'?'menu_check':''" :to="{ name: 'address_list'}">{{i18n.index.address_administration}}</router-link>
+                  <router-link :class="routerName == 'user/index/address_list'?'menu_check':''" :to="{ name: 'user/index/address_list'}">{{i18n.index.address_administration}}</router-link>
                 </li>
                 <li>
-                  <router-link :class="routerName == 'safety_settings'?'menu_check':''" :to="{ name: 'safety_settings'}">{{i18n.index.security_settings}}</router-link>
+                  <router-link :class="routerName == 'user/index/safety_settings'?'menu_check':''" :to="{ name: 'user/index/safety_settings'}">{{i18n.index.security_settings}}</router-link>
                 </li>
               </ul>
               <ul>
@@ -93,10 +93,10 @@
                   <i class="account-acc5"></i>{{i18n.index.distribution_center}}
                 </li>
                 <li>
-                  <router-link :class="routerName == 'lower_list'?'menu_check':''" :to="{ name: 'lower_list'}">{{i18n.index.mypromotion}}</router-link>
+                  <router-link :class="routerName == 'user/index/lower_list'?'menu_check':''" :to="{ name: 'user/index/lower_list'}">{{i18n.index.mypromotion}}</router-link>
                 </li>
                 <li>
-                  <router-link :class="routerName == 'income'?'menu_check':''"  :to="{ name: 'income'}">{{i18n.index.myearnings}}</router-link>
+                  <router-link :class="routerName == 'user/index/income'?'menu_check':''"  :to="{ name: 'user/index/income'}">{{i18n.index.myearnings}}</router-link>
                 </li>
               </ul>
               <ul>
@@ -105,17 +105,17 @@
                 </li>
                 <!--<li><a href="">我的发票</a></li>-->
                 <li>
-                  <router-link  :class="routerName == 'return_goods_index'?'menu_check':''" :to="{ name: 'return_goods_index'}">{{i18n.index.refund_exchange}}</router-link>
+                  <router-link  :class="routerName == 'user/index/return_goods_index'?'menu_check':''" :to="{ name: 'user/index/return_goods_index'}">{{i18n.index.refund_exchange}}</router-link>
                 </li>
                 <li>
-                 <router-link :class="routerName == 'dispute'?'menu_check':''" :to="{ name: 'dispute'}">{{i18n.index.trade_complaints}}</router-link>
+                 <router-link :class="routerName == 'order/index/dispute'?'menu_check':''" :to="{ name: 'order/index/dispute'}">{{i18n.index.trade_complaints}}</router-link>
                 </li>
                 <li>
-                  <router-link :class="routerName == 'expose_list'?'menu_check':''" :to="{ name: 'expose_list'}">{{i18n.index.violation_report}}</router-link>
+                  <router-link :class="routerName == 'user/index/expose_list'?'menu_check':''" :to="{ name: 'user/index/expose_list'}">{{i18n.index.violation_report}}</router-link>
                 </li>
 
                 <li>
-                 <router-link :class="routerName == 'consult_list'?'menu_check':''" :to="{ name: 'consult_list'}">{{i18n.index.search_record}}</router-link>
+                 <router-link :class="routerName == 'user/index/consult_list'?'menu_check':''" :to="{ name: 'user/index/consult_list'}">{{i18n.index.search_record}}</router-link>
                 </li>
               </ul>
             </div>
@@ -135,11 +135,6 @@ export default {
   data() {
     return {};
   },
-  asyncData ({ app, query, params}) {
-	  console.log(app,query,params)
-		query.key
-		params.id
- },
   created() {},
   computed:{
     routerName:function(){

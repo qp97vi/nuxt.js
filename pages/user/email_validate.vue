@@ -144,7 +144,7 @@ export default {
 </script>
 
 <style scoped>
-@import "../../static/css/security_set.css";
+@import "@/static/css/security_set.css";
 >>> .security_passwd .block-02 .pub-ul li .con input {
   height: 100%;
 }

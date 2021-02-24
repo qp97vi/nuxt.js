@@ -113,22 +113,16 @@
 										<em class="num">{{item.order_sn}}</em>
 									</span>
 									<span class="time-num">
-										{{i18n.order_list.seller}}：
-										<a v-if="isImOn()" href="javascript:;" :user_id="user.user_id" :uname="user.nickname" :avatar="user.head_pic"
+										{{i18n.order_list.seller}}：<em class="num" style="margin-right: 0px;"> {{item.store_name}}</em>
+										<a v-if="shop_basic.im_choose == 1" href="javascript:;" :user_id="user.user_id" :uname="user.nickname" :avatar="user.head_pic"
 										 sign="" :storeid="item.store_id" :client_host="location.host" :client_href="location.href" :goods_id="item.order_goods[0].goods_id"
 											:im_href="location.origin + '/im'" :ws_socket="getWssOrws() + '//' + location.host + '/ws'" 
 											 :order_id="item.order_id" :order_sn="item.order_sn" :add_time="item.add_time_detail"
 											 :full_address="item.address" :consignee="item.consignee + item.mobile" id="workerman-kefu" onclick="jump()">
-											<em class="num">
-												{{item.store_name}}
-												<i class="ear"></i>
-											</em>
+											<i class="ear"></i>
 										</a>
-										<a v-else :href="'tencent://message/?uin=' + item.store_qq + '&amp;Site=TPshop商城&amp;Menu=yes'">
-											<em class="num">
-												{{item.store_name}}
-												<i class="ear"></i>
-											</em>
+										<a v-if="shop_basic.im_choose == 2" :href="'tencent://message/?uin=' + item.store_qq + '&amp;Site=TPshop商城&amp;Menu=yes'">
+											<i class="ear"></i>
 										</a>
 									</span>
 									<div class="paysoon">
@@ -287,6 +281,7 @@
 </template>
 
 <script>
+ import { mapState } from "vuex";
 	import {
 		getUser
 	} from "@/utils/auth.js";
@@ -297,7 +292,7 @@
 		confirmReceipt,
 	} from "@/utils/api.js";
 	import {loadImJs,getWssOrws} from "@/utils/asyncLoadJs"
-	let loadedMineMapJs = false;//是否加载完im的js
+	let loadedImJs = false;//是否加载完im的js
 	export default {
 		data() {
 			return {
@@ -329,11 +324,11 @@
 				formLabelWidth: "100px",
 				type: "", //类型
 				location:window.location,
-				im_choose: this.$store.state.shop_basic.im_choose,
 				user: getUser(),
 			};
 		},
 		computed: {
+			...mapState(["shop_basic"]),
 			i18n() {
 				// this.form.region = this.$t('user.order_list.cause_one');
 				return this.$t('user')
@@ -345,13 +340,6 @@
 		methods: {
 			goods_details(commit){
 				this.$router.push({name:'goodsInfo',query:{id:commit.goods_id}})
-			},
-			isImOn(){
-				if(typeof(this.im_choose) != "undefined"  && this.im_choose == 1){
-					return true
-				}else{
-					return false
-				}
 			},
 			getWssOrws(){
 				return getWssOrws()
@@ -524,9 +512,9 @@
 				type: this.seleType,
 			};
 			this.pagingMethod(params);
-			if (!loadedMineMapJs && this.isImOn()) {
+			if (!loadedImJs && this.shop_basic.im_choose == 1) {
 				loadImJs(location.origin + '/im').then(() => {
-				  loadedMineMapJs = true;
+				  loadedImJs = true;
 				})
 			}
 		},
@@ -534,7 +522,7 @@
 </script>
 
 <style scoped>
-	@import "../../static/css/cOrderIframe.css";
+	@import "@/static/css/cOrderIframe.css";
 
 	>>>.el-dialog__body {
 		padding: 5px 20px;

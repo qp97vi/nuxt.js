@@ -61,8 +61,6 @@
           </ul>
         </div>
       </div>
-      <div class="howuse">
-      </div>
       <!-- 有数据时 -->
       <div class="coupon-items" v-if="couponBool">
         <!-- :class="item.status == 0 && now < item.use_end_time ? 'coupon-item coupon-item-d' : 'coupon-item coupon-item-dgray'" :class="item.bool ? 'coupon-item-hover' : ''"  -->
@@ -131,11 +129,7 @@
         </div>
       </div>
       <!-- 没有数据 -->
-      <p
-        class="norecode"
-        style="font-size: 12px;color: #999999;padding: 50px 0;text-align: center;"
-        v-else
-      >{{i18n.norecord}}！</p>
+      <p class="ncyekjl" v-else>{{i18n.norecord}}!</p>
     </div>
     <!-- 分页 -->
     <div class="paging">

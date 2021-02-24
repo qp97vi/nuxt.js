@@ -188,7 +188,7 @@
                   :title="i18n.goods_collect.contact_here"
                   class="flow-qq"
                 >
-                  <img src="../../static/images/button_old_41.gif" height="16" border="0" alt="QQ" />
+                  <img @/static/images/button_old_41.gif" height="16" border="0" alt="QQ" />
                 </a>
                 <a
                   :href="'http://amos1.taobao.com/msg.ww?v=2&amp;uid=' + item.store.store_phone + '13800138006&amp;s=2'"
@@ -196,7 +196,7 @@
                   class="flow-qq"
                 >
                   <img
-                    src="../../static/images/wangwang16.gif"
+                    @/static/images/wangwang16.gif"
                     width="16"
                     height="16"
                     border="0"
@@ -512,8 +512,8 @@ export default {
 </script>
 
 <style scoped>
-@import "../../static/css/bookmark.css";
-@import "../../static/css/myaccount.css";
+@import "@/static/css/bookmark.css";
+@import "@/static/css/myaccount.css";
 .flow {
   margin: 0px;
 }

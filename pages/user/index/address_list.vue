@@ -222,8 +222,8 @@
 </script>
 
 <style scoped>
-	@import "../../static/css/return.add.css";
-	@import "../../static/css/myaccount.css";
+	@import "@/static/css/return.add.css";
+	@import "@/static/css/myaccount.css";
 
 	.defulat_address {
 		margin: 0 0 0 10px;

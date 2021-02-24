@@ -332,7 +332,7 @@
 
 
 <style scoped>
-	@import "../../static/css/jh.css";
+	@import "@/static/css/jh.css";
 
 	.topup-money {
 		background-color: #ffffff;

@@ -196,7 +196,7 @@ export default {
 </script>
 
 <style scoped>
-@import "../../static/css/security_set.css";
+@import "@/static/css/security_set.css";
 >>> .el-input {
   float: left;
 }

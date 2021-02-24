@@ -437,7 +437,7 @@ export default {
 </script>
 
 <style scoped>
-@import "../../static/css/login.css";
+@import "@/static/css/login.css";
 .login-wrap{
   height: 100%;
 }

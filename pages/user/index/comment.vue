@@ -146,6 +146,10 @@
             </tbody>
           </table>
         </div>
+        <div v-if="pagingData.length == 0" class="ncyekjl">
+            暂无记录！
+        </div>
+
         <!-- 分页 -->
         <div class="paging">
           <div class="block">

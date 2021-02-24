@@ -466,7 +466,7 @@ export default {
 </script>
 
 <style scoped>
-@import "../../static/css/cOrderIframe.css";
+@import "@/static/css/cOrderIframe.css";
 
 >>> .el-dialog__body {
   padding: 5px 20px;

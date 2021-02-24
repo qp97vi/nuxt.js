@@ -30,20 +30,22 @@
 						<span>{{i18n.consult_list.consult_time}}</span>
 					</li>
 				</ul>
-				<ul class="" data-address-id="" v-for="(item,index) in pagingData" :key="item.id">
-					<li class="sx2"><span>{{item.username}}</span></li>
-					<li class="sx1"><span>{{item.content}}</span></li>
-					<li class="sx3"><span>{{item.goods_name}}</span></li>
-					<li class="sx5">
-						<span>{{item.add_time_format}}</span>
-					</li>
-
-					<li class="store-reply p" style="float: none;width: 80%;text-align: left;padding:0 8%" v-for="(child,index) in item.children_consults" :key="child.id">
-						<span class="visitor-name">{{i18n.vendor}} <i class="reply-tips" style="color: #ec6909;">{{i18n.consult_list.reply}}</i>：</span>
-						{{child.content}} <i class="send-time" style="float: right">{{child.add_time_format}}</i>
-					</li>
-					<br>
-				</ul>
+				<div v-if="pagingData.length!=0">
+					<ul v-for="item in pagingData" :key="item.id">
+						<li class="sx2"><span>{{item.username}}</span></li>
+						<li class="sx1"><span>{{item.content}}</span></li>
+						<li class="sx3"><span>{{item.goods_name}}</span></li>
+						<li class="sx5">
+							<span>{{item.add_time_format}}</span>
+						</li>
+						<li class="store-reply p" style="float: none;width: 80%;text-align: left;padding:0 8%" v-for="(child,index) in item.children_consults" :key="child.id">
+							<span class="visitor-name">{{i18n.vendor}} <i class="reply-tips" style="color: #ec6909;">{{i18n.consult_list.reply}}</i>：</span>
+							{{child.content}} <i class="send-time" style="float: right">{{child.add_time_format}}</i>
+						</li>
+						<br>
+					</ul>
+				</div>
+				<div class="ncyekjl" v-else>{{i18n.norecord}}!</div>
 			</div>
 			<!-- 分页 -->
 			<div class="paging">

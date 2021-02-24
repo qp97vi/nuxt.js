@@ -187,7 +187,7 @@
                   <!-- <span class="mobile-buy-cheap">
 										手机购买更便宜
 										<i>
-											<img class="small-qrcode-h" src="../../static/images/qrcode.png" alt /> -->
+											<img class="small-qrcode-h" @/static/images/qrcode.png" alt /> -->
                   <!--<img class="big-qrcode-h" src="/template/pc/rainbow/static/images/qrcode.png" alt="" />-->
                   <!-- 		<img class="big-qrcode-h" img-url=""
 											 src="" />

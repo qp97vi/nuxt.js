@@ -86,7 +86,7 @@
 										</td>
 										<td>
 											<div class="access">
-												<nuxt-link :to="{name:'goods_collect'}" target="_blank">
+												<nuxt-link :to="{name:'user/index/goods_collect'}" target="_blank">
 													<i class="mycollect"></i>
 													<span>{{i18n.index.collect}}</span>
 												</nuxt-link>
@@ -94,9 +94,9 @@
 										</td>
 										<td class="lastcol">
 											<div class="access">
-												<nuxt-link :to="{name:'order_list'}" target="_blank">
+												<nuxt-link :to="{name:'user/index/order_list'}" target="_blank">
 													<i class="myorders"></i>
-													<span>{{i18n.index.indent}}</span>
+													<span>{{i18n.index.indent}}</span> 
 												</nuxt-link>
 											</div>
 										</td>
@@ -104,7 +104,7 @@
 									<tr class="lastcow">
 										<td>
 											<div class="access">
-												<nuxt-link :to="{name:'safety_settings'}" target="_blank">
+												<nuxt-link :to="{name:'user/index/safety_settings'}" target="_blank">
 													<i class="account_security"></i>
 													<span>{{i18n.index.account_security}}</span>
 												</nuxt-link>
@@ -112,7 +112,7 @@
 										</td>
 										<td>
 											<div class="access">
-												<nuxt-link :to="{name:'recharge'}" target="_blank">
+												<nuxt-link :to="{name:'user/index/recharge'}" target="_blank">
 													<i class="myshares"></i>
 													<span>{{i18n.index.balance}}</span>
 												</nuxt-link>
@@ -567,7 +567,7 @@
 </script>
 
 <style scoped>
-	@import "../../static/css/swiper.min.css";
+	@import "@/static/css/swiper.min.css";
 
 	.fn-mall a {
 		width: 100%;

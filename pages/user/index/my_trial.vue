@@ -78,7 +78,7 @@
         </li>
       </ul>
     </div>
-	<div v-if="value==1&&bool1==false" class="norecode">
+	<div v-if="value==1&&bool1==false" class="ncyekjl">
         暂无记录！
 	</div>
     <div style="text-align: center;" v-if="value==2&&bool2==true">
@@ -122,7 +122,7 @@
         </li>
       </ul>
     </div>
-	<div v-if="value==2&&bool2==false" class="norecode">
+	<div v-if="value==2&&bool2==false" class="ncyekjl">
         暂无记录！
 	</div>
     <div style="text-align: center;" v-if="value==3&&bool3==true">
@@ -186,7 +186,7 @@
         </li>
       </ul>
     </div>
-	<div v-if="value==3&&bool3==false" class="norecode">
+	<div v-if="value==3&&bool3==false" class="ncyekjl">
         暂无记录！
 	</div>
     <div style="text-align: center;" v-if="value==4&&bool4==true">
@@ -222,7 +222,7 @@
         </li>
       </ul>
     </div>
-	<div v-if="value==4&&bool4==false" class="norecode">
+	<div v-if="value==4&&bool4==false" class="ncyekjl">
         暂无记录！
 	</div>
 	<!-- 分页 -->
@@ -376,10 +376,6 @@ export default {
 };
 </script>
 <style scoped>
-.norecode{
-   text-align: center;
-   padding: 20px 0;
-}
 
 .mytrial {
   width: 1032px;

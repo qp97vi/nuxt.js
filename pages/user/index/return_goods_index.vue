@@ -32,7 +32,7 @@
             <span @click="inquire">{{i18n.return_goods_index.inquire}}</span>
           </div>
         </div>
-        <div class="sheetbd" style="display: ;">
+        <div class="sheetbd">
           <table width="100%" border cellspacing cellpadding>
             <tbody>
               <tr class="ttoda">
@@ -65,9 +65,9 @@
                   </div>
                 </td>
                 <td class="r_1">
-				  <a :href="'tencent://message/?uin=' + item.store_qq + '&amp;Site=TPshop商城&amp;Menu=yes'">
-				    <i class="ear"></i>&nbsp;&nbsp;{{i18n.return_goods_index.contact_seller}}
-				  </a>
+                <a :href="'tencent://message/?uin=' + item.store_qq + '&amp;Site=TPshop商城&amp;Menu=yes'">
+                  <i class="ear"></i>&nbsp;&nbsp;{{i18n.return_goods_index.contact_seller}}
+                </a>
                 </td>
                 <td class="r_2">
                   <p class="lig6">
@@ -110,7 +110,7 @@
                   </select>
                 </td>
                 <td class="rt_1">
-                  <select class="sele_t" name="status" @change="stateChanges">
+                  <select class="sele_t" name="status" @change="stateChanges"> 
                     <option value>{{i18n.return_goods_index.allstate}}</option>
                     <option value="-2">{{i18n.return_goods_index.canceled}}</option>
                     <option value="-1">{{i18n.return_goods_index.audit_failure}}</option>
@@ -227,6 +227,7 @@
           </table>
         </div>
       </form>
+      <div class="ncyekjl" v-if="bool==1 && refundData.length==0 || bool!=1 && returnGoods.length==0">{{i18n.norecord}}!</div>
       <!-- 分页 -->
       <div class="paging" style="margin-top:20px;">
         <div class="block">

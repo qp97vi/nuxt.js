@@ -30,7 +30,7 @@
         </ul>
       </div>
 	  <div class="mesg_none" v-if="messageData.length == 0">
-	  	<img src="../../static/images/mesgnone.png">
+	  	<img @/static/images/mesgnone.png">
 	  	<span>{{i18n.message_notice.norecord}}~</span>
 	  </div>
       <!--消息内容-->
@@ -42,7 +42,7 @@
 			  {{i18n.message_notice.check_all}}
 			</span>
             <a href="#" @click="deleteByids">
-              <img src="../../static/images/delet.png" />{{i18n.message_notice.delete}}
+              <img @/static/images/delet.png" />{{i18n.message_notice.delete}}
             </a>
           </div>
           <div class="mesg_con">
@@ -62,7 +62,7 @@
                     <span>{{logist.message_title}}</span>
 					<i v-if="logist.is_see == 0"></i>
                     <a href="#" @click="deleteByid(logist.rec_id)">
-                      <img src="../../static/images/delet.png" />
+                      <img @/static/images/delet.png" />
                     </a>
                     <em>{{logist.send_time_show}}</em>
                   </div>
@@ -102,7 +102,7 @@
 			  			<span>{{notice.message_title}}</span>
 						<i v-if="notice.is_see == 0"></i>
 						<a href="#" @click="deleteByid(notice.rec_id)">
-						<img src="../../static/images/delet.png"></a><em>{{notice.send_time_show}}</em></div>
+						<img @/static/images/delet.png"></a><em>{{notice.send_time_show}}</em></div>
 						<div class="mesgdeta_sec">
 							<p>{{notice.message_content}}</p>
 						</div>
@@ -126,7 +126,7 @@
 			  			<span>{{activity.message_title}}</span>
 						<i v-if="activity.is_see == 0"></i>
 			  			<a href="#" @click="deleteByid(activity.rec_id)">
-			  				<img src="../../static/images/delet.png">
+			  				<img @/static/images/delet.png">
 			  			</a><em>{{activity.send_time_show}}</em>
 			  		</div>
 			  		<div class="act_mesgde_sec">
@@ -153,9 +153,9 @@
 					  />
 				  </div>
 			      <div class="directmesg_ri">
-			          <div class="directmesg_img see10987"><img src="../../static/images/perslogo.png"><i>3</i></div>
+			          <div class="directmesg_img see10987"><img @/static/images/perslogo.png"><i>3</i></div>
 			          <div class="directmesg_con">
-			              <div class="mesgdeta_fir"><span>{{i18n.message_notice.service}}</span><a href="#"><img src="../../static/images/delet.png"></a><em>{{privateMessage.send_time_show}}</em></div>
+			              <div class="mesgdeta_fir"><span>{{i18n.message_notice.service}}</span><a href="#"><img @/static/images/delet.png"></a><em>{{privateMessage.send_time_show}}</em></div>
 			              <p>{{i18n.message_notice.what}}</p>
 			          </div>
 			      </div>
@@ -579,7 +579,7 @@ export default {
 </script>
 
 <style scoped>
-@import "../../static/css/message_notice.css";
+@import "@/static/css/message_notice.css";
 >>>.el-dialog__body{
 	padding: 0;
 }

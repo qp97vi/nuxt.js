@@ -176,7 +176,7 @@
               <div class="oversuccen" v-if="bool == 3">
                 <div class="zaiebox">
                   <div class="fljair">
-                    <img src="../../static/images/flj.png" />
+                    <img @/static/images/flj.png" />
                   </div>
                   <div class="fljfon">
                     <p>{{i18n.forget_pwd.successfully_set}}</p>
@@ -462,7 +462,7 @@ export default {
 </script>
 
 <style scoped>
-@import "../../static/css/myaccount.css";
+@import "@/static/css/myaccount.css";
 >>> .el-select .el-input.is-focus .el-input__inner {
 	border-color: #409EFF !important;
 }
