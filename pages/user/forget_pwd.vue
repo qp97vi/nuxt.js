@@ -16,7 +16,7 @@
     <div class="home-index-middle">
       <div class="w1224">
         <div class="g-crumbs">
-			 <router-link :to="{ name: 'user_index'}">{{i18n.forget_pwd.mymall}}</router-link>
+			 <nuxt-link :to="{ name: 'user_index'}">{{i18n.forget_pwd.mymall}}</nuxt-link>
           <i class="litt-xyb"></i>
           <span>{{i18n.forget_pwd.forget_password}}</span>
         </div>
@@ -182,7 +182,7 @@
                     <p>{{i18n.forget_pwd.successfully_set}}</p>
                     <p>
                       {{i18n.forget_pwd.engrave_password}}
-                      <router-link :to="{ name: 'login'}">{{i18n.forget_pwd.back_login_again}}</router-link>
+                      <nuxt-link :to="{ name: 'login'}">{{i18n.forget_pwd.back_login_again}}</nuxt-link>
                     </p>
                     <!-- <a href="{:U('User/logout')}">返回重新登录</a></p> -->
                   </div>

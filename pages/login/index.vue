@@ -2,7 +2,7 @@
 <template>
   <div>
     <div class="header area">
-      <router-link :to="{name:'index'}" style="margin: 10px 0;height: 59px; ">
+      <nuxt-link :to="{name:'index'}" style="margin: 10px 0;height: 59px; ">
         <img
 		  v-if="$store.state.shop_config" 
           :src="apiHead+$store.state.shop_config.store_logo||imgUrl"
@@ -10,7 +10,7 @@
           alt 
         />
 		
-      </router-link>
+      </nuxt-link>
       <span class="login-welcome" style="font-size: 28px;font-family:微软雅黑;">
         <span>{{i18n.theme}}</span>
       </span>
@@ -24,7 +24,7 @@
           <div class="title oh">
             <h1 class="fl" v-if="$store.state.shop_config">{{i18n.title}}{{shop_config.store_name}}</h1>
             <div class="regist-link fr">
-              <router-link :to="{name:'reg'}">{{i18n.register}}</router-link>
+              <nuxt-link :to="{name:'reg'}">{{i18n.register}}</nuxt-link>
             </div>
           </div>
           <div class="u-msg-wrap">
@@ -72,7 +72,7 @@
             </el-input>
             <div class="u-safe">
               <span class="forget">
-                <router-link :to="{name:'forget_pwd'}">{{i18n.forget_pwd}}</router-link>
+                <nuxt-link :to="{name:'forget_pwd'}">{{i18n.forget_pwd}}</nuxt-link>
               </span>
             </div>
             <div class="u-btn mb20 mt20">

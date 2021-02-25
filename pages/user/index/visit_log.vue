@@ -73,14 +73,14 @@
                 <li>
                   <div class="s_xsall">
                     <div class="xs_img">
-                      <router-link :to="{ name: 'goodsInfo', query:{id: item2.goods_id}}">
+                      <nuxt-link :to="{ name: 'goods/goodsInfo/id', query:{id: item2.goods_id}}">
                         <img
                           :src="apiHead + '/mall/goods/thumb_image?width=227&height=227&goods_id=' + item2.goods_id"
                         />
-                      </router-link>
+                      </nuxt-link>
                     </div>
                     <div class="shop_name2">
-              <router-link :to="{ name: 'goodsInfo', query:{id: item2.goods_id}}">{{item2.goods_name}}</router-link>
+              <nuxt-link :to="{ name: 'goods/goodsInfo/id', query:{id: item2.goods_id}}">{{item2.goods_name}}</nuxt-link>
                     </div>
                     <div class="price-tag">
                       <span class="now">

@@ -85,25 +85,25 @@
                   <i class="ph_c"></i>{{i18n.info.phone}}
                 </span>
                 <span :class="userInfo.mobile == '' ? 'change_e' : 'change_p'">
-                  <router-link :to="{ name: 'set_mobile',query:{mobile:userInfo.mobile,type: 0}}" style="cursor:pointer;">
+                  <nuxt-link :to="{ name: 'set_mobile',query:{mobile:userInfo.mobile,type: 0}}" style="cursor:pointer;">
                     <span v-if="userInfo.mobile == ''">{{i18n.info.not_bound}}</span>
                     <span v-else>{{i18n.info.change_binding}}</span>
-                  </router-link>
+                  </nuxt-link>
                 </span>
                 <span>
                   <i class="em_c"></i>{{i18n.info.mailbox}}
                 </span>
                 <span :class="userInfo.email == '' ? 'change_e' : 'change_p'">
-                  <router-link :to="{ name: 'email_validate'}" style="cursor:pointer;">
+                  <nuxt-link :to="{ name: 'email_validate'}" style="cursor:pointer;">
                     <span v-if="userInfo.email == ''">{{i18n.info.not_bound}}</span>
                     <span v-else>{{i18n.info.change_binding}}</span>
-                  </router-link>
+                  </nuxt-link>
                 </span>
               </div>
               <div class="careful">
                 <span class="fir_sen">{{i18n.info.annotation}}</span>
                 <span class="co_blue">
-                  <router-link :to="{name:'safety_settings'}">{{i18n.info.security_settings}}</router-link>
+                  <nuxt-link :to="{name:'safety_settings'}">{{i18n.info.security_settings}}</nuxt-link>
                 </span>
               </div>
               <div class="save_s">

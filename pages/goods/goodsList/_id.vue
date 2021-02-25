@@ -328,22 +328,22 @@ $Author: soubao-java 2020-07-22 $ */
           </div>
           <div class="tjhot-shoplist" id="ajax_hot_goods" v-if="hotGoods && hotGoods.length > 0">
             <div class="alone-shop" v-for="(item, index) in hotGoods" :key="index" v-if="index < 5">
-              <router-link :to="{ name: 'goods/goodsInfo/id', query: { id: item.goods_id } }">
+              <nuxt-link :to="{ name: 'goods/goodsInfo/id', query: { id: item.goods_id } }">
                 <img class="lazy" :src="item.original_img" style="display: inline" />
-              </router-link>
+              </nuxt-link>
               <p class="line-two-hidd">
-                <router-link
+                <nuxt-link
                   :to="{ name: 'goods/goodsInfo/id', query: { id: item.goods_id } }"
-                >{{ item.goods_name }}</router-link>
+                >{{ item.goods_name }}</nuxt-link>
               </p>
               <p class="price-tag">
                 <span class="li_xfo">{{ i18nCommon.symbol }}</span>
                 <span>{{ item.shop_price.toFixed(2) }}</span>
               </p>
               <p class="store-alone">
-                <router-link
+                <nuxt-link
                   :to="{ name: 'goods/goodsInfo/id', query: { id: item.goods_id } }"
-                >{{ item.goods_name }}</router-link>
+                >{{ item.goods_name }}</nuxt-link>
               </p>
             </div>
           </div>
@@ -359,22 +359,22 @@ $Author: soubao-java 2020-07-22 $ */
               v-if="index < 5"
             >
               <div class="alone-shop">
-                <router-link :to="{ name: 'goods/goodsInfo/id', query: { id: item.goods_id } }">
+                <nuxt-link :to="{ name: 'goods/goodsInfo/id', query: { id: item.goods_id } }">
                   <img class="lazy" :src="item.original_img" style="display: inline" />
-                </router-link>
+                </nuxt-link>
                 <p class="line-two-hidd">
-                  <router-link
+                  <nuxt-link
                     :to="{ name: 'goods/goodsInfo/id', query: { id: item.goods_id } }"
-                  >{{ item.goods_name }}</router-link>
+                  >{{ item.goods_name }}</nuxt-link>
                 </p>
                 <p class="price-tag">
                   <span class="li_xfo">{{ i18nCommon.symbol }}</span>
                   <span>{{ item.shop_price.toFixed(2) }}</span>
                 </p>
                 <p class="store-alone">
-                  <router-link
+                  <nuxt-link
                     :to="{ name: 'store', query: { id: item.store_id } }"
-                  >{{ item.cat_name }}</router-link>
+                  >{{ item.cat_name }}</nuxt-link>
                 </p>
               </div>
             </div>
@@ -429,9 +429,9 @@ $Author: soubao-java 2020-07-22 $ */
               <li v-for="(item, index) in goodsData" :key="index">
                 <div class="s_xsall">
                   <div class="xs_img">
-                    <router-link :to="{ name: 'goods/goodsInfo/id', query: { id: item.goods_id } }">
+                    <nuxt-link :to="{ name: 'goods/goodsInfo/id', query: { id: item.goods_id } }">
                       <img class="lazy-list" :src="item.original_img" style="display: inline" />
-                    </router-link>
+                    </nuxt-link>
                   </div>
                   <div class="xs_slide">
                     <div class="small-xs-shop">
@@ -462,9 +462,9 @@ $Author: soubao-java 2020-07-22 $ */
                   <div v-if="item.prom_type_detail" style="color: #ff8f22;">{{i18n.goodsList.participating}}{{item.prom_type_detail}}</div>
                   <div v-else style="height: 21px;"></div>
                   <div class="shop_name2">
-                    <router-link
+                    <nuxt-link
                       :to="{ name: 'goods/goodsInfo/id', query: { id: item.goods_id } }"
-                    >{{ item.goods_name }}</router-link>
+                    >{{ item.goods_name }}</nuxt-link>
                   </div>
                   <div class="shop_name2">
                     <span
@@ -477,10 +477,10 @@ $Author: soubao-java 2020-07-22 $ */
                         margin-right: 5px;
                       "
                     >{{ i18n.goodsList.autotrophy }}</span>
-                    <router-link
+                    <nuxt-link
                       class="co_hchh"
                       :to="{ name: 'store', query: { store_id: item.store_id } }"
-                    >{{ item.store_name }}</router-link>
+                    >{{ item.store_name }}</nuxt-link>
                   </div>
                   <div class="J_btn_statu">
                     <div class="p-num">
@@ -539,7 +539,7 @@ $Author: soubao-java 2020-07-22 $ */
         <ul class="ul-li-column p" id="favourite_goods">
           <li v-for="index in arr" :key="index">
             <div class="pad">
-              <router-link
+              <nuxt-link
                 :to="{
                   name: 'goods/goodsInfo/id',
                   query: { id: guessYoulikeGoodsList[index].goods_id },
@@ -550,14 +550,14 @@ $Author: soubao-java 2020-07-22 $ */
                   style="display: inline"
                   :src="guessYoulikeGoodsList[index].original_img"
                 />
-              </router-link>
+              </nuxt-link>
               <div class="shop_name2">
-                <router-link
+                <nuxt-link
                   :to="{
                     name: 'goods/goodsInfo/id',
                     query: { id: guessYoulikeGoodsList[index].goods_id },
                   }"
-                >{{ guessYoulikeGoodsList[index].goods_name }}</router-link>
+                >{{ guessYoulikeGoodsList[index].goods_name }}</nuxt-link>
               </div>
               <div class="price-tag">
                 <span class="now">

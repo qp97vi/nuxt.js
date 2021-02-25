@@ -18,7 +18,7 @@
           <div class="sclq">
             <i class="top-up lq"></i>
             <span>
-              <router-link :to="{name:'coupon_list'}">{{i18n.coupon.get_more_coupon}}</router-link>
+              <nuxt-link :to="{name:'coupon_list'}">{{i18n.coupon.get_more_coupon}}</nuxt-link>
             </span>
           </div>
         </div>
@@ -53,7 +53,7 @@
           <ul class="ty-las">
             <li :class="state == 0 ? 'red' : ''">
               <a href="#" @click="changeState(0)">{{i18n.default}}</a>
-              <!-- <router-link :to="{name:'coupon'}">默认</router-link> -->
+              <!-- <nuxt-link :to="{name:'coupon'}">默认</nuxt-link> -->
             </li>
             <li :class="state == 1 ? 'red' : ''">
               <a href="#" @click="changeState(1)">{{i18n.coupon.fast_due}}</a>
@@ -111,10 +111,10 @@
             </div>
             <div class="op-btns">
               <!--指定商品-->
-              <!-- <router-link :to="type==1 || type == 2 ? {name:'coupon'}:{name:'goodsInfo'}" class="btncoupon">
+              <!-- <nuxt-link :to="type==1 || type == 2 ? {name:'coupon'}:{name:'goodsInfo'}" class="btncoupon">
                 <span class="txt">立即使用</span>
                 <b></b>
-              </router-link>-->
+              </nuxt-link>-->
               <em class="btncoupon" @click="immediateUse(item)">
                 <span class="txt">{{i18n.coupon.immediate_use}}</span>
                 <b></b>

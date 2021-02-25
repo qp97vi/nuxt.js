@@ -16,23 +16,23 @@
         <div class="fl">
           <div class="fl ler" v-if="bool">
             <div class="fl ler">
-              <router-link :to="{name:'user'}">{{userInfo.nickname}}</router-link>
+              <nuxt-link :to="{name:'user'}">{{userInfo.nickname}}</nuxt-link>
             </div>
             <div class="fl ler">
-              <router-link :to="{name:'message_notice'}">
+              <nuxt-link :to="{name:'message_notice'}">
                 {{i18n.topBar.index2.news}}（
                 <span class="red">{{newsNub}}</span>）
-              </router-link>
+              </nuxt-link>
             </div>
             <div class="fl ler">
               <span @click="quit()" style="cursor: pointer;">{{i18n.topBar.index2.quit}}</span>
             </div>
           </div>
           <div class="fl ler" v-else>
-            <router-link class="link" active-class="active" to="/login">
+            <nuxt-link class="link" active-class="active" to="/login">
               <a class="userinfo">{{i18n.topBar.index2.login}}</a>
-            </router-link>
-            <router-link to="/reg" class="red">{{i18n.topBar.index2.reg}}</router-link>
+            </nuxt-link>
+            <nuxt-link to="/reg" class="red">{{i18n.topBar.index2.reg}}</nuxt-link>
           </div>
           <div class="fl spc"></div>
           <div class="sendaddress pr fl">
@@ -76,15 +76,15 @@
         <div class="top-ri-header fr">
           <ul>
             <li>
-              <router-link :to="{ name: 'user/index/order_list/id'}">{{i18n.topBar.index2.myorder}}</router-link>
+              <nuxt-link :to="{ name: 'user/index/order_list/id'}">{{i18n.topBar.index2.myorder}}</nuxt-link>
             </li>
             <li class="spacer"></li>
             <li>
-              <router-link :to="{ name: 'user/index/visit_log'}">{{i18n.topBar.index2.browse}}</router-link>
+              <nuxt-link :to="{ name: 'user/index/visit_log'}">{{i18n.topBar.index2.browse}}</nuxt-link>
             </li>
             <li class="spacer"></li>
             <li>
-              <router-link :to="{ name: 'user/index/goods_collect/id'}">{{i18n.topBar.index2.goods_collect}}</router-link>
+              <nuxt-link :to="{ name: 'user/index/goods_collect/id'}">{{i18n.topBar.index2.goods_collect}}</nuxt-link>
             </li>
             <li class="spacer"></li>
             <li class="hover-ba-navdh">
@@ -97,7 +97,7 @@
                       <a href="http://jseller.tpsns.com" target="_blank">{{i18n.topBar.index2.business}}</a>
                     </li>
                     <li>
-                      <router-link :to="{ name: 'newjoin/index/newjoin_index'}">{{i18n.topBar.index2.help}}</router-link>
+                      <nuxt-link :to="{ name: 'newjoin/index/newjoin_index'}">{{i18n.topBar.index2.help}}</nuxt-link>
                     </li>
                   </ul>
                 </div>
@@ -111,10 +111,10 @@
                 <div class="conta-hv-nav">
                   <ul>
                     <li>
-						<router-link :to="{ name: 'activity/group_list/id'}">{{i18n.topBar.index2.group_purchase}}</router-link>
+						<nuxt-link :to="{ name: 'activity/group_list/id'}">{{i18n.topBar.index2.group_purchase}}</nuxt-link>
                     </li>
                     <li>
-						<router-link :to="{ name: 'activity/flash_sale_list/id'}">{{i18n.topBar.index2.rush_purchase}}</router-link>
+						<nuxt-link :to="{ name: 'activity/flash_sale_list/id'}">{{i18n.topBar.index2.rush_purchase}}</nuxt-link>
                     </li>
                   </ul>
                 </div>

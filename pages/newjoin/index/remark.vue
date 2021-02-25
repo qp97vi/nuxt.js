@@ -14,25 +14,25 @@
     <div class="gome-layout-area pb50 clearfix">
       <ul class="steps clearfix">
         <li class="first prev ok">
-			<router-link :to="{ name: 'agreement'}">
+			<nuxt-link :to="{ name: 'agreement'}">
             <b>1</b>
             <span class="going"></span>
             <em class="f">{{i18n.in_instructions}}</em>
-          </router-link>
+          </nuxt-link>
         </li>
         <li class="prev ok">
-			<router-link :to="{ name: 'basic_info'}">
+			<nuxt-link :to="{ name: 'basic_info'}">
             <b>2</b>
             <span class="going"></span>
             <em class="f">{{i18n.write_company_message}}</em>
-          </router-link>
+          </nuxt-link>
         </li>
         <li class="prev ok">
-			<router-link :to="{ name: 'seller_info'}">
+			<nuxt-link :to="{ name: 'seller_info'}">
             <b>3</b>
             <span class="going"></span>
             <em class="f">{{i18n.write_shop_message}}</em>
-          </router-link>
+          </nuxt-link>
         </li>
         <li class="cur ok">
           <b>4</b>
@@ -147,7 +147,7 @@
           </el-form-item>
         </el-form>
         <div class="gome-btn pt30">
-          <router-link class="gome-btn-gray" :to="{ name: 'seller_info'}">{{i18n.last_step}}</router-link>
+          <nuxt-link class="gome-btn-gray" :to="{ name: 'seller_info'}">{{i18n.last_step}}</nuxt-link>
           <a href="javascript:void(0)" class="gome-btn-red" @click="submit()">{{i18n.save_data}}</a>
         </div>
       </div>

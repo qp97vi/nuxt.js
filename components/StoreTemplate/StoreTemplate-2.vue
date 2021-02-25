@@ -16,16 +16,16 @@
 			<div class="sidertabs tab-lis-1">
 				<div class="sider-top-stra sider-midd-1">
 					<div class="icon-tabe-chan">
-						<router-link :to="{ name: 'user_index'}">
+						<nuxt-link :to="{ name: 'user_index'}">
 							<i class="share-side share-side1"></i>
 							<i class="share-side tab-icon-tip triangleshow"></i>
-						</router-link>
+						</nuxt-link>
 						<div class="dl_login">
 							<div class="hinihdk">
 								<img class="head_pic" src="../../static/images/dl.png" />
 								<p class="loginafter nologin">
 									<span>{{i18n.StoreTemplate.StoreTemplate2.hello_first}}</span>
-									<router-link :to="{ name: 'login'}">{{i18n.StoreTemplate.StoreTemplate2.register}}</router-link>！
+									<nuxt-link :to="{ name: 'login'}">{{i18n.StoreTemplate.StoreTemplate2.register}}</nuxt-link>！
 								</p>
 								<span class="tab-tip">{{i18n.StoreTemplate.StoreTemplate2.news}}</span>
 							</div>
@@ -34,19 +34,19 @@
 				</div>
 				<div class="sider-top-stra sider-midd-2">
 					<div class="icon-tabe-chan mmm">
-						<router-link :to="{ name: 'goods_collect'}" target="_blank">
+						<nuxt-link :to="{ name: 'goods_collect'}" target="_blank">
 
 							<i class="share-side share-side1"></i>
 							<!--<i class="share-side tab-icon-tip"></i>-->
 							<span class="tab-tip">{{i18n.StoreTemplate.StoreTemplate2.collect}}</span>
-						</router-link>
+						</nuxt-link>
 					</div>
 					<div class="icon-tabe-chan hostry">
-						<router-link :to="{ name: 'visit_log'}" target="_blank">
+						<nuxt-link :to="{ name: 'visit_log'}" target="_blank">
 							<i class="share-side share-side1"></i>
 							<!--<i class="share-side tab-icon-tip"></i>-->
 							<span class="tab-tip">{{i18n.StoreTemplate.StoreTemplate2.track}}</span>
-						</router-link>
+						</nuxt-link>
 					</div>
 				</div>
 			</div>
@@ -84,9 +84,9 @@
 		<div class="header-wrap">
 			<div class="public-head-layout wrapper">
 				<h1 class="site-logo">
-					<router-link :to="{name:'index'}">
+					<nuxt-link :to="{name:'index'}">
 						<img :src="store.store_logo" class="pngFix" />
-					</router-link>
+					</nuxt-link>
 				</h1>
 				<div class="heade_store_info">
 					<div class="slogo">
@@ -139,7 +139,7 @@
 									</dd>
 								</dl>
 								<div class="goto">
-									<router-link :to="{name:'store',query:{store_id:store.store_id}}">{{i18n.StoreTemplate.StoreTemplate2.dnter_store}}</router-link>
+									<nuxt-link :to="{name:'store',query:{store_id:store.store_id}}">{{i18n.StoreTemplate.StoreTemplate2.dnter_store}}</nuxt-link>
 									<a href="javascript:void(0)" @click="addFavoriteStores()">
 										{{i18n.StoreTemplate.StoreTemplate2.favorite_stores}}
 										<em nctype="store_collect"></em>
@@ -178,7 +178,7 @@
 							<div class="ncs-message-bar">
 								<div class="default">
 									<h5>
-										<router-link :to="{name:'store',query:{store_id:store.store_id}}" class="store_name">{{store.store_name}}</router-link>
+										<nuxt-link :to="{name:'store',query:{store_id:store.store_id}}" class="store_name">{{store.store_name}}</nuxt-link>
 									</h5>
 									<span member_id="1"></span>
 								</div>
@@ -205,9 +205,9 @@
 			<div class="ncsl-nav">
 				<!-- 不启用店铺装修 -->
 				<div class="banner">
-					<router-link :to="{name:'store'}" class="img">
+					<nuxt-link :to="{name:'store'}" class="img">
 						<img :src="store.store_banner" alt="邮汇·派" title="邮汇·派" class="pngFix" style="height: 100%;width: 100%" />
-					</router-link>
+					</nuxt-link>
 					<!-- </a> -->
 				</div>
 				<div id="nav" class="ncs-nav">
@@ -263,9 +263,9 @@
 								<li v-for="(item,index) in recommendGoods" :key="item.store_id">
 									<dl>
 										<dt>
-											<router-link class="goods-thumb" target="_blank" :title="item.goods_name" :to="{name:'goodsInfo',query:{id:item.goods_id}}">
+											<nuxt-link class="goods-thumb" target="_blank" :title="item.goods_name" :to="{name:'goodsInfo',query:{id:item.goods_id}}">
 												<img :src="item.original_img" :alt="item.goods_name" />
-											</router-link>
+											</nuxt-link>
 											<!-- </a> -->
 											<ul class="goods-thumb-scroll-show">
 												<li v-for="(commit,sexIndex) in item.goods_images" :key="commit.img_id" :class="commit.bool ? 'selected' : ''"
@@ -277,7 +277,7 @@
 											</ul>
 										</dt>
 										<dd class="goods-name">
-											<router-link target="_blank" :to="{name:'goodsInfo',query:{id:item.goods_id}}">{{item.goods_name}}</router-link>
+											<nuxt-link target="_blank" :to="{name:'goodsInfo',query:{id:item.goods_id}}">{{item.goods_name}}</nuxt-link>
 										</dd>
 										<dd class="goods-info">
 											<span class="price">
@@ -306,9 +306,9 @@
 								<li v-for="(item,index) in newGoods" :key="item.goods_id">
 									<dl>
 										<dt>
-											<router-link target="_blank" class="goods-thumb" :to="{name:'goodsInfo',query:{id:item.goods_id}}">
+											<nuxt-link target="_blank" class="goods-thumb" :to="{name:'goodsInfo',query:{id:item.goods_id}}">
 												<img :src="item.original_img" :alt="item.goods_name" />
-											</router-link>
+											</nuxt-link>
 											<!-- </a> -->
 											<ul class="goods-thumb-scroll-show">
 												<li :class="commit.bool ? 'selected' : ''" v-for="(commit,sexIndex) in item.goods_images" :key="commit.img_id"
@@ -320,7 +320,7 @@
 											</ul>
 										</dt>
 										<dd class="goods-name">
-											<router-link target="_blank" :title="item.goods_name" :to="{name:'goodsInfo',query:{id:item.goods_id}}">{{item.goods_name}}</router-link>
+											<nuxt-link target="_blank" :title="item.goods_name" :to="{name:'goodsInfo',query:{id:item.goods_id}}">{{item.goods_name}}</nuxt-link>
 											<!-- </a> -->
 										</dd>
 										<dd class="goods-info">
@@ -391,15 +391,15 @@
 									<li v-for="goods in salesGoods" :key="goods.goods_id">
 										<dl>
 											<dt>
-												<router-link :to="{name:'goodsInfo',query:{id:goods.goods_id}}">{{goods.goods_name}}</router-link>
+												<nuxt-link :to="{name:'goodsInfo',query:{id:goods.goods_id}}">{{goods.goods_name}}</nuxt-link>
 											</dt>
 											<dd class="goods-pic">
-												<router-link :to="{name:'goodsInfo',query:{id:goods.goods_id}}">
+												<nuxt-link :to="{name:'goodsInfo',query:{id:goods.goods_id}}">
 													<span class="thumb size40">
 														<i></i>
 														<img :src="apiHead + '/mall/goods/thumb_image?width=40&height=40&goods_id=' + goods.goods_id" />
 													</span>
-												</router-link>
+												</nuxt-link>
 												<!-- </a> -->
 												<p>
 													<span class="thumb size100" style="width:100px;height:100px;">
@@ -423,16 +423,16 @@
 									<li v-for="goods in collectGoods" :key="goods.goods_id">
 										<dl>
 											<dt>
-												<router-link :to="{name:'goodsInfo',query:{id:goods.goods_id}}">{{goods.goods_name}}</router-link>
+												<nuxt-link :to="{name:'goodsInfo',query:{id:goods.goods_id}}">{{goods.goods_name}}</nuxt-link>
 												<!-- </a> -->
 											</dt>
 											<dd class="goods-pic">
-												<router-link :to="{name:'goodsInfo',query:{id:goods.goods_id}}">
+												<nuxt-link :to="{name:'goodsInfo',query:{id:goods.goods_id}}">
 													<span class="thumb size40">
 														<i></i>
 														<img :src="apiHead + '/mall/goods/thumb_image?width=40&height=40&goods_id=' + goods.goods_id" />
 													</span>
-												</router-link>
+												</nuxt-link>
 												<!-- </a> -->
 												<p>
 													<span class="thumb size100" style="width:100px;height:100px;">
@@ -509,15 +509,15 @@
 									<dd>
 										<div class="fd-media">
 											<div class="goodsimg">
-												<router-link :to="{ name:'goodsInfo' , query:{id:item.goods_id}}" target="_blank">
+												<nuxt-link :to="{ name:'goodsInfo' , query:{id:item.goods_id}}" target="_blank">
 													<img :src="item.original_img" alt width="120" height="120" />
-												</router-link>
+												</nuxt-link>
 											</div>
 											<div class="goodsinfo">
 												<dl>
 													<dt>
-														<router-link :to="{ name:'goodsInfo' , query:{id:item.goods_id}}" target="_blank" style="display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
-															{{item.goods_name}}</router-link>
+														<nuxt-link :to="{ name:'goodsInfo' , query:{id:item.goods_id}}" target="_blank" style="display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
+															{{item.goods_name}}</nuxt-link>
 													</dt>
 													<dd>{{i18n.StoreTemplate.StoreTemplate2.price}}：{{i18nCommon.symbol}}{{Number(item.market_price).toFixed(2)}}</dd>
 													<dd>{{i18n.StoreTemplate.StoreTemplate2.market_price}}：{{i18nCommon.symbol}}{{Number(item.shop_price).toFixed(2)}}</dd>
@@ -561,9 +561,9 @@
 				<div class="cms-sns-right">
 					<div class="cms-sns-right-container">
 						<div class="cms-store-pic">
-							<router-link :to="{name:'store',query:{id:store.store_id}}">
+							<nuxt-link :to="{name:'store',query:{id:store.store_id}}">
 								<img :src="store.store_logo" />
-							</router-link>
+							</nuxt-link>
 						</div>
 						<dl class="cms-store-info">
 							<dt>{{i18n.StoreTemplate.StoreTemplate2.trade_name}}</dt>
@@ -629,9 +629,9 @@
 							<li v-for="(item,index) in storeData" :key="item.goods_id">
 								<dl>
 									<dt>
-										<router-link class="goods-thumb" target="_blank" :to="{name:'goodsInfo',query:{id:item.goods_id}}">
+										<nuxt-link class="goods-thumb" target="_blank" :to="{name:'goodsInfo',query:{id:item.goods_id}}">
 											<img :src="item.original_img" :alt="item.goods_name" />
-										</router-link>
+										</nuxt-link>
 										<!-- </a> -->
 										<ul class="goods-thumb-scroll-show">
 											<li :class="commit.bool ? 'selected' : ''" @mouseover="tabContentimg(commit,sexIndex,index)" v-for="(commit,sexIndex) in item.goods_images"
@@ -643,7 +643,7 @@
 										</ul>
 									</dt>
 									<dd class="goods-name">
-										<router-link :title="item.goods_name" target="_blank" :to="{name:'goodsInfo',query:{id:item.goods_id}}">{{item.goods_name}}</router-link>
+										<nuxt-link :title="item.goods_name" target="_blank" :to="{name:'goodsInfo',query:{id:item.goods_id}}">{{item.goods_name}}</nuxt-link>
 										<!-- </a> -->
 									</dd>
 									<dd class="goods-info">

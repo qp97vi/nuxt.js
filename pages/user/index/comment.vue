@@ -103,9 +103,9 @@
                       />
                     </div>
                     <div class="shop_name">
-                      <router-link :to="{ name: 'goodsInfo',query:{id:item.goods_id}}">
+                      <nuxt-link :to="{ name: 'goods/goodsInfo/id',query:{id:item.goods_id}}">
                         <span>{{item.goods_name}}</span>
-                      </router-link>
+                      </nuxt-link>
                     </div>
                   </div>
                 </td>
@@ -130,15 +130,15 @@
                 <td class="sx6">
                   <div class="rbac">
                     <p class="inspect">
-                      <router-link
+                      <nuxt-link
                         v-if="item.comment_is_del==0"
                         :to="{name:'goodsInfo',query:{id:item.goods_id}}"
-                      >{{i18n.inquire}}</router-link>
+                      >{{i18n.inquire}}</nuxt-link>
                       <span v-else-if="item.comment_is_del==1"></span>
-                      <router-link
+                      <nuxt-link
                         v-else
                         :to="{ name: 'comment_list',query:{order_id:item.order_id}}"
-                      >{{i18n.evaluate}}</router-link>
+                      >{{i18n.evaluate}}</nuxt-link>
                     </p>
                   </div>
                 </td>

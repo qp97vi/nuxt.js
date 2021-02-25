@@ -31,7 +31,7 @@
 					<div class="shop-list-splb pre-set-suma p">
 						<ul>
 							<li v-for="(item,index) in goodlist" :key="index">
-								<router-link target="_blank" class="seckill_mod_goods_link" :to="{name:'goodsInfo',query:{id:item.goods_id}}">
+								<nuxt-link target="_blank" class="seckill_mod_goods_link" :to="{name:'goodsInfo',query:{id:item.goods_id}}">
 									<div class="s_xsall">
 										<div class="xs_img">
 											<a target="_blank">
@@ -51,7 +51,7 @@
 											</div>
 										</div>
 									</div>
-								</router-link>
+								</nuxt-link>
 							</li>
 						</ul>
 					</div>

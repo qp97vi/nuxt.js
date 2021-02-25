@@ -23,7 +23,7 @@
           </h2>
           <ul>
             <li :key="idx" v-for="(itm,idx) in item.articles">
-              <router-link :to="{name:'detail',query:{id:itm.article_id}}">{{itm.title}}</router-link>
+              <nuxt-link :to="{name:'detail',query:{id:itm.article_id}}">{{itm.title}}</nuxt-link>
             </li>
           </ul>
         </div>

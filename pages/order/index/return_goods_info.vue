@@ -26,33 +26,33 @@
           <div class="serft_fl">
             <span>
               {{i18n.after_sales}}
-              <router-link class="red" :to="{name:'store',query:{store_id:storeData.store_id}}">{{storeData.store_name}}</router-link>
+              <nuxt-link class="red" :to="{name:'store',query:{store_id:storeData.store_id}}">{{storeData.store_name}}</nuxt-link>
               {{i18n.provide_with}}
             </span>
           </div>
           <div class="serft_fr">
             <div class="shop-if-dif">
               <div class="shop-difimg">
-                <router-link
+                <nuxt-link
                  :to="{name:'goodsInfo',query:{id:serviceDetailsData.goods_id}}"
                  :title="serviceDetailsData.goods_name"
                 >
                 <img :src="apiHead + '/mall/goods/thumb_image?width=100&height=100&goods_id=' + serviceDetailsData.goods_id" />
-                </router-link>
+                </nuxt-link>
               </div>
               <div class="cebigeze">
                 <p class="may_zco">
                   <span>{{i18n.order_number}}：</span>
                   <span>
-					<router-link :to="{name:'order_detail',query:{order_id:serviceDetailsData.order_id}}">
-                    {{serviceDetailsData.order_sn}}</router-link>
+					<nuxt-link :to="{name:'order_detail',query:{order_id:serviceDetailsData.order_id}}">
+                    {{serviceDetailsData.order_sn}}</nuxt-link>
                   </span>
                 </p>
                 <p class="may_zco">
-                  <router-link
+                  <nuxt-link
                    :to="{name:'goodsInfo',query:{id:serviceDetailsData.goods_id}}"
                    :title="serviceDetailsData.goods_name"
-                  >{{orderGoodsData.goods_name}}</router-link>
+                  >{{orderGoodsData.goods_name}}</nuxt-link>
                 </p>
               </div>
             </div>

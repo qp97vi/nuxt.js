@@ -23,7 +23,7 @@
 						<nuxt-link class="link" active-class="active" :to="{name:'login'}">
 							<a class="userinfo">{{i18n.topBar.index.login}}</a>
 						</nuxt-link>
-						<router-link to="/reg" class="red">{{i18n.topBar.index.reg}}</router-link>
+						<nuxt-link to="/reg" class="red">{{i18n.topBar.index.reg}}</nuxt-link>
 						<!-- <a class="red">注册</a> -->
 					</div>
 					<div class="fl spc" style="margin-top:10px"></div>
@@ -73,19 +73,19 @@
 				<div class="top-ri-header fl">
 					<ul>
 						<li>
-							<router-link target="_blank" :to="{name:'user/index/order_list/id'}">{{i18n.topBar.index.order}}</router-link>
+							<nuxt-link target="_blank" :to="{name:'user/index/order_list/id'}">{{i18n.topBar.index.order}}</nuxt-link>
 						</li>
 						<li class="spacer"></li>
 						<li>
-							<router-link target="_blank" :to="{name:'user/index/account'}">{{i18n.topBar.index.account}}</router-link>
+							<nuxt-link target="_blank" :to="{name:'user/index/account'}">{{i18n.topBar.index.account}}</nuxt-link>
 						</li>
 						<li class="spacer"></li>
 						<li>
-							<router-link target="_blank" :to="{name:'user/index/coupon'}">{{i18n.topBar.index.coupon}}</router-link>
+							<nuxt-link target="_blank" :to="{name:'user/index/coupon'}">{{i18n.topBar.index.coupon}}</nuxt-link>
 						</li>
 						<li class="spacer"></li>
 						<li>
-							<router-link target="_blank" :to="{name:'user/index/goods_collect/id'}">{{i18n.topBar.index.goods_collect}}</router-link>
+							<nuxt-link target="_blank" :to="{name:'user/index/goods_collect/id'}">{{i18n.topBar.index.goods_collect}}</nuxt-link>
 						</li>
 						<li class="spacer"></li>
 						<li class="hover-ba-navdh">
@@ -98,7 +98,7 @@
 											<a :href="$store.state.sellerUrl" :title="i18n.topBar.index.business" target="_blank">{{i18n.topBar.index.business}}</a>
 										</li>
 										<li>
-											<router-link :to="{ name: 'newjoin/index/newjoin_index'}">{{i18n.topBar.index.help}}</router-link>
+											<nuxt-link :to="{ name: 'newjoin/index/newjoin_index'}">{{i18n.topBar.index.help}}</nuxt-link>
 										</li>
 									</ul>
 								</div>

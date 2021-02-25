@@ -19,7 +19,7 @@
         </div>
         <div class="btnBox">
           <div class="btn-shopp ui-button fl" @click="handleClose">{{i18n.AddCartPop.continue_shopping}}</div>
-          <router-link :to="{ name: 'cart'}" class="btn-goCart ui-button fl">{{i18n.AddCartPop.shopping_cart}}</router-link>
+          <nuxt-link :to="{ name: 'cart'}" class="btn-goCart ui-button fl">{{i18n.AddCartPop.shopping_cart}}</nuxt-link>
           <!-- <div ></div> -->
         </div>
       </div>
@@ -28,15 +28,15 @@
         <ul class="fn-clear buy-list">
           <template>
             <li v-for="(item,index) in hotGoods" :key="index" v-if="index<4">
-              <router-link
+              <nuxt-link
                 :to="{name:'goodsInfo',query:{id:item.goods_id}}"
                 class="watch-img"
                 target="_parent"
               >
                 <img :src="item.original_img" />
-              </router-link>
+              </nuxt-link>
               <h4>
-                <router-link :to="{name:'goodsInfo',query:{id:item.goods_id}}">{{item.goods_name}}</router-link>
+                <nuxt-link :to="{name:'goodsInfo',query:{id:item.goods_id}}">{{item.goods_name}}</nuxt-link>
               </h4>
               <p>
                 <q class="fn-rmb">{{i18nCommon.symbol}}</q>

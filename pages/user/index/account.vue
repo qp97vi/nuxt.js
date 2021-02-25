@@ -14,9 +14,9 @@
     <div class="menumain p">
       <div class="goodpiece">
         <h1>{{i18n.integral.i_integral}}</h1>
-		<router-link :to="{name:'article/index/detail/id'}">
+		<nuxt-link :to="{name:'article/index/detail/id'}">
 		  <span class="co_blue">{{i18n.integral.help}}</span>
-		</router-link>
+		</nuxt-link>
       </div>
       <div class="shopcard myjfhg ma-to-20 p">
         <div class="cuschan">
@@ -24,7 +24,7 @@
             <i class="kyjf"></i>{{i18n.integral.now_integral}}：
           </span>
           <span class="co">{{userInfo.pay_points}}</span>
-          <router-link class="jfhg" :to="{name:'integralMall'}">{{i18n.integral.redemption}}</router-link>
+          <nuxt-link class="jfhg" :to="{name:'integralMall'}">{{i18n.integral.redemption}}</nuxt-link>
         </div>
         <div class="cuschan">
           <span class="kycha">

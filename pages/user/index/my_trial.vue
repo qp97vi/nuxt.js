@@ -46,7 +46,7 @@
             </div>
             <div style="text-align: center;" class="fl try_check">
               <p v-if="item.is_paid==0">
-                <router-link :to="{name:'paymentOrderTrial',query:{order_sn:item.order_sn}}">去支付</router-link>
+                <nuxt-link :to="{name:'paymentOrderTrial',query:{order_sn:item.order_sn}}">去支付</nuxt-link>
               </p>
               <span v-if="item.is_shipping==2&&item.is_receive==0">
                 <el-button
@@ -54,16 +54,16 @@
                   @click="toEdit(item.order_sn)"
                   icon="el-icon-edit-outline"
                 >确认收货</el-button>
-                <router-link :to="{name:'logistics_tracking',query:{order_sn:item.order_sn}}">查看物流</router-link>
+                <nuxt-link :to="{name:'logistics_tracking',query:{order_sn:item.order_sn}}">查看物流</nuxt-link>
               </span>
               <span v-if="item.is_shipping==2&&item.is_receive==1">
-                <router-link :to="{name:'trailcomment',query:{order_sn:item.order_sn}}">
+                <nuxt-link :to="{name:'trailcomment',query:{order_sn:item.order_sn}}">
                   <el-button
                     v-if="item.is_shipping==2&&item.is_receive==1&&item.is_comment==0"
                     size="small"
                     icon="el-icon-edit-outline"
                   >评价</el-button>
-                </router-link>
+                </nuxt-link>
                 <el-button
                   v-if="item.is_shipping==2&&item.is_receive==1&&item.is_comment==1"
                   size="small"
@@ -71,7 +71,7 @@
                 >已评价</el-button>
               </span>
               <p>
-                <router-link :to="{name:'viewdetails',query:{trial_id:item.trial_id}}">查看详情</router-link>
+                <nuxt-link :to="{name:'viewdetails',query:{trial_id:item.trial_id}}">查看详情</nuxt-link>
               </p>
             </div>
           </div>
@@ -112,10 +112,10 @@
             </div>
             <div class="fl try_check">
               <p v-if="item.is_paid==0">
-                <router-link :to="{name:'paymentOrderTrial',query:{order_sn:item.order_sn}}">去支付</router-link>
+                <nuxt-link :to="{name:'paymentOrderTrial',query:{order_sn:item.order_sn}}">去支付</nuxt-link>
               </p>
               <p>
-                <router-link :to="{name:'viewdetails',query:{trial_id:item.trial_id}}">查看详情</router-link>
+                <nuxt-link :to="{name:'viewdetails',query:{trial_id:item.trial_id}}">查看详情</nuxt-link>
               </p>
             </div>
           </div>
@@ -162,16 +162,16 @@
                   @click="toEdit(item.order_sn)"
                   icon="el-icon-edit-outline"
                 >确认收货</el-button>
-                <router-link :to="{name:'logistics_tracking',query:{order_sn:item.order_sn}}">查看物流</router-link>
+                <nuxt-link :to="{name:'logistics_tracking',query:{order_sn:item.order_sn}}">查看物流</nuxt-link>
               </span>
               <span v-if="item.is_shipping==2&&item.is_receive==1">
-                <router-link :to="{name:'trailcomment',query:{order_sn:item.order_sn}}">
+                <nuxt-link :to="{name:'trailcomment',query:{order_sn:item.order_sn}}">
                   <el-button
                     v-if="item.is_shipping==2&&item.is_receive==1&&item.is_comment==0"
                     size="small"
                     icon="el-icon-edit-outline"
                   >评价</el-button>
-                </router-link>
+                </nuxt-link>
                 <el-button
                   v-if="item.is_shipping==2&&item.is_receive==1&&item.is_comment==1"
                   size="small"
@@ -179,7 +179,7 @@
                 >已评价</el-button>
               </span>
               <p>
-                <router-link :to="{name:'viewdetails',query:{trial_id:item.trial_id}}">查看详情</router-link>
+                <nuxt-link :to="{name:'viewdetails',query:{trial_id:item.trial_id}}">查看详情</nuxt-link>
               </p>
             </div>
           </div>
@@ -215,7 +215,7 @@
             </div>
             <div class="fl try_check">
               <p>
-                <router-link :to="{name:'viewdetails',query:{trial_id:item.trial_id}}">查看详情</router-link>
+                <nuxt-link :to="{name:'viewdetails',query:{trial_id:item.trial_id}}">查看详情</nuxt-link>
               </p>
             </div>
           </div>

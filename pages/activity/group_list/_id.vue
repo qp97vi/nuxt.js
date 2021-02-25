@@ -86,7 +86,7 @@
           <div class="shop-list-splb pre-set-suma groupcy p">
             <ul>
               <li v-for="(item,index) in goodsList" :key="index">
-				<router-link :to="{ name:'goodsInfo', query:{id:item.goods_id} }">
+				<nuxt-link :to="{ name:'goodsInfo', query:{id:item.goods_id} }">
 					<div class="s_xsall">
 					  <div class="xs_img">
 						<a>
@@ -142,7 +142,7 @@
                     </span>
                   </a>
                 </div>
-				</router-link>
+				</nuxt-link>
 			  </li>
             </ul>
           </div>

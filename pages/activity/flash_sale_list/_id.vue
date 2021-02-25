@@ -74,7 +74,7 @@
           <div class="grid_c1">
             <ul class="seckill_mod_goodslist clearfix">
               <li v-for="(item,index) in goodlist" :key="index" class="seckill_mod_goods">
-                <router-link target="_blank" class="seckill_mod_goods_link" :to="{name:'goodsInfo',query:{id:item.goods_id}}">
+                <nuxt-link target="_blank" class="seckill_mod_goods_link" :to="{name:'goodsInfo',query:{id:item.goods_id}}">
                   <img
                     class="seckill_mod_goods_link_img"
                     :src="apiHead + '/mall/goods/thumb_image?goods_id='+ item.goods_id+'&width=400&height=400'"
@@ -115,7 +115,7 @@
                     <i class="seckill_mod_goods_info_i" v-else>{{i18n.flash_sale_lsit.go_buy}}</i>
                     <i class="seckill_mod_goods_info_i" v-if="item.percent == 100">{{i18n.flash_sale_lsit.sold_out_empty}}</i>
                   </span>
-                </router-link>
+                </nuxt-link>
               </li>
             </ul>
           </div>

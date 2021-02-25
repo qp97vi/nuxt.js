@@ -14,11 +14,11 @@
 		<div class="gome-layout-area pb50">
 			<ul class="steps clearfix">
 				<li class="first prev ok">
-					<router-link :to="{ name: 'agreement'}">
+					<nuxt-link :to="{ name: 'agreement'}">
 						<b>1</b>
 						<span class="going"></span>
 						<em class="f">{{i18n.in_instructions}}</em>
-					</router-link>
+					</nuxt-link>
 				</li>
 				<li class="cur ok">
 					<b>2</b>
@@ -232,7 +232,7 @@
 					</div>
 				</form>
 				<div class="gome-btn pt30">
-					<router-link class="gome-btn-gray" :to="{ name: 'contact'}">{{i18n.last_step}}</router-link>
+					<nuxt-link class="gome-btn-gray" :to="{ name: 'contact'}">{{i18n.last_step}}</nuxt-link>
 					<a href="javascript:void(0)" class="gome-btn-red" @click="submit()">{{i18n.next_step_shop}}</a>
 				</div>
 			</div>

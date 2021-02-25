@@ -82,7 +82,7 @@
                   </span>
                   <div class="paysoon">
                     <a class="ps_lj" href="javascript:;" @click="fob(item)" v-if="item.is_able_receive">{{i18n.order_list.receiving_affirm}}</a>
-                    <router-link class="ps_lj" :to="{name:'paymentOrder',query:{order_sn:item.order_sn}}" v-if="(item.pay_status==0 || item.pay_status == 2) && item.order_status == 0">{{i18n.order_list.immediate_payment}}</router-link>
+                    <nuxt-link class="ps_lj" :to="{name:'paymentOrder',query:{order_sn:item.order_sn}}" v-if="(item.pay_status==0 || item.pay_status == 2) && item.order_status == 0">{{i18n.order_list.immediate_payment}}</nuxt-link>
                     <a class="consoorder" href="javascript:;" @click="setPiece(item)" v-if="item.is_able_cancel">{{i18n.order_list.cancellation_order}}</a>
                   </div>
                 </div>
@@ -96,9 +96,9 @@
                     <img :src="apiHead + '/mall/goods/thumb_image?width=100&height=100&goods_id=' + commit.goods_id" />
                   </div>
                   <div class="shop_name">
-                    <router-link :to="{ name: 'goodsInfo',query:{id:commit.goods_id}}">
+                    <nuxt-link :to="{ name: 'goods/goodsInfo/id',query:{id:commit.goods_id}}">
                       <span>{{commit.goods_name}}</span>
-                    </router-link>
+                    </nuxt-link>
                   </div>
                   <div class="shop_name">
                     <a></a>
@@ -112,10 +112,10 @@
               <td class="sx3">
                 <span>x{{commit.goods_num}}</span><br>
                 <span v-if="(item.is_able_return) && commit.is_send > 0 && commit.unsend == 0">
-                  <router-link :to="{ name: 'return_goods_rec',query:{rec_id:commit.rec_id}}">{{i18n.order_list.apply_sales}}</router-link>
+                  <nuxt-link :to="{ name: 'return_goods_rec',query:{rec_id:commit.rec_id}}">{{i18n.order_list.apply_sales}}</nuxt-link>
                 </span>
                 <span v-if="commit.unsend == 1">
-                  <router-link :to="{ name: 'return_goods_info',query:{rec_id:commit.rec_id}}">{{i18n.order_list.after_sale}}</router-link>
+                  <nuxt-link :to="{ name: 'return_goods_info',query:{rec_id:commit.rec_id}}">{{i18n.order_list.after_sale}}</nuxt-link>
                 </span>
               </td>
               <!-- </span> -->
@@ -138,17 +138,17 @@
                 <div class="detail_or">
                   <p class="d_yzo">{{item.order_status_detail}}</p>
                   <p>
-                    <router-link :to="{name:'order_detail',query:{order_id:item.order_id}}">{{i18n.order_list.view_details}}</router-link>
+                    <nuxt-link :to="{name:'order_detail',query:{order_id:item.order_id}}">{{i18n.order_list.view_details}}</nuxt-link>
                   </p>
                 </div>
               </td>
               <td class="sx6" :rowspan="item.order_goods.length" v-if="index==0">
                 <div class="rbac">
                   <p class>
-                    <router-link :to="{name:'goodsInfo',query: {id:commit.goods_id}}">{{i18n.order_list.buy_again}}</router-link>
+                    <nuxt-link :to="{name:'goodsInfo',query: {id:commit.goods_id}}">{{i18n.order_list.buy_again}}</nuxt-link>
                   </p>
                   <p class="inspect" v-if="item.is_able_comment">
-                    <router-link :to="{ name: 'comment_list',query:{order_id:item.order_id}}">{{i18n.order_list.evaluate}}</router-link>
+                    <nuxt-link :to="{ name: 'comment_list',query:{order_id:item.order_id}}">{{i18n.order_list.evaluate}}</nuxt-link>
                   </p>
                 </div>
               </td>
@@ -160,7 +160,7 @@
       <div class="order-alone-li lastset_cm" v-else>
         <div class="car-none-pl">
           <i class="account-acco1"></i>{{i18n.order_list.noorder}}，
-          <router-link :to="{name:'index'}">{{i18n.order_list.have_look}}~</router-link>
+          <nuxt-link :to="{name:'index'}">{{i18n.order_list.have_look}}~</nuxt-link>
         </div>
       </div>
       <!-- 分页 -->

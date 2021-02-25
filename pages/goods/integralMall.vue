@@ -16,7 +16,7 @@
     <div class="search-box p">
       <div class="w1224">
         <div class="search-path fl">
-			<router-link :to="{ name: 'integralMall'}">{{i18n.integralMall.all_results}}</router-link>
+			<nuxt-link :to="{ name: 'integralMall'}">{{i18n.integralMall.all_results}}</nuxt-link>
           <i class="litt-xyb"></i>
           <span>{{i18n.integralMall.integral_shop}}</span>
         </div>
@@ -119,7 +119,7 @@
                       <span>
                         <em>{{item.sales_sum}}</em>{{i18n.integralMall.people_buy}}
                       </span>
-                      <router-link :to="{name:'goodsInfo',query:{id:item.goods_id}}">{{i18n.integralMall.immediately}}</router-link>
+                      <nuxt-link :to="{name:'goodsInfo',query:{id:item.goods_id}}">{{i18n.integralMall.immediately}}</nuxt-link>
                     </div>
                   </div>
                 </div>
@@ -162,7 +162,7 @@
                         </p>
                       </div>
                       <div class="fr">
-                        <router-link :to="{name:'goodsInfo'}">{{i18n.integralMall.immediately}}</router-link>
+                        <nuxt-link :to="{name:'goodsInfo'}">{{i18n.integralMall.immediately}}</nuxt-link>
                       </div>
                     </div>
                   </div>
@@ -183,7 +183,7 @@
                       <span>
                         <em>{{item.sales_sum}}</em>{{i18n.integralMall.people_buy}}
                       </span>
-                      <router-link :to="{name:'goodsInfo'}">{{i18n.integralMall.immediately}}</router-link>
+                      <nuxt-link :to="{name:'goodsInfo'}">{{i18n.integralMall.immediately}}</nuxt-link>
                     </div>
                   </div>
                 </li>

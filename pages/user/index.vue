@@ -130,7 +130,7 @@
 <script>
 import TopBar from "@/components/TopBar/index2.vue";
 import TopInfo from "@/components/TopInfo/index.vue";
-
+import { getUser } from "@/utils/auth.js";
 export default {
   data() {
     return {
@@ -140,12 +140,18 @@ export default {
   },
   asyncData ({ params, route, error }) {   
     console.log("路由信息",route)
+
     return {
       routerName: route.name
     }
   },
   created() {
-	//   console.log("路由信息",this.$route)
+	  if(getUser()==null) {
+		   this.$router.push({
+			  name:"login"
+		  })
+		  return false
+	  }
   },
   mounted() {
 	  this.title = document.title;

@@ -16,9 +16,9 @@
     <div class="home-index-middle">
       <div class="w1224">
         <div class="g-crumbs">
-          <router-link :to="{ name: 'user_index'}">{{i18n.my_mall}}</router-link>
+          <nuxt-link :to="{ name: 'user_index'}">{{i18n.my_mall}}</nuxt-link>
           <i class="litt-xyb"></i>
-          <router-link :to="{ name: 'order_list'}">{{i18n.order_centre}}</router-link>
+          <nuxt-link :to="{ name: 'order_list'}">{{i18n.order_centre}}</nuxt-link>
           <i class="litt-xyb"></i>
           <span>
             <b>{{i18n.order}}：{{orderDetailsData.order_sn}}</b>
@@ -62,12 +62,12 @@
                     {{i18n.call_at}}{{finally_pay_time | datefmtAll}}
                     <p>{{i18n.before_payment}}</p>
                   </h3>
-                  <router-link class="ddn3" style="margin-top:20px;" :to="{name:'paymentOrder',query:{order_sn:orderDetailsData.order_sn}}">{{i18n.payment}}</router-link>
+                  <nuxt-link class="ddn3" style="margin-top:20px;" :to="{name:'paymentOrder',query:{order_sn:orderDetailsData.order_sn}}">{{i18n.payment}}</nuxt-link>
                 </div>
                 <div v-else>
                   <h1 class="ddn2">{{orderDetailsData.order_status_detail}}</h1>
                   <div v-if="orderDetailsData.is_able_comment">
-                    <router-link :to="{ name: 'comment_list',query:{order_id:orderDetailsData.order_id}}" class="ddn3">{{i18n.evaluate}}</router-link>
+                    <nuxt-link :to="{ name: 'comment_list',query:{order_id:orderDetailsData.order_id}}" class="ddn3">{{i18n.evaluate}}</nuxt-link>
                   </div>
                 </div>
               </div>
@@ -226,12 +226,12 @@
                     <el-popover trigger="hover" placement="top" width="160">
                       <p>未支付/已取消，导致没有兑换码</p>
                       <div style="text-align: right; margin: 0" v-if="orderDetailsData.is_able_pay">
-                        <router-link :to="{name:'paymentOrder',query:{order_sn:orderDetailsData.order_sn}}">
+                        <nuxt-link :to="{name:'paymentOrder',query:{order_sn:orderDetailsData.order_sn}}">
                           <el-button type="danger" size="mini">
                             去支付
 
                           </el-button>
-                        </router-link>
+                        </nuxt-link>
                       </div>
                       <el-button size="mini" type="warning" slot="reference" v-if="orderDetailsData.pay_status == 0">未生成</el-button>
                     </el-popover>
@@ -406,16 +406,16 @@
                   <td class="sx1">
                     <div class="shop-if-dif">
                       <div class="shop-difimg">
-                        <router-link :to="{name:'goodsInfo',query:{id:item.goods_id}}">
+                        <nuxt-link :to="{name:'goodsInfo',query:{id:item.goods_id}}">
                           <img :src="apiHead + '/mall/goods/thumb_image?width=100&height=100&goods_id=' + item.goods_id" />
-                        </router-link>
+                        </nuxt-link>
                       </div>
                       <div class="cebigeze">
                         <div class="shop_name">
-                          <router-link :to="{name:'goodsInfo',query:{id:item.goods_id}}">
+                          <nuxt-link :to="{name:'goodsInfo',query:{id:item.goods_id}}">
                             <el-tag type="danger" size="small " effect="dark" v-if="orderDetailsData.is_virtual == 1">虚拟</el-tag>
                             <span>{{item.goods_name}}</span>
-                          </router-link>
+                          </nuxt-link>
                         </div>
                         <p class="mayxl">{{item.spec_key_name}}</p>
                       </div>
@@ -435,10 +435,10 @@
                   <td class="sx6">
                     <div class="twrbac">
                       <p v-if="item.is_send < 2 && orderDetailsData.order_status == 2 && (time-orderDetailsData.add_time)<7776000">
-                        <router-link :to="{name:'return_goods_info',query:{order_id:item.order_id}}">{{i18n.apply_sale}}</router-link>
+                        <nuxt-link :to="{name:'return_goods_info',query:{order_id:item.order_id}}">{{i18n.apply_sale}}</nuxt-link>
                       </p>
                       <p>
-                        <router-link class="songobuy" :to="{name:'goodsInfo', query: {id: item.goods_id}}">{{i18n.buy_again}}</router-link>
+                        <nuxt-link class="songobuy" :to="{name:'goodsInfo', query: {id: item.goods_id}}">{{i18n.buy_again}}</nuxt-link>
                       </p>
                     </div>
                   </td>

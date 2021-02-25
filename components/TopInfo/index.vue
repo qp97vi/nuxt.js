@@ -11,28 +11,28 @@ $Author: soubao-java 2020-07-22 $ */
   <div data-v-2648786f class="nav-middan-z p home-index-head">
     <div data-v-2648786f class="header w1224">
       <div data-v-2648786f class="ecsc-logo">
-        <router-link :to="{ name: 'index' }" class="logo">
+        <nuxt-link :to="{ name: 'index' }" class="logo">
           <img 
 		   v-if="$store.state.shop_config" 
 		   :src="apiHead+$store.state.shop_config.store_logo||imgUrl"
 		   style="max-width: 194px; max-height: 70px;" />
 		  
-        </router-link>
+        </nuxt-link>
       </div>
       <div data-v-2648786f class="m-index">
-        <router-link :to="{ name: 'user' }" class="index">{{
+        <nuxt-link :to="{ name: 'user' }" class="index">{{
           i18n.TopInfo.mymall
-        }}</router-link>
-        <router-link :to="{ name: 'index' }" class="home">{{
+        }}</nuxt-link>
+        <nuxt-link :to="{ name: 'index' }" class="home">{{
           i18n.TopInfo.return_shophome
-        }}</router-link>
+        }}</nuxt-link>
       </div>
       <div data-v-2648786f class="m-navitems">
         <ul data-v-2648786f class="fixed p">
           <li data-v-2648786f>
-            <router-link :to="{ name: 'index' }">{{
+            <nuxt-link :to="{ name: 'index' }">{{
               i18n.TopInfo.home_page
-            }}</router-link>
+            }}</nuxt-link>
           </li>
           <li data-v-2648786f>
             <el-dropdown @command="handleCommand">
@@ -51,15 +51,15 @@ $Author: soubao-java 2020-07-22 $ */
             </el-dropdown>
           </li>
           <li data-v-2648786f class="u-msg">
-            <router-link :to="{ name: 'message_notice' }">
+            <nuxt-link :to="{ name: 'message_notice' }">
               {{ i18n.TopInfo.news }}
               <span data-v-2648786f>{{ newsNub }}</span>
-            </router-link>
+            </nuxt-link>
           </li>
           <li data-v-2648786f>
-            <router-link :to="{ name: 'integralMall' }">{{
+            <nuxt-link :to="{ name: 'integralMall' }">{{
               i18n.TopInfo.integral
-            }}</router-link>
+            }}</nuxt-link>
           </li>
           <li data-v-2648786f class="search_li">
             <form data-v-2648786f>
@@ -77,13 +77,13 @@ $Author: soubao-java 2020-07-22 $ */
       </div>
       <div data-v-2648786f class="shopingcar-index fr">
         <div data-v-2648786f id="hd-my-cart" class="u-g-cart fr fixed">
-          <router-link :to="{ name: 'cart' }">
+          <nuxt-link :to="{ name: 'cart' }">
             <p data-v-2648786f class="c-n fl">{{ i18n.TopInfo.mycart }}</p>
             <p data-v-2648786f class="c-num fl">
               <span data-v-2648786f id="cart_quantity" class="count cart_quantity">({{ cartBill.goods_num }})</span>
               <i data-v-2648786f class="i-c oh"></i>
             </p>
-          </router-link>
+          </nuxt-link>
           <div data-v-2648786f id="show_minicart" class="u-fn-cart u-mn-cart">
             <!--有商品时-s-->
             <div class="mn-c-m oh" v-if="cartBill.store_cart_list.length > 0">
@@ -112,9 +112,9 @@ $Author: soubao-java 2020-07-22 $ */
                           ></a>
 
                           <p class="i fl mr5">
-                            <router-link
+                            <nuxt-link
                               :to="{
-                                name: 'goodsInfo',
+                                name: 'goods/goodsInfo/id',
                                 query: { id: item.goods_id },
                               }"
                             >
@@ -129,18 +129,18 @@ $Author: soubao-java 2020-07-22 $ */
                                 alt
                                 :title="item.goods_name"
                               />
-                            </router-link>
+                            </nuxt-link>
                           </p>
 
                           <p class="n fl">
-                            <router-link
+                            <nuxt-link
                               :to="{
-                                name: 'goodsInfo',
+                                name: 'goods/goodsInfo/id',
                                 query: { id: item.goods_id },
                               }"
                             >
                               {{ item.goods_name }}
-                              {{ item.spec_key_name }}</router-link
+                              {{ item.spec_key_name }}</nuxt-link
                             >
                           </p>
 
@@ -169,8 +169,8 @@ $Author: soubao-java 2020-07-22 $ */
                   </p>
                 </div>
                 <div class="c-btn">
-                  <router-link :to="{ name: 'cart' }"
-                    >{{ i18n.TopInfo.goshopping_cart }} &gt;&gt;</router-link
+                  <nuxt-link :to="{ name: 'cart' }"
+                    >{{ i18n.TopInfo.goshopping_cart }} &gt;&gt;</nuxt-link
                   >
                 </div>
               </div>

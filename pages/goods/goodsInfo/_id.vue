@@ -20,7 +20,7 @@
           <a>{{i18n.goodsInfo.all_result}}</a>
           <template v-for="(item) in goodsCategoryList">
             <i class="litt-xyb"></i>
-            <router-link :to="{name:'goodsList',query:{cat_id:item.id}}">{{item.name}}</router-link>
+            <nuxt-link :to="{name:'goodsList',query:{cat_id:item.id}}">{{item.name}}</nuxt-link>
           </template>
           <div class="havedox">
             <span>{{goods.goods_name}}</span>
@@ -78,8 +78,8 @@
             <div class="share" style="float: left">
               <div class="jiathis_style">
                 &nbsp;&nbsp;
-                <router-link v-if="user" class="next-right fr" :to="{name: 'expose', query: {goods_id: goods.goods_id}}">{{i18n.goodsInfo.inform}}</router-link>
-                <router-link v-else class="next-right fr" :to="{name: 'expose', query: {goods_id: goods.goods_id}}">{{i18n.goodsInfo.inform}}</router-link>
+                <nuxt-link v-if="user" class="next-right fr" :to="{name: 'expose', query: {goods_id: goods.goods_id}}">{{i18n.goodsInfo.inform}}</nuxt-link>
+                <nuxt-link v-else class="next-right fr" :to="{name: 'expose', query: {goods_id: goods.goods_id}}">{{i18n.goodsInfo.inform}}</nuxt-link>
               </div>
             </div>
             <!-- <share :config="config"></share> -->
@@ -96,8 +96,8 @@
                 </el-popover>
                 <!-- <a href="https://www.facebook.com/sharer.php?u=http://192.168.0.189:8082/#/goods/goodsInfo?id=5" target="_blank" style="margin-right:19px;">
 								       分享 <img src="${fbShareJpg}" style="border:none 0;" alt="" /></a> -->
-                <!-- <router-link v-if="user" class="next-right fr" :to="{name: 'expose', query: {goods_id: goods.goods_id}}">分享</router-link>
-								<router-link v-else class="next-right fr" :to="{name: 'expose', query: {goods_id: goods.goods_id}}">分享</router-link> -->
+                <!-- <nuxt-link v-if="user" class="next-right fr" :to="{name: 'expose', query: {goods_id: goods.goods_id}}">分享</nuxt-link>
+								<nuxt-link v-else class="next-right fr" :to="{name: 'expose', query: {goods_id: goods.goods_id}}">分享</nuxt-link> -->
               </div>
             </div>
           </div>
@@ -273,7 +273,7 @@
                 <span>{{i18n.goodsInfo.serve}}：</span>
               </li>
               <li class="lawir">
-                <span class="service">{{i18n.goodsInfo.cause}}<router-link :to="{name:'store',query:{store_id:store.store_id}}">{{store.store_name}}</router-link>{{i18n.goodsInfo.provide_aftersales}}</span>
+                <span class="service">{{i18n.goodsInfo.cause}}<nuxt-link :to="{name:'store',query:{store_id:store.store_id}}">{{store.store_name}}</nuxt-link>{{i18n.goodsInfo.provide_aftersales}}</span>
               </li>
             </ul>
           </div>
@@ -351,11 +351,11 @@
 
         <div class="detail-ry p" v-if="store != ''">
           <div class="delogo">
-            <router-link :to="{name:'store',query:{id:store.store_id}}">
+            <nuxt-link :to="{name:'store',query:{id:store.store_id}}">
               <img :src="store.store_logo" v-if="store.store_logo" />
               <img src="@/static/images/icon_goods_thumb_empty_300.png" v-else />
               <span v-if="store.is_own_shop == 0">{{store.store_name}}</span>
-            </router-link>
+            </nuxt-link>
             <template v-if="store.store_id == 1 || store.is_own_shop == 1">
               <div class="ownsj cooperation">
                 <div style="display: flex;justify-content: center;flex-direction: column;">
@@ -435,7 +435,7 @@
             </a>
           </div>
           <div class="intoshop p">
-            <router-link :to="{name:'store',query:{store_id:store.store_id}}">{{i18n.goodsInfo.enter_store}}</router-link>
+            <nuxt-link :to="{name:'store',query:{store_id:store.store_id}}">{{i18n.goodsInfo.enter_store}}</nuxt-link>
           </div>
           <div class="guaz_jd"></div>
         </div>
@@ -474,7 +474,7 @@
             <div class="type-bot">
               <ul class="xg_typ">
                 <li v-for="(item,index) in storeGoodsClassList" :key="index">
-                  <router-link :to="{name:'store',query:{id:store.store_id}}">{{item.cat_name}}</router-link>
+                  <nuxt-link :to="{name:'store',query:{id:store.store_id}}">{{item.cat_name}}</nuxt-link>
                 </li>
               </ul>
             </div>
@@ -486,9 +486,9 @@
             <div class="type-bot">
               <ul class="xg_typ">
                 <li v-for="(item,index) in brandList" :key="index">
-                  <router-link :to="{name:'goodsList',query:{brand_ids:item.brand_ids}}" target="_blank">
+                  <nuxt-link :to="{name:'goodsList',query:{brand_ids:item.brand_ids}}" target="_blank">
                     {{item.name}}
-                  </router-link>
+                  </nuxt-link>
                 </li>
               </ul>
             </div>
@@ -500,7 +500,7 @@
             <div class="type-bot">
               <ul class="xg_typ">
                 <li v-for="(item,index) in shop_basic.hot_keywords.split('|')" :key="index">
-                  <router-link :to="{name:'goodsList',query:{words:item}}" target="_blank">{{item}}</router-link>
+                  <nuxt-link :to="{name:'goodsList',query:{words:item}}" target="_blank">{{item}}</nuxt-link>
                 </li>
               </ul>
             </div>
@@ -511,13 +511,13 @@
             </div>
             <div class="tjhot-shoplist type-bot">
               <div class="alone-shop" v-for="(item,index) in guessYoulikeGoodsList" :key="index">
-                <router-link :to="{ name:'goodsInfo' , query:{id:item.goods_id}}">
+                <nuxt-link :to="{ name:'goodsInfo' , query:{id:item.goods_id}}">
                   <img :src="apiHead + '/mall/goods/thumb_image?width=206&height=206&goods_id=' + item.goods_id" style="display: inline;" />
-                </router-link>
+                </nuxt-link>
                 <p class="line-two-hidd">
-                  <router-link :to="{ name:'goodsInfo', query:{id:item.goods_id} }">
+                  <nuxt-link :to="{ name:'goodsInfo', query:{id:item.goods_id} }">
                     {{item.goods_name}}
-                  </router-link>
+                  </nuxt-link>
                 </p>
                 <p class="price-tag">
                   <span class="li_xfo">{{i18nCommon.symbol}}</span>

@@ -13,9 +13,9 @@
   <div class="home-index-middle">
     <div class="w1224">
       <div class="g-crumbs">
-        <router-link :to="{ name: 'user_index'}">{{i18n.my_mall}}</router-link>
+        <nuxt-link :to="{ name: 'user_index'}">{{i18n.my_mall}}</nuxt-link>
         <i class="litt-xyb"></i>
-		 <router-link :to="{name:'dispute'}">{{i18n.trade_dispute}}</router-link>
+		 <nuxt-link :to="{name:'dispute'}">{{i18n.trade_dispute}}</nuxt-link>
         <i class="litt-xyb"></i>
         <span>{{i18n.dispute_application}}</span>
       </div>
@@ -44,9 +44,9 @@
             <span>{{i18n.remind_one}}</span>
             <span class="fr">
               {{i18n.conditions_met}}？
-			  <router-link
+			  <nuxt-link
 			    :to="{name:'return_goods_index'}"
-			  >{{i18n.click_apply}}</router-link>
+			  >{{i18n.click_apply}}</nuxt-link>
             </span>
           </div>
         </div>
@@ -57,7 +57,7 @@
               <span>
                 <em class="light">{{i18n.order_number}}：</em>
                 <em>
-				  <router-link :to="{name:'order_detail',query:{order_id:orderDetailsData.order_id}}">{{orderDetailsData.order_sn}}</router-link>
+				  <nuxt-link :to="{name:'order_detail',query:{order_id:orderDetailsData.order_id}}">{{orderDetailsData.order_sn}}</nuxt-link>
                 </em>
               </span>
               <span>
@@ -79,12 +79,12 @@
                   <!--只有一件商品时，商品名显示
                   大于一件商品时商品名不显示-->
                   <div v-for="(item) in order_goods" :key="item.rec_id" >
-					<router-link :to="{ name: 'goodsInfo',query:{id:item.goods_id}}" target="_blank">
+					<nuxt-link :to="{ name: 'goods/goodsInfo/id',query:{id:item.goods_id}}" target="_blank">
                       <img
                         :src="apiHead + '/mall/goods/thumb_image?width=60&height=60&goods_id=' + item.goods_id"
                       />
 					  <div v-if="order_goods.length==1" class="aloneli">{{order_goods[0].goods_name}}</div>
-                    </router-link>
+                    </nuxt-link>
                   </div>
                   <!-- {{order_goods.length}} -->
 				
@@ -172,9 +172,9 @@
                   <div class="applyrestore">
                     <p class="tit">{{i18n.nomeet_conditions}}</p>
                     <p class="mali">{{i18n.conditions_one}}</p>
-                    <router-link
+                    <nuxt-link
                       :to="{name:'return_goods_index'}"
-                    >{{i18n.exchanged}}</router-link>
+                    >{{i18n.exchanged}}</nuxt-link>
                   </div>
                 </li>
               </ul>

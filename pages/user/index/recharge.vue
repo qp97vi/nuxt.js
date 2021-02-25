@@ -44,10 +44,10 @@
           </span>
         </div>
         <div class="cuschan tc-uic">
-          <router-link class="topup-mom" :to="{ name: 'withdrawals'}">{{i18n.recharge.withdraw_deposit}}</router-link>
+          <nuxt-link class="topup-mom" :to="{ name: 'withdrawals'}">{{i18n.recharge.withdraw_deposit}}</nuxt-link>
         </div>
 		<div class="cuschan tc-uic" style="margin-top: 10px;">
-		  <router-link class="topup-mom" :to="{ name: 'invest'}">充值</router-link>
+		  <nuxt-link class="topup-mom" :to="{ name: 'invest'}">充值</nuxt-link>
 		</div>
       </div>
       <div class="time-sala">

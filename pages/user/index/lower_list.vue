@@ -58,7 +58,7 @@
               <li class="sx6">
                 <div class="rbac">
                   <p class="inspect">
-					<router-link :to="{ name: 'income', query:{buy_user_id:item.user_id}}">{{i18n.lower_list.examine}}</router-link>
+					<nuxt-link :to="{ name: 'income', query:{buy_user_id:item.user_id}}">{{i18n.lower_list.examine}}</nuxt-link>
                   </p>
                 </div>
               </li>

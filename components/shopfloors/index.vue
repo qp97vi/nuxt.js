@@ -28,10 +28,10 @@
                     <div class="classify" :style="{background:item.color}">
                         <ul>
                             <li v-for="item in item.goods_category_list" :key="item.id">
-                                <router-link
+                                <nuxt-link
                                     :to="{name:'goods/goodsList/id',query:{cat_id:item.id}}"
                                     target="_blank"
-                                >{{item.name}}</router-link>
+                                >{{item.name}}</nuxt-link>
                             </li>
                         </ul>
                     </div>
@@ -52,12 +52,12 @@
                     <ul>
                         <li  v-for="item in item.floor_blocks" :key="item.goods_id">
                             <dl v-for="item in item.goods_list" :key="item.goods_id">
-                                <router-link :to="{ name: 'goods/goodsInfo/id', query:{id:item.goods_id}}">
+                                <nuxt-link :to="{ name: 'goods/goodsInfo/id', query:{id:item.goods_id}}">
                                     <dt>
                                         <a href=""><img :src="item.original_img" alt=""></a>
                                     </dt>
                                     <dd><p>{{item.goods_name}}</p><span>{{i18nCommon.symbol}}{{item.shop_price}}</span></dd>
-                                </router-link>
+                                </nuxt-link>
                             </dl>
                         </li>
                     </ul>
@@ -67,11 +67,11 @@
             <div v-if="item.brands.length>0" class="brands">
                 <ul>
                     <li v-for="item in item.brands" :key="item.id">
-                        <router-link :to="{name:'goods/goodsList/id',query:{brand_ids:item.id}}"
+                        <nuxt-link :to="{name:'goods/goodsList/id',query:{brand_ids:item.id}}"
                         target="_blank"
                         :title="item.name">
                             <img :src="item.logo" alt="">
-                        </router-link>
+                        </nuxt-link>
                         
                     </li>
                 </ul>

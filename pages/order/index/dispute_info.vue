@@ -13,9 +13,9 @@
   <div class="home-index-middle">
     <div class="w1224">
       <div class="g-crumbs">
-         <router-link :to="{ name: 'user_index'}">{{i18n.mymall}}</router-link>
+         <nuxt-link :to="{ name: 'user_index'}">{{i18n.mymall}}</nuxt-link>
         <i class="litt-xyb"></i>
-		<router-link :to="{name:'dispute'}">{{i18n.trade_dispute}}</router-link>
+		<nuxt-link :to="{name:'dispute'}">{{i18n.trade_dispute}}</nuxt-link>
         <i class="litt-xyb"></i>
         <span>{{i18n.dispute_application}}</span>
       </div>
@@ -203,15 +203,15 @@
               <p>
                 <span>{{i18n.seller}}：</span>
                 <span>
-				  <router-link :to="{name:'store'}">{{complain.store_name}}
-                    <i class="las-ear"></i></router-link>
+				  <nuxt-link :to="{name:'store'}">{{complain.store_name}}
+                    <i class="las-ear"></i></nuxt-link>
                 </span>
               </p>
               <!-- <p><span>服务单号：</span><span>39909002515</span></p>-->
               <p>
                 <span>{{i18n.corresponds_order}}：</span>
                 <span>
-				  <router-link :to="{name:'order_detail',query:{order_id:complain.order_id}}">{{complain.order_sn}}</router-link>
+				  <nuxt-link :to="{name:'order_detail',query:{order_id:complain.order_id}}">{{complain.order_sn}}</nuxt-link>
                 </span>
               </p>
             </div>

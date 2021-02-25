@@ -492,7 +492,7 @@ export default {
 					})
 				} else {  //表示单个商品
 					this.$router.push({
-						name: 'goodsInfo',
+						name: 'goods/goodsInfo/id',
 						query: {
 							id: item.goods_id
 						}
@@ -506,7 +506,7 @@ export default {
 					})
 				} else {  //表示单个商品
 					this.$router.push({
-						name: 'goodsInfo',
+						name: 'goods/goodsInfo/id',
 						query: {
 							id: item.goods_id
 						}
@@ -520,7 +520,7 @@ export default {
 					})
 				} else {  //表示单个商品
 					this.$router.push({
-						name: 'goodsInfo',
+						name: 'goods/goodsInfo/id',
 						query: {
 							id: item.goods_id
 						}
@@ -534,7 +534,7 @@ export default {
 					})
 				} else {  //表示单个商品
 					this.$router.push({
-						name: 'goodsInfo',
+						name: 'goods/goodsInfo/id',
 						query: {
 							id: item.goods_id
 						}
@@ -543,7 +543,7 @@ export default {
 			}
 			if (item.prom_type == 5) {
 				this.$router.push({
-					name: 'goodsInfo',
+					name: 'goods/goodsInfo/id',
 					query: {
 						id: item.goods_id
 					}
@@ -551,7 +551,7 @@ export default {
 			}
 			if (item.prom_type == 6) {
 				this.$router.push({
-					name: 'goodsInfo',
+					name: 'goods/goodsInfo/id',
 					query: {
 						id: item.goods_id
 					}
@@ -562,7 +562,7 @@ export default {
 			}
 			if (item.prom_type == 8) {
 				this.$router.push({
-					name: 'goodsInfo',
+					name: 'goods/goodsInfo/id',
 					query: {
 						id: item.goods_id
 					}

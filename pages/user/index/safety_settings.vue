@@ -14,9 +14,9 @@
     <div class="menumain">
       <div class="goodpiece">
         <h1>{{i18n.safety_settings.security_settings}}</h1>
-		<router-link :to="{name:'article/index/detail/id'}">
+		<nuxt-link :to="{name:'article/index/detail/id'}">
           <span class="co_blue">{{i18n.safety_settings.help}}</span>
-        </router-link>
+        </nuxt-link>
       </div>
       <div class="menu-ri-t setsafe p">
         <div class="mu-head fl">
@@ -48,7 +48,7 @@
             <span>{{i18n.safety_settings.suggest_two}}</span>
           </li>
           <li class="sx3">
-            <router-link class="co_blue" :to="{name:'password'}">{{i18n.safety_settings.amend}}</router-link>
+            <nuxt-link class="co_blue" :to="{name:'password'}">{{i18n.safety_settings.amend}}</nuxt-link>
           </li>
         </ul>
         <ul>
@@ -59,10 +59,10 @@
             <span>{{i18n.safety_settings.verify_one}}</span>
           </li>
           <li class="sx3">
-            <router-link class="co_blue" :to="{name:'paypwd'}">
+            <nuxt-link class="co_blue" :to="{name:'paypwd'}">
               <span v-if="userInfo.paypwd">{{i18n.safety_settings.set}}</span>
               <span v-else>{{i18n.safety_settings.amend}}</span>
-            </router-link>
+            </nuxt-link>
           </li>
         </ul>
         <ul>
@@ -77,13 +77,13 @@
             </span>
           </li>
           <li class="sx3">
-            <router-link class="co_blue" :to="{ name: 'set_mobile',query:{mobile:userInfo.mobile,type:1}}">
+            <nuxt-link class="co_blue" :to="{ name: 'set_mobile',query:{mobile:userInfo.mobile,type:1}}">
               <span v-if="!userInfo.mobile">{{i18n.safety_settings.noset}}</span>
               <span v-else>
                 <span v-if="userInfo.mobile_validated==0">{{i18n.safety_settings.unverified}}</span>
                 <span v-else>{{i18n.safety_settings.authenticated}}</span>
               </span>
-            </router-link>
+            </nuxt-link>
           </li>
         </ul>
         <ul>

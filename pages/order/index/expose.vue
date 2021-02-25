@@ -31,17 +31,17 @@
 				</div>
 				<dl class="re-model-s01 b-simply-box">
 					<dt class="h-simply-img">
-						<router-link :to="{name:'goodsInfo',query:{id:goods.goods_id}}" target="_blank">
+						<nuxt-link :to="{name:'goodsInfo',query:{id:goods.goods_id}}" target="_blank">
 							<img
 							  :src="apiHead + '/mall/goods/thumb_image?width=50&height=50&goods_id=' + goods.goods_id"
 							  height="100"
 							  alt="100*100"
 							/>
-						</router-link>
+						</nuxt-link>
 					</dt>
 					<dd class="h-simply-info">
 						<p class="p-name">
-							{{i18n.goods_name}}:<router-link :to="{name:'goodsInfo',query:{id:goods.goods_id}}" target="_blank">{{goods.goods_name}}</router-link>
+							{{i18n.goods_name}}:<nuxt-link :to="{name:'goodsInfo',query:{id:goods.goods_id}}" target="_blank">{{goods.goods_name}}</nuxt-link>
 						</p>
 						<ul class="p-info-list">
 							<li class="sub-item">{{i18n.goods_sn}}: {{goods.goods_sn}}</li>
@@ -147,7 +147,7 @@
 				</div>
 			</div>
 			<p class="ud-jblink">
-				{{i18n.myreport}}-【<router-link :to="{name:'expose_list'}">{{i18n.inform_message}}</router-link>】{{i18n.query_report}}
+				{{i18n.myreport}}-【<nuxt-link :to="{name:'expose_list'}">{{i18n.inform_message}}</nuxt-link>】{{i18n.query_report}}
 			</p>
 			<div class="btn-groups">
 				<input type="button" :value="i18n.submit_report" class="btn-s01" @click="addReport">

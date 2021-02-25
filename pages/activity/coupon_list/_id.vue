@@ -49,14 +49,14 @@
                 </div>
               </div>
               <div class="q-opbtns">
-				<router-link v-if="coupon.is_get == 0" :to="{name:'get_coupon',query:{id: coupon.id}}">
+				<nuxt-link v-if="coupon.is_get == 0" :to="{name:'get_coupon',query:{id: coupon.id}}">
 					<b class="semi-circle"></b>
 					{{i18n.coupon_list.at_once_get}}
-				</router-link>
-				<router-link v-if="coupon.is_get == 1" :to="{name:'store',query:{store_id: coupon.store_id}}">
+				</nuxt-link>
+				<nuxt-link v-if="coupon.is_get == 1" :to="{name:'store',query:{store_id: coupon.store_id}}">
 					<b class="semi-circle"></b>
 					{{i18n.coupon_list.at_once_use}}
-				</router-link>
+				</nuxt-link>
 				<a v-if="coupon.is_lead_end == 1" href="javascript:void(0);">
 					<b class="semi-circle"></b>
 					{{i18n.coupon_list.now_already_get}}

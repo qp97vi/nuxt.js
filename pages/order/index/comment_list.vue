@@ -25,7 +25,7 @@
                     <i class="tip-icon"></i>
                     <h3 class="tip-title">{{i18n.all_evaluation}}~</h3>
                     <div class="tip-hint">
-                      <router-link :to="{name:'comment'}">{{i18n.list_evaluated}} &gt;</router-link>
+                      <nuxt-link :to="{name:'comment'}">{{i18n.list_evaluated}} &gt;</nuxt-link>
                     </div>
                   </div>
                 </div>
@@ -263,21 +263,21 @@
                         <div class="fi-info" v-if="item.is_comment!=1">
                           <div class="comment-goods">
                             <div class="p-img">
-							  <router-link
-							    :to="{ name: 'goodsInfo', query:{id:item.goods_id}}"
+							  <nuxt-link
+							    :to="{ name: 'goods/goodsInfo/id', query:{id:item.goods_id}}"
 								target="_blank"
 							  >
 								<img
 								  :src="apiHead + '/mall/goods/thumb_image?width=100&height=100&goods_id=' + item.goods_id"
 								/>
-                              </router-link>
+                              </nuxt-link>
                             </div>
                             <!-- <div> -->
                             <div class="p-name">
-							  <router-link
-							    :to="{ name: 'goodsInfo', query:{id:item.goods_id}}"
+							  <nuxt-link
+							    :to="{ name: 'goods/goodsInfo/id', query:{id:item.goods_id}}"
 							  	target="_blank"
-							  >{{item.goods_name}}</router-link>
+							  >{{item.goods_name}}</nuxt-link>
                             </div>
                             <div class="p-price">
                               <strong>{{i18nCommon.symbol}}{{Number(item.goods_price).toFixed(2)}}</strong>

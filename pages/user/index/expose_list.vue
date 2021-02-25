@@ -67,7 +67,7 @@
                 </td>
                 <td class="sx4">
                   <span>{{item.expose_state_detail}}</span>
-                  <router-link :to="{name:'expose_info',query:{expose_id:item.expose_id}}">{{i18n.expose_list.details_report_form}}</router-link>
+                  <nuxt-link :to="{name:'expose_info',query:{expose_id:item.expose_id}}">{{i18n.expose_list.details_report_form}}</nuxt-link>
                 </td>
               </tr>
             </tbody>

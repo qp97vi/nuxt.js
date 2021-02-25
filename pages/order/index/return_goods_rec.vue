@@ -40,12 +40,12 @@
                           <td>
                             <ul class="list-proinfo" id="removeTheSingleGife">
                               <li class="fore1">
-								<router-link :to="{name:'goodsInfo',query:{id:orderGoods.goods_id}}">
+								<nuxt-link :to="{name:'goodsInfo',query:{id:orderGoods.goods_id}}">
                                   <img
                                     :src="apiHead + '/mall/goods/thumb_image?width=50&height=50&goods_id=' + orderGoods.goods_id"
                                   />
                                   {{orderGoods.goods_name}}
-                                </router-link>
+                                </nuxt-link>
                               </li>
                             </ul>
                           </td>

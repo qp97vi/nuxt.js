@@ -93,7 +93,7 @@
         <div class="top_leg p ma-to-20">
           <span class="paragraph fl">
             <i class="ddd"></i>{{i18n.cart2.delivery_inventory}}
-            <router-link :to="{name:'cart'}">返回购物车</router-link>
+            <nuxt-link :to="{name:'cart'}">返回购物车</nuxt-link>
           </span>
           <a class="newadd fr hover-y">
             <i class="las-warning"></i>{{i18n.cart2.price_explain}}
@@ -136,9 +136,9 @@
                 <li v-for="(item, index) in storeOrder.order_goods" :key="index">
                   <div class="goods-extra clearfix">
                     <div class="p-img">
-                      <router-link :to="{ name:'goods/goodsInfo/id' , query:{id:item.goods_id}}" target="_blank">
+                      <nuxt-link :to="{ name:'goods/goodsInfo/id' , query:{id:item.goods_id}}" target="_blank">
                         <img :src="apiHead + '/mall/goods/thumb_image?width=100&height=100&goods_id=' + item.goods_id" alt />
-                      </router-link>
+                      </nuxt-link>
                       <div class="p-img-tips goods_shipping_img" v-if="item.is_delivery == 0">{{i18n.cart2.not_goods}}</div>
                     </div>
                     <div class="goods-msg clearfix">
@@ -148,9 +148,9 @@
                         <span class="tp-bold tp-c-red1" style="margin-right: 12px;" v-if="item.prom_type==3">优惠促销</span>
                         <span class="tp-bold tp-c-red1" style="margin-right: 12px;" v-if="item.prom_type==4">预售</span>
                         <span class="tp-bold tp-c-red1" style="margin-right: 12px;" v-if="item.prom_type==6">拼团</span>
-                        <router-link :to="{ name:'goods/goodsInfo/id' , query:{id:item.goods_id}}" target="_blank">
+                        <nuxt-link :to="{ name:'goods/goodsInfo/id' , query:{id:item.goods_id}}" target="_blank">
                           {{item.goods_name}}
-                        </router-link>
+                        </nuxt-link>
                       </div>
                       <ul class="tp-cart-goods-mes">
                         <li>
@@ -309,7 +309,7 @@
                 {{i18n.cart2.pay_pswd}}:
                 <input type="password" v-model="payPwdTmp" />
                 <span v-if="user.pay_pwd == '' || typeof(user.pay_pwd) == 'undefined'">{{i18n.cart2.please_first}}
-                  <router-link :to="{path:'/user/paypwd'}" style="color: #e23435;">{{i18n.cart2.set_pay_pswd}}</router-link>
+                  <nuxt-link :to="{path:'/user/paypwd'}" style="color: #e23435;">{{i18n.cart2.set_pay_pswd}}</nuxt-link>
                 </span>
               </label>
             </p>

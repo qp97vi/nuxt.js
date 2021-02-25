@@ -102,14 +102,14 @@
             <ul>
               <li v-for="(item,index) in storeList" :key="index">
                 <div class="deoe">
-                  <router-link :to="{name:'store',query:{store_id:item.store_id}}" class="deoe-pic-wrap" >
+                  <nuxt-link :to="{name:'store',query:{store_id:item.store_id}}" class="deoe-pic-wrap" >
                     <img
                       class="gejr lazy"
                       :src="item.store_banner"
                       style="display: inline;"
                     />
-                  </router-link>
-                  <router-link :to="{name:'store',query:{store_id:item.store_id}}" >
+                  </nuxt-link>
+                  <nuxt-link :to="{name:'store',query:{store_id:item.store_id}}" >
                     <div class="logoansome">
                       <div class="neleu">
                         <img
@@ -123,7 +123,7 @@
                         <p class="main">{{item.seo_description}}</p>
                       </div>
                     </div>
-                  </router-link>
+                  </nuxt-link>
                 </div>
               </li>
             </ul>
@@ -148,7 +148,7 @@
               <ul id="favourite_goods">
                 <li :key="index" v-for="(item,index) in goodsList" class>
                   <div class="shde">
-					<router-link :to="{name:'goodsInfo',query:{id:item.goods_id}}">
+					<nuxt-link :to="{name:'goodsInfo',query:{id:item.goods_id}}">
             <p class="hotgoodsname">{{item.goods_name}}</p>
 						<a>
 						  <img
@@ -157,7 +157,7 @@
 							style="display: inline;"
 						  />
 						</a>
-					</router-link>
+					</nuxt-link>
                     <div class="box-hotshui">
                       <div class="price-tag">
                         <span class="now">
@@ -170,13 +170,13 @@
                         </span>
                       </div>
                       <p class="shop_name">
-						   <router-link :to="{name:'goodsInfo',query:{id:item.goods_id}}">{{item.goods_name}}</router-link>
+						   <nuxt-link :to="{name:'goodsInfo',query:{id:item.goods_id}}">{{item.goods_name}}</nuxt-link>
                       </p>
                       <div class="shop_name2">
-						  <router-link
+						  <nuxt-link
 						    class="co_hchh"
 						    :to="{name:'store',query:{store_id:item.store_id}}"
-						  >{{item.store_name}}</router-link>
+						  >{{item.store_name}}</nuxt-link>
                       </div>
                       <div class="chejancns p">
                         <span class="fl">

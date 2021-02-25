@@ -13,7 +13,7 @@
   <div>
     <top-bar></top-bar>
     <top-info></top-info>
-    <router-view />
+    <nuxt-child />
     <div class="slidebar_alo">
 	<ul>
 		<li class="re_cuso"><a target="_blank" href="">{{i18n.service_serve}}</a></li>

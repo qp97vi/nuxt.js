@@ -26,7 +26,7 @@
           <ul class="normal-list">
             <li class="li-item" v-for="help in helpList" :key="help.help_id">
               <em class="icon-middot"></em>
-			  <!-- <router-link :to="{name:'helpInfo',query:{help_id: help.help_id}}">{{help.help_title}}</router-link> -->
+			  <!-- <nuxt-link :to="{name:'helpInfo',query:{help_id: help.help_id}}">{{help.help_title}}</nuxt-link> -->
 			  <a href="#" @click="getHelpInfo(help.help_id)">{{help.help_title}}</a>
             </li>
           </ul>

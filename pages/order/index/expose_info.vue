@@ -18,13 +18,13 @@
       <div class="jdxe_xq ma-to-10">
         <div class="goods_infom">
           <div class="fi_imgli">
-            <router-link :to="{name:'goodsInfo',query:{id:reportSingleData.expose_goods_id}}" target="_blank">
+            <nuxt-link :to="{name:'goodsInfo',query:{id:reportSingleData.expose_goods_id}}" target="_blank">
             	<img
             	  :src="apiHead + '/mall/goods/thumb_image?width=50&height=50&goods_id=' + reportSingleData.expose_goods_id"
             	  height="100"
             	  alt="100*100"
             	/>
-            </router-link>
+            </nuxt-link>
           </div>
           <div class="fi_fonri">
             <p>{{i18n.goods_name}}：{{reportSingleData.expose_goods_name}}</p>
@@ -70,7 +70,7 @@
         </div>
       </div>
 	  <p class="tips_jub">
-	  	{{i18n.mymall}}-【<router-link :to="{name:'expose_list'}">{{i18n.inform_message}}</router-link>】{{i18n.query_report}}
+	  	{{i18n.mymall}}-【<nuxt-link :to="{name:'expose_list'}">{{i18n.inform_message}}</nuxt-link>】{{i18n.query_report}}
 	  </p>
       <div class="boxbutn_re">
         <el-button type="danger" size='mini' @click="getBack()">{{i18n.return}}</el-button>

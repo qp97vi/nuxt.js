@@ -16,7 +16,7 @@
     <div class="home-index-middle">
       <div class="w1224">
         <div class="g-crumbs">
-			 <router-link :to="{ name: 'user_index'}">我的商城</router-link>
+			 <nuxt-link :to="{ name: 'user_index'}">我的商城</nuxt-link>
           <i class="litt-xyb"></i>
           <span>三方登录</span>
         </div>

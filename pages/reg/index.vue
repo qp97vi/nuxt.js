@@ -18,7 +18,7 @@
 				</li>
 				<li class="no fn-fr loginbtn">
 					{{i18n.reg.have_registered}}
-					<router-link :to="{name:'login'}">{{i18n.reg.register}}&gt;</router-link>
+					<nuxt-link :to="{name:'login'}">{{i18n.reg.register}}&gt;</nuxt-link>
 				</li>
 			</ul>
 			<!-- 手机注册 -->
@@ -59,7 +59,7 @@
 											<p class="fn-fl checktxt">
 												<input type="checkbox" class="iyes fn-fl J_protocal" style="margin-top:13px;" v-model="ruleForm.checked" />
 												<span class="fn-fl">{{i18n.reg.read_agree}}</span>
-												<router-link target="_blank" class="itxt fn-fl" :to="{name:'serve_agreement'}">《{{i18n.reg.service_contract}}》</router-link>
+												<nuxt-link target="_blank" class="itxt fn-fl" :to="{name:'serve_agreement'}">《{{i18n.reg.service_contract}}》</nuxt-link>
 												<!-- </a> -->
 											</p>
 											<p class="fn-fl errorbox v-txt" id="protocalBox"></p>
@@ -108,7 +108,7 @@
 											<p class="fn-fl checktxt">
 												<input type="checkbox" class="iyes fn-fl J_protocal" style="margin-top:13px;" v-model="emailForm.checked" />
 												<span class="fn-fl">{{i18n.reg.read_agree}}</span>
-												<router-link target="_blank" class="itxt fn-fl" :to="{name:'serve_agreement'}">《{{i18n.reg.service_contract}}》</router-link>
+												<nuxt-link target="_blank" class="itxt fn-fl" :to="{name:'serve_agreement'}">《{{i18n.reg.service_contract}}》</nuxt-link>
 											</p>
 											<p class="fn-fl errorbox v-txt" id="protocalBox"></p>
 										</div>

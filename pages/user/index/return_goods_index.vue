@@ -43,7 +43,7 @@
               </tr>
               <tr v-for="(item) in refundData" :key="item.order_id">
                 <td class="r_1">
-                  <router-link class="co_blue" :to="{name:'order_detail',query:{order_id:item.order_id}}">{{item.order_sn}}</router-link>
+                  <nuxt-link class="co_blue" :to="{name:'order_detail',query:{order_id:item.order_id}}">{{item.order_sn}}</nuxt-link>
                 </td>
                 <td class="r_2">
                   <div
@@ -57,10 +57,10 @@
                       />
                     </div>
                     <div class="jt-butan">
-                      <router-link
+                      <nuxt-link
                         :to="orderGoods.unsend==1 ? '':{name:'return_goods_rec',query:{rec_id:orderGoods.rec_id}}"
                         :class="orderGoods.unsend==1 ? 'active':''"
-                      >{{i18n.return_goods_index.applyfor}}</router-link>
+                      >{{i18n.return_goods_index.applyfor}}</nuxt-link>
                     </div>
                   </div>
                 </td>
@@ -129,10 +129,10 @@
                   <span class="co_blue" style="cursor: pointer;">{{item.id}}</span>
                 </td>
                 <td class="rt_1">
-                  <router-link class="co_blue" :to="{name:'order_detail',query:{order_id:item.order_id}}">{{item.order_sn}}</router-link>
+                  <nuxt-link class="co_blue" :to="{name:'order_detail',query:{order_id:item.order_id}}">{{item.order_sn}}</nuxt-link>
                 </td>
                 <td class="rt_2 te-al-le">
-                  <router-link class="co_blue" :to="{name:'goodsInfo',query:{id:item.goods_id}}">{{item.order_goods.goods_name}}</router-link>
+                  <nuxt-link class="co_blue" :to="{name:'goodsInfo',query:{id:item.goods_id}}">{{item.order_goods.goods_name}}</nuxt-link>
                 </td>
                 <td class="rt_1">
                   <p class="lig6">
@@ -142,10 +142,10 @@
                 <td class="rt_1">{{item.status_desc}}</td>
                 <td class="rt_1">
                   <p>
-                    <router-link
+                    <nuxt-link
                       class="co_blue"
                       :to="{name:'return_goods_info',query:{rec_id:item.rec_id}}"
-                    >{{i18n.return_goods_index.examine}}</router-link>
+                    >{{i18n.return_goods_index.examine}}</nuxt-link>
                   </p>
                 </td>
               </tr>
@@ -196,7 +196,7 @@
                         />
                       </div>
                       <div class="shop_name">
-                        <router-link :to="{name:'goodsInfo',query:{id:item.goods_id}}">{{item.order_goods.goods_name}}</router-link>
+                        <nuxt-link :to="{name:'goodsInfo',query:{id:item.goods_id}}">{{item.order_goods.goods_name}}</nuxt-link>
                       </div>
                     </div>
                   </td>
@@ -219,7 +219,7 @@
                   <td class>{{item.gap_reason}}</td>
                   <td class="rc_1">{{item.status_desc}}</td>
                   <td class>
-                    <router-link :to="{name:'return_goods_info',query:{rec_id:item.rec_id}}">{{i18n.return_goods_index.examine}}</router-link>
+                    <nuxt-link :to="{name:'return_goods_info',query:{rec_id:item.rec_id}}">{{i18n.return_goods_index.examine}}</nuxt-link>
                   </td>
                 </tr>
               </template>
@@ -253,7 +253,7 @@
         <p>1.{{i18n.return_goods_index.inreturn}}</p>
         <p>
           2. {{i18n.return_goods_index.examine}}&nbsp;
-          <router-link :to="{name:'article/index/detail/id'}">{{i18n.return_goods_index.sales_policy}};</router-link>
+          <nuxt-link :to="{name:'article/index/detail/id'}">{{i18n.return_goods_index.sales_policy}};</nuxt-link>
         </p>
       </div>
     </div>

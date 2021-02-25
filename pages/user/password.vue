@@ -110,7 +110,7 @@
 	  		<div class="fljfon">
 	  			<p>{{i18n.password.successfully_set}}</p>
 	  			<p>{{i18n.password.remember_password}}
-					<router-link :to="{ name: 'login'}">{{i18n.password.back_login_again}}</router-link>
+					<nuxt-link :to="{ name: 'login'}">{{i18n.password.back_login_again}}</nuxt-link>
 				</p>
 				<!-- <a href="{:U('User/logout')}">返回重新登录</a></p> -->
 	  		</div>

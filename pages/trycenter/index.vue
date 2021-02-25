@@ -3,17 +3,17 @@
         <top-bar></top-bar>
         <search-box></search-box>
         <div class="w1224" style="overflow: hidden;">
-            <router-link :to="{name:'all_try'}"  class="trytitle"  :class="routerName == 'all_try' ? 'action' : ''">
+            <nuxt-link :to="{name:'all_try'}"  class="trytitle"  :class="routerName == 'all_try' ? 'action' : ''">
                 <div>全部试用</div>
-            </router-link>
-            <router-link :to="{name:'try_foreshow'}" class="trytitle"  :class="routerName == 'try_foreshow' ? 'action' : ''">
+            </nuxt-link>
+            <nuxt-link :to="{name:'try_foreshow'}" class="trytitle"  :class="routerName == 'try_foreshow' ? 'action' : ''">
                 <div>试用预告</div>
-            </router-link>
-            <router-link  :to="{name:'my_trial'}" class="trytitle"  :class="routerName == '' ? 'action' : ''">
+            </nuxt-link>
+            <nuxt-link  :to="{name:'my_trial'}" class="trytitle"  :class="routerName == '' ? 'action' : ''">
                 <div>我的试用</div>
-            </router-link>
+            </nuxt-link>
         </div>
-        <router-view></router-view>
+        <nuxt-child></nuxt-child>
     </div>
 </template>
 <script>

@@ -15,13 +15,13 @@
       <div class="user-entry" v-if="userInfo != null">
         {{i18n.topBar.index3.shalom}}
         <span>
-          <router-link :to="{name:'user'}">{{userInfo.nickname}}</router-link>
+          <nuxt-link :to="{name:'user'}">{{userInfo.nickname}}</nuxt-link>
           <div class="nc-grade-mini" style="cursor:pointer;" onclick="javascript:go();">VO</div>
         </span>
         {{i18n.topBar.index3.welcome_back}}，
-          <router-link :to="{name:'user'}" :title="i18n.topBar.index3.home_page" :alt="i18n.topBar.index3.home_page">
+          <nuxt-link :to="{name:'user'}" :title="i18n.topBar.index3.home_page" :alt="i18n.topBar.index3.home_page">
           <span>{{i18n.topBar.index3.shop}}</span>
-        </router-link>
+        </nuxt-link>
         <span>
           [
           <span @click="quit()" style="cursor: pointer;">{{i18n.topBar.index3.quit}}</span>
@@ -30,10 +30,10 @@
       </div>
       <div class="user-entry" v-else>
         Hi，{{i18n.topBar.index3.welcome}}
-        <router-link :to="{name:'index'}">{{i18n.topBar.index3.shop}}</router-link>
-        <router-link :to="{name:'login'}">{{i18n.topBar.index3.please_log}}</router-link>
+        <nuxt-link :to="{name:'index'}">{{i18n.topBar.index3.shop}}</nuxt-link>
+        <nuxt-link :to="{name:'login'}">{{i18n.topBar.index3.please_log}}</nuxt-link>
         <span>
-          <router-link :to="{name:'reg'}">{{i18n.topBar.index3.free_registration}}</router-link>
+          <nuxt-link :to="{name:'reg'}">{{i18n.topBar.index3.free_registration}}</nuxt-link>
         </span>
       </div>
       <div class="quick-menu">
@@ -74,13 +74,13 @@
         <dl :class="bool == 1 ?'hover':''" @mousemove="moveClass(1)" @mouseout="outClass()">
           <dt>
             <em class="ico_shop"></em>
-            <router-link :to="{name:'newjoin/index/newjoin_index'}" :title="i18n.topBar.index3.business_management">{{i18n.topBar.index3.business_management}}</router-link>
+            <nuxt-link :to="{name:'newjoin/index/newjoin_index'}" :title="i18n.topBar.index3.business_management">{{i18n.topBar.index3.business_management}}</nuxt-link>
             <i></i>
           </dt>
           <dd>
             <ul>
               <li>
-                <router-link :to="{name:'newjoin/index/newjoin_index'}" :title="i18n.topBar.index3.investmentin">{{i18n.topBar.index3.investmentin}}</router-link>
+                <nuxt-link :to="{name:'newjoin/index/newjoin_index'}" :title="i18n.topBar.index3.investmentin">{{i18n.topBar.index3.investmentin}}</nuxt-link>
               </li>
               <li>
                 <a href="http://jseller.tpsns.com" target="_blank" :title="i18n.topBar.index3.management_center">{{i18n.topBar.index3.merchant_login}}</a>
@@ -91,19 +91,19 @@
         <dl :class="bool == 2 ?'hover':''" @mousemove="moveClass(2)" @mouseout="outClass()">
           <dt>
             <em class="ico_order"></em>
-            <router-link :to="{name:'user/index/goods_collect/id'}" :title="i18n.topBar.index3.business_management">{{i18n.topBar.index3.myorder}}</router-link>
+            <nuxt-link :to="{name:'user/index/goods_collect/id'}" :title="i18n.topBar.index3.business_management">{{i18n.topBar.index3.myorder}}</nuxt-link>
             <i></i>
           </dt>
           <dd>
             <ul>
               <li>
-                <router-link :to="{name:'user/index/order_list/id',query:{type:'WAITPAY',leftPx:'14'}}">{{i18n.topBar.index3.pending_order}}</router-link>
+                <nuxt-link :to="{name:'user/index/order_list/id',query:{type:'WAITPAY',leftPx:'14'}}">{{i18n.topBar.index3.pending_order}}</nuxt-link>
               </li>
               <li>
-                <router-link :to="{name:'user/index/order_list/id',query:{type:'WAITRECEIVE',leftPx:'40'}}">{{i18n.topBar.index3.receipt_confirmed}}</router-link>
+                <nuxt-link :to="{name:'user/index/order_list/id',query:{type:'WAITRECEIVE',leftPx:'40'}}">{{i18n.topBar.index3.receipt_confirmed}}</nuxt-link>
               </li>
               <li>
-                <router-link :to="{name:'user/index/order_list/id',query:{type:'All',leftPx:'1'}}">{{i18n.topBar.index3.trade_evaluated}}</router-link>
+                <nuxt-link :to="{name:'user/index/order_list/id',query:{type:'All',leftPx:'1'}}">{{i18n.topBar.index3.trade_evaluated}}</nuxt-link>
               </li>
             </ul>
           </dd>
@@ -111,16 +111,16 @@
         <dl :class="bool == 3 ?'hover':''" @mousemove="moveClass(3)" @mouseout="outClass()">
           <dt>
             <em class="ico_store"></em>
-            <router-link :to="{name:'user/index/goods_collect/id'}" :title="i18n.topBar.index3.business_management">{{i18n.topBar.index3.myfavorite}}</router-link>
+            <nuxt-link :to="{name:'user/index/goods_collect/id'}" :title="i18n.topBar.index3.business_management">{{i18n.topBar.index3.myfavorite}}</nuxt-link>
             <i></i>
           </dt>
           <dd>
             <ul>
               <li>
-                <router-link :to="{name:'user/index/goods_collect/id',query:{tabBool:true}}">{{i18n.topBar.index3.goods_collection}}</router-link>
+                <nuxt-link :to="{name:'user/index/goods_collect/id',query:{tabBool:true}}">{{i18n.topBar.index3.goods_collection}}</nuxt-link>
               </li>
               <li>
-                <router-link :to="{name:'user/index/goods_collect/id',query:{tabBool:false}}">{{i18n.topBar.index3.collection}}</router-link>
+                <nuxt-link :to="{name:'user/index/goods_collect/id',query:{tabBool:false}}">{{i18n.topBar.index3.collection}}</nuxt-link>
               </li>
             </ul>
           </dd>
@@ -133,13 +133,13 @@
           <dd>
             <ul>
               <li>
-                <router-link :to="{name:'article/index/detail/id'}">{{i18n.topBar.index3.help_center}}</router-link>
+                <nuxt-link :to="{name:'article/index/detail/id'}">{{i18n.topBar.index3.help_center}}</nuxt-link>
               </li>
               <li>
-                <router-link :to="{name:'article/index/detail/id'}">{{i18n.topBar.index3.postsales_service}}</router-link>
+                <nuxt-link :to="{name:'article/index/detail/id'}">{{i18n.topBar.index3.postsales_service}}</nuxt-link>
               </li>
               <li>
-                <router-link :to="{name:'article/index/detail/id'}">{{i18n.topBar.index3.call_center}}</router-link>
+                <nuxt-link :to="{name:'article/index/detail/id'}">{{i18n.topBar.index3.call_center}}</nuxt-link>
               </li>
             </ul>
           </dd>

@@ -38,7 +38,7 @@
 			<div class="maibos">
 				<div class="maleri100">
 					<div class="buttomretuandclos">
-						<router-link :to="{name:'coupon_list'}">{{i18n.get_coupon.return_activity}}</router-link>
+						<nuxt-link :to="{name:'coupon_list'}">{{i18n.get_coupon.return_activity}}</nuxt-link>
 						<a href="javascript:window.close()">{{i18n.get_coupon.out_page}}</a>
 					</div>
 					<div class="questionsany">

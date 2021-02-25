@@ -14,9 +14,9 @@
 		<div class="menumain p">
 			<div class="goodpiece">
 				<h1>{{i18n.withdrawals.withdraw_apply}}</h1>
-				<router-link :to="{name:'article/index/detail/id'}">
+				<nuxt-link :to="{name:'article/index/detail/id'}">
 					<span class="co_blue">{{i18n.withdrawals.balance_statement}}</span>
-				</router-link>
+				</nuxt-link>
 				<input type="hidden" id="openid" value />
 			</div>
 			<div class="personerinfro tixbox">

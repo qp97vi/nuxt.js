@@ -34,20 +34,20 @@
 						<div class="keyword">
 							<ul>
 								<li v-for="(item,index) in keywords" :key="index">
-									<router-link :style="item==words?'color: #e83632 !important;':''" :to="{name: 'goods/goodsList/id', query: {words: item, searchType: 1}}" target="_blank">{{item}}</router-link>
+									<nuxt-link :style="item==words?'color: #e83632 !important;':''" :to="{name: 'goods/goodsList/id', query: {words: item, searchType: 1}}" target="_blank">{{item}}</nuxt-link>
 								</li>
 							</ul>
 						</div>
 					</div>
 					<div class="shopingcar-index fr">
 						<div class="u-g-cart fr fixed">
-							<router-link :to="{name:'cart'}">
+							<nuxt-link :to="{name:'cart'}">
 								<p class="c-num">
 									<i class="car2_0"></i>
 									<span>{{i18n.SearchBox.mycart}}</span>
 									<span class="count cart_quantity">{{cartBill.goods_num}}</span>
 								</p>
-							</router-link>
+							</nuxt-link>
 							<div class="u-fn-cart u-mn-cart">
 								<!--有商品时-s-->
 								<div class="mn-c-m oh" v-if="cartBill.store_cart_list.length > 0">
@@ -64,16 +64,16 @@
 															<a href="javascript:void(0);" class="del js_delete"  @click="delCart(item.id)"></a>
 
 															<p class="i fl mr5">
-																<router-link :to="{name:'goodsInfo',query:{id:item.goods_id}}">
+																<nuxt-link :to="{name:'goodsInfo',query:{id:item.goods_id}}">
 																	<img :src="apiHead + '/mall/goods/thumb_image?width=50&height=50&goods_id=' + item.goods_id" height="50"
 																	 width="50" alt :title="item.goods_name" />
-																</router-link>
+																</nuxt-link>
 															</p>
 
 															<p class="n fl">
-																<router-link :to="{name:'goodsInfo',query:{id:item.goods_id}}">
+																<nuxt-link :to="{name:'goodsInfo',query:{id:item.goods_id}}">
 																	{{item.goods_name}} {{item.spec_key_name}}
-																</router-link>
+																</nuxt-link>
 															</p>
 
 															<p class="fl js_mini_num">* {{item.goods_num}} {{i18n.SearchBox.piece}}</p>
@@ -98,7 +98,7 @@
 											</p>
 										</div>
 										<div class="c-btn">
-											<router-link :to="{name:'cart'}">{{i18n.SearchBox.settle_accounts}} &gt;&gt;</router-link>
+											<nuxt-link :to="{name:'cart'}">{{i18n.SearchBox.settle_accounts}} &gt;&gt;</nuxt-link>
 										</div>
 									</div>
 								</div>
@@ -126,12 +126,12 @@
 								<div class="item fore1" v-for="(node,node_index) in goodsCategoryTree" :key="node_index">
 									<div class="item-left">
 										<div class="cata-nav-name">
-											<router-link :to="{name: 'goods/goodsList/id',query:{cat_id:node.id}}" target="_blank">{{node.name}}</router-link>
-											<router-link :to="{name: 'goods/goodsList/id',query:{cat_id:node.id}}" target="_blank" v-for="(child,child_index) in node.children"
+											<nuxt-link :to="{name: 'goods/goodsList/id',query:{cat_id:node.id}}" target="_blank">{{node.name}}</nuxt-link>
+											<nuxt-link :to="{name: 'goods/goodsList/id',query:{cat_id:node.id}}" target="_blank" v-for="(child,child_index) in node.children"
 											 :key="child_index">
 												<em></em>
 												{{child.name}}
-											</router-link>
+											</nuxt-link>
 										</div>
 									</div>
 									<div class="cata-nav-layer">
@@ -142,14 +142,14 @@
 											<div class="subitems">
 												<dl v-for="(child,child_index) in node.children" :key="child_index">
 													<dt>
-														<router-link :to="{name: 'goods/goodsList/id',query:{cat_id:child.id}}" target="_blank">
+														<nuxt-link :to="{name: 'goods/goodsList/id',query:{cat_id:child.id}}" target="_blank">
 															{{child.name}}
 															<i>&gt;</i>
-														</router-link>
+														</nuxt-link>
 													</dt>
 													<dd>
-														<router-link :to="{name: 'goods/goodsList/id',query:{cat_id:grandson.id}}" target="_blank" v-for="(grandson,grandson_index) in child.children"
-														 :key="grandson_index">{{grandson.name}}</router-link>
+														<nuxt-link :to="{name: 'goods/goodsList/id',query:{cat_id:grandson.id}}" target="_blank" v-for="(grandson,grandson_index) in child.children"
+														 :key="grandson_index">{{grandson.name}}</nuxt-link>
 													</dd>
 												</dl>
 												<div class="item-brands">
@@ -162,9 +162,9 @@
 											<div class="item-brands">
 												<ul>
 													<li v-for="(brand,brand_index) in node.brands" :key="brand_index">
-														<router-link :to="{name: 'goods/goodsList/id',query:{brand_ids:brand.id}}" target="_blank" :title="brand.name">
+														<nuxt-link :to="{name: 'goods/goodsList/id',query:{brand_ids:brand.id}}" target="_blank" :title="brand.name">
 															<img :src="brand.logo" width="91" height="40" />
-														</router-link>
+														</nuxt-link>
 													</li>
 												</ul>
 											</div>
@@ -180,38 +180,38 @@
 						<ul>
 							<!-- 首页 -->
 							<li>
-								<router-link :class="routerName == 'index'?'selected':''" :to="{ name: 'index'}">{{i18n.SearchBox.home_page}}</router-link>
+								<nuxt-link :class="routerName == 'index'?'selected':''" :to="{ name: 'index'}">{{i18n.SearchBox.home_page}}</nuxt-link>
 							</li>
 							<!-- 限时抢购 -->
 							<!-- <li>
-								<router-link :class="routerName == 'activity/flash_sale_list/id'?'selected':''" :to="{ name: 'activity/flash_sale_list/id'}">{{i18n.SearchBox.flash_sale}}</router-link>
+								<nuxt-link :class="routerName == 'activity/flash_sale_list/id'?'selected':''" :to="{ name: 'activity/flash_sale_list/id'}">{{i18n.SearchBox.flash_sale}}</nuxt-link>
 							</li> -->
 							<!-- 团购 --> 
 							<li>
-								<router-link :class="routerName == 'activity/group_list/id'?'selected':''" :to="{ name: 'activity/group_list/id'}">{{i18n.SearchBox.group_purchase}}</router-link>
+								<nuxt-link :class="routerName == 'activity/group_list/id'?'selected':''" :to="{ name: 'activity/group_list/id'}">{{i18n.SearchBox.group_purchase}}</nuxt-link>
 							</li>
 							<!-- 促销活动 -->
 							<li>
-								<router-link :class="routerName == 'activity/promoteList/id'?'selected':''" :to="{ name: 'activity/promoteList/id'}">{{i18n.SearchBox.sales_promotion}}</router-link>
+								<nuxt-link :class="routerName == 'activity/promoteList/id'?'selected':''" :to="{ name: 'activity/promoteList/id'}">{{i18n.SearchBox.sales_promotion}}</nuxt-link>
 							</li>
 							<!-- 预售 -->
 							<li>
-								<router-link :class="routerName == 'activity/pre_sell_list/id'?'selected':''" :to="{ name: 'activity/pre_sell_list/id'}">{{i18n.SearchBox.presell}}</router-link>
+								<nuxt-link :class="routerName == 'activity/pre_sell_list/id'?'selected':''" :to="{ name: 'activity/pre_sell_list/id'}">{{i18n.SearchBox.presell}}</nuxt-link>
 							</li>
 							<!-- 店铺街 -->
 							<!-- <li>
-								<router-link :class="routerName == 'index/street'?'selected':''" :to="{ name: 'index/street'}">{{i18n.SearchBox.depot_island}}</router-link>
+								<nuxt-link :class="routerName == 'index/street'?'selected':''" :to="{ name: 'index/street'}">{{i18n.SearchBox.depot_island}}</nuxt-link>
 							</li> -->
 							<!-- 积分商城 -->
 							<!-- <li>
-								<router-link :class="routerName == 'goods/integralMall'?'selected':''" :to="{ name: 'goods/integralMall'}">{{i18n.SearchBox.integral}}</router-link>
+								<nuxt-link :class="routerName == 'goods/integralMall'?'selected':''" :to="{ name: 'goods/integralMall'}">{{i18n.SearchBox.integral}}</nuxt-link>
 							</li> -->
 							<!-- 试用中心 -->
 							<li>
-								<router-link :class="routerName == 'trycenter'?'selected':''" :to="{ name: 'trycenter'}">试用中心</router-link>
+								<nuxt-link :class="routerName == 'trycenter'?'selected':''" :to="{ name: 'trycenter'}">试用中心</nuxt-link>
 							</li>
 							<li>
-								<router-link :class="routerName == 'publish_list'?'selected':''" :to="{ name: 'publish_list'}">动态列表</router-link>
+								<nuxt-link :class="routerName == 'publish_list'?'selected':''" :to="{ name: 'publish_list'}">动态列表</nuxt-link>
 							</li>
 						
 							
@@ -229,17 +229,17 @@
 			<div class="sidertabs tab-lis-1">
 				<div class="sider-top-stra sider-midd-1">
 					<div class="icon-tabe-chan">
-						<router-link :to="{ name: 'login'}">
+						<nuxt-link :to="{ name: 'login'}">
 							<i class="share-side share-side1"></i>
 							<i class="share-side tab-icon-tip triangleshow"></i>
-						</router-link>
+						</nuxt-link>
 						<div class="dl_login">
 							<div class="hinihdk">
 								<img class="head_pic" src="@/static/images/dl.png" v-if="!user" />
 								<img class="head_pic" @click="toUserIndex()" :src="user.head_pic" v-else />
 								<p class="loginafter nologin" v-if="!user">
 									<span>{{i18n.SearchBox.hello_first}}</span>
-									<router-link :to="{ name: 'login'}">{{i18n.SearchBox.register}}</router-link>！
+									<nuxt-link :to="{ name: 'login'}">{{i18n.SearchBox.register}}</nuxt-link>！
 								</p>
 								<p class="loginafter islogin" v-else>
 									<span class="id_jq userinfo" @click="toUserIndex()">{{user.nickname}}</span>
@@ -262,25 +262,25 @@
 						</a>
 					</div>
 					<div class="icon-tabe-chan massage">
-						<router-link :to="{ name: 'message_notice'}">
+						<nuxt-link :to="{ name: 'message_notice'}">
 							<i class="share-side share-side1"></i>
 							<span class="tab-tip">{{i18n.SearchBox.news}}</span>
-						</router-link>
+						</nuxt-link>
 					</div>
 				</div>
 				<div class="sider-top-stra sider-midd-2">
 					<div class="icon-tabe-chan mmm">
-						<router-link :to="{ name: 'goods_collect'}">
+						<nuxt-link :to="{ name: 'goods_collect'}">
 							<i class="share-side share-side1"></i>
 							<span class="tab-tip">{{i18n.SearchBox.collect}}</span>
-						</router-link>
+						</nuxt-link>
 						<!-- </a> -->
 					</div>
 					<div class="icon-tabe-chan hostry">
-						<router-link :to="{ name: 'visit_log'}">
+						<nuxt-link :to="{ name: 'visit_log'}">
 							<i class="share-side share-side1"></i>
 							<span class="tab-tip">{{i18n.SearchBox.track}}</span>
-						</router-link>
+						</nuxt-link>
 					</div>
 					<!--      <div class="icon-tabe-chan sign">
 							<a href="" target="_blank">
@@ -342,15 +342,15 @@
 										<a href="javascript:void(0);" class="del js_delete" @click="delCart(cart.id)"></a>
 
 										<p class="i fl mr5">
-											<router-link :to="{name:'goodsInfo',query:{id:cart.goods_id}}">
+											<nuxt-link :to="{name:'goodsInfo',query:{id:cart.goods_id}}">
 												<img :src="apiHead + '/mall/goods/thumb_image?width=50&height=50&goods_id=' + cart.goods_id" height="50"
 												 width="50" alt :title="cart.goods_name" />
-											</router-link>
+											</nuxt-link>
 										</p>
 
 										<p class="n fl">
-											<router-link :to="{name:'goodsInfo',query:{id:cart.goods_id}}">
-												{{cart.goods_name}} {{cart.spec_key_name}}</router-link>
+											<nuxt-link :to="{name:'goodsInfo',query:{id:cart.goods_id}}">
+												{{cart.goods_name}} {{cart.spec_key_name}}</nuxt-link>
 										</p>
 										<p class="fl js_mini_num">* {{cart.goods_num}} 件</p>
 										<p class="p fr mt5">
@@ -369,7 +369,7 @@
 								<span>{{cartBill.goods_num}}</span>{{i18n.SearchBox.atotal}}：{{i18nCommon.symbol}}
 								<span>{{cartBill.goods_price}}</span>
 							</p>
-							<router-link :to="{name:'cart'}">{{i18n.SearchBox.go_shopping_cart}}</router-link>
+							<nuxt-link :to="{name:'cart'}">{{i18n.SearchBox.go_shopping_cart}}</nuxt-link>
 						</div>
 					</div>
 				</div>

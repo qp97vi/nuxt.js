@@ -17,9 +17,9 @@
         <img :src="item.ad_code" @click="edit(item)" />
       </a>
       <!-- v-if="item.ad_link.indexOf('http')>-1" -->
-      <!-- <router-link v-else :target="item.target == 1? '_blank' : '_self'" :to="item.ad_link">
+      <!-- <nuxt-link v-else :target="item.target == 1? '_blank' : '_self'" :to="item.ad_link">
         <img :src="item.ad_code" />
-      </router-link> -->
+      </nuxt-link> -->
     </li>
   </div>
 </template>

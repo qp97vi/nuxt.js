@@ -81,10 +81,10 @@
                     <span class="time-num">
                       {{i18n.integral.order_id}}：
                       <em class="num">
-                        <router-link
+                        <nuxt-link
                           class="co_blue"
                           :to="{name:'order_detail',query:{order_id:item.order_id}}"
-                        >{{item.order_sn}}</router-link>
+                        >{{item.order_sn}}</nuxt-link>
                       </em>
                     </span>
                     <span class="time-num">
@@ -103,15 +103,15 @@
                     v-for="orderGoods in item.order_goods"
                     :key="orderGoods.rec_id"
                   >
-                    <router-link :to="{name:'goodsInfo',query:{id:orderGoods.goods_id}}">
+                    <nuxt-link :to="{name:'goodsInfo',query:{id:orderGoods.goods_id}}">
                       <img
                         :src="apiHead + '/mall/goods/thumb_image?width=100&height=100&goods_id=' + orderGoods.goods_id"
                       />
-                    </router-link>
+                    </nuxt-link>
                     <div class="shop_name">
-                      <router-link
+                      <nuxt-link
                         :to="{name:'goodsInfo',query:{id:orderGoods.goods_id}}"
-                      >{{orderGoods.goods_name}}</router-link>
+                      >{{orderGoods.goods_name}}</nuxt-link>
                     </div>
                     <div class="iu">x{{orderGoods.goods_num}}</div>
                   </div>
@@ -125,7 +125,7 @@
                   <span>{{item.total_amount.toFixed(2)}}</span>
                 </td>
                 <td class="sx4">
-                  <router-link :to="{ name: 'order_index',query:{order_sn:item.order_sn}}">{{i18n.dispute.apply_trade_dispute}}</router-link>
+                  <nuxt-link :to="{ name: 'order_index',query:{order_sn:item.order_sn}}">{{i18n.dispute.apply_trade_dispute}}</nuxt-link>
                 </td>
               </tr>
             </tbody>
@@ -219,18 +219,18 @@
                       <img
                         :src="apiHead + '/mall/goods/thumb_image?width=60&height=60&goods_id=' + item.goods_id"
                       />
-                      <router-link
+                      <nuxt-link
                         :to="{name:'goodsInfo',query:{id:orderGoods.goods_id}}"
-                      >{{item.goods_name}}</router-link>
+                      >{{item.goods_name}}</nuxt-link>
                     </div>
                     <div v-else>
                       <img
                         @/static/images/icon_goods_thumb_empty_300.png"
                         style="width:60px;height:60px;"
                       />
-                      <router-link
+                      <nuxt-link
                         :to="{name:'order_detail',query:{order_id:item.order_id}}"
-                      >{{item.complain_content}}</router-link>
+                      >{{item.complain_content}}</nuxt-link>
                     </div>
                   </div>
                 </td>
@@ -241,9 +241,9 @@
                   <span class="red">{{item.complain_state_detail}}</span>
                 </td>
                 <td class="sx4">
-                  <router-link
+                  <nuxt-link
                     :to="{ name: 'dispute_info',query:{complain_id:item.complain_id}}"
-                  >{{i18n.dispute.view_dispute_details}}</router-link>
+                  >{{i18n.dispute.view_dispute_details}}</nuxt-link>
                 </td>
               </tr>
             </tbody>

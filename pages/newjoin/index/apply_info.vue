@@ -52,8 +52,8 @@
               <p style="text-align:center;color:red;">{{i18n.review_tow}}</p>
             </div>
             <div class="bottom">
-			<router-link :to="{ name: 'basic_info'}" class="btn btn-primary">{{i18n.amend_application}}</router-link>
-              <router-link :to="{ name: 'index'}" class="btn">{{i18n.return_home}}</router-link>
+			<nuxt-link :to="{ name: 'basic_info'}" class="btn btn-primary">{{i18n.amend_application}}</nuxt-link>
+              <nuxt-link :to="{ name: 'index'}" class="btn">{{i18n.return_home}}</nuxt-link>
             </div>
           </div>
           <div class="main" v-else-if="apply_state == 1">
@@ -81,7 +81,7 @@
 
                 <div class="bottom">
                   <a class="btn btn-primary" href="http://jseller.tpsns.com">{{i18n.seller_center}}</a>
-				  <router-link :to="{ name: 'index'}" class="btn">{{i18n.return_home}}</router-link>
+				  <nuxt-link :to="{ name: 'index'}" class="btn">{{i18n.return_home}}</nuxt-link>
                 </div>
                 <p class="handle">
                   {{i18n.canalso}}

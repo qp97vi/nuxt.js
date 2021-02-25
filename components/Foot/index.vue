@@ -50,7 +50,7 @@
 							<ul v-for="(cat,catIndex) in directory" :key="catIndex">
 								<li class="foot-th">{{cat.cat_name}}</li>
 								<li v-for="(item,index) in cat.articles" :key="index">
-									<router-link :to="{path:'/article/detail',query:{id:item.article_id}}">{{item.title}}</router-link>
+									<nuxt-link :to="{path:'/article/detail',query:{id:item.article_id}}">{{item.title}}</nuxt-link>
 								</li>
 							</ul>
 						</div>
@@ -77,9 +77,9 @@
 				</div>
 				<div class="mod_copyright p">
 					<div class="grid-top">
-						<router-link :to="{name:'detail',query:{id: 11}}" target="_blank">{{i18n.foot.information_bulletin}}</router-link>
+						<nuxt-link :to="{name:'detail',query:{id: 11}}" target="_blank">{{i18n.foot.information_bulletin}}</nuxt-link>
 						<span>|</span>
-						<router-link :to="{name:'detail',query:{id: 1}}" target="_blank">{{i18n.foot.business_process}}</router-link>
+						<nuxt-link :to="{name:'detail',query:{id: 1}}" target="_blank">{{i18n.foot.business_process}}</nuxt-link>
 						<span>|</span>
 					</div>
 					<p v-if="$store.state.shop_config.store_entry_type == 0">

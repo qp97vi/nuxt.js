@@ -16,7 +16,7 @@
 				<img :src="userInfo.head_pic" />
 			</div>
 			<div class="mu-midd fl">
-				<router-link :to="{ name: 'user_index'}">{{userInfo.nickname}}</router-link>
+				<nuxt-link :to="{ name: 'user_index'}">{{userInfo.nickname}}</nuxt-link>
 				<a class="mu-m-vip">{{levelData.level_name}}</a>
 				<p>
 					<span>{{i18n.user_index.account_security}}：</span>
@@ -43,34 +43,34 @@
 						</a>
 					</li>
 					<li class>
-						<router-link :to="{name:'recharge'}">
+						<nuxt-link :to="{name:'recharge'}">
 							<i class="icon-balance"></i>
 							<span>{{i18n.user_index.account_balance}}</span>
 							<em class="mu-unit">&nbsp;{{i18n.user_index.unit}}</em>
 							<em class="mu-num">{{Number(userInfo.user_money).toFixed(2)}}</em>
 							<i class="icon-ar"></i>
-						</router-link>
+						</nuxt-link>
 					</li>
 					<li>
 						<!--下一个ul里拿上来的-->
-						<router-link :to="{name:'account'}">
+						<nuxt-link :to="{name:'account'}">
 							<i class="icon-point"></i>
 							<span>{{i18n.user_index.available_integral}}</span>
 							<em class="mu-unit">&nbsp;{{i18n.user_index.point}}</em>
 							<em class="mu-num">{{userInfo.pay_points}}</em>
 							<i class="icon-ar"></i>
-						</router-link>
+						</nuxt-link>
 					</li>
 				</ul>
 				<ul class="mu-a2">
 					<li>
-						<router-link :to="{name:'coupon'}">
+						<nuxt-link :to="{name:'coupon'}">
 							<i class="icon-coupon"></i>
 							<span>{{i18n.user_index.discount_coupon}}</span>
 							<em class="mu-unit">&nbsp;{{i18n.user_index.open}}</em>
 							<em class="mu-num">{{total}}</em>
 							<i class="icon-ar"></i>
-						</router-link>
+						</nuxt-link>
 					</li>
 				</ul>
 			</div>
@@ -79,7 +79,7 @@
 			<div class="ddlb-ayh">
 				<div class="ddlb-tit">
 					<h1>{{i18n.user_index.myorder}}</h1>
-					<router-link :to="{name:'order_list'}" class="u-view-all">{{i18n.user_index.view_allorders}}</router-link>
+					<nuxt-link :to="{name:'order_list'}" class="u-view-all">{{i18n.user_index.view_allorders}}</nuxt-link>
 					<i class="u-sep"></i>
 				</div>
 				<div class="order-alone-li" v-if="OrderFormData != ''">
@@ -107,7 +107,7 @@
 										</span>
 										<div class="paysoon">
 											<a class="ps_lj"  href="javascript:;" @click="fob(OrderFormData)" v-if="OrderFormData.shipping_status==1 && OrderFormData.order_status == 1" >{{i18n.user_index.goods_receipt}}</a>
-											<router-link class="ps_lj" :to="{name:'paymentOrder',query:{order_sn:OrderFormData.order_sn}}">{{i18n.user_index.immediate_payment}}</router-link>
+											<nuxt-link class="ps_lj" :to="{name:'paymentOrder',query:{order_sn:OrderFormData.order_sn}}">{{i18n.user_index.immediate_payment}}</nuxt-link>
 											<a class="consoorder" href="javascript:;" @click="setPiece(OrderFormData)" v-if="(OrderFormData.order_status==0 || OrderFormData.order_status == 1) && OrderFormData.shipping_status == 0">{{i18n.user_index.cancellation_order}}</a>
 										</div>
 									</div>
@@ -121,9 +121,9 @@
 											<img style="width:100px;height:100px" :src="apiHead + '/mall/goods/thumb_image?width=100&height=100&goods_id=' + item.goods_id" />
 										</div>
 										<div class="shop_name">
-											<router-link :to="{ name: 'goodsInfo',query:{id:item.goods_id}}">
+											<nuxt-link :to="{ name: 'goods/goodsInfo/id',query:{id:item.goods_id}}">
 												<span>{{item.goods_name}}</span>
-											</router-link>
+											</nuxt-link>
 										</div>
 									</div>
 								</td>
@@ -152,17 +152,17 @@
 									<div class="detail_or">
 										<p class="d_yzo">{{OrderFormData.order_status_detail}}</p>
 										<p>
-											<router-link :to="{name:'order_detail',query:{order_id:item.order_id}}">{{i18n.user_index.view_details}}</router-link>
+											<nuxt-link :to="{name:'order_detail',query:{order_id:item.order_id}}">{{i18n.user_index.view_details}}</nuxt-link>
 										</p>
 									</div>
 								</td>
 								<td class="sx6" rowspan="1">
 									<div class="rbac">
 										<p class>
-											<router-link :to="{name:'goodsInfo', query:{ id: item.goods_id }}">{{i18n.user_index.buy_again}}</router-link>
+											<nuxt-link :to="{name:'goodsInfo', query:{ id: item.goods_id }}">{{i18n.user_index.buy_again}}</nuxt-link>
 										</p>
 										<p class="inspect" v-if="OrderFormData.order_status==2 && OrderFormData.order_status != 4">
-											<router-link :to="{ name: 'comment_list',query:{order_id:OrderFormData.order_id}}">{{i18n.user_index.evaluate}}</router-link>
+											<nuxt-link :to="{ name: 'comment_list',query:{order_id:OrderFormData.order_id}}">{{i18n.user_index.evaluate}}</nuxt-link>
 										</p>
 									</div>
 								</td>
@@ -184,18 +184,18 @@
 					<div class="coll-etl">
 						<div class="ddlb-tit">
 							<h1>{{i18n.user_index.myfavorite}}</h1>
-							<router-link :to="{name:'goods_collect'}" class="u-view-all">{{i18n.user_index.view_more}}</router-link>
+							<nuxt-link :to="{name:'goods_collect'}" class="u-view-all">{{i18n.user_index.view_more}}</nuxt-link>
 						</div>
 						<div class="shop-sc-t">
 							<ul>
 								<li v-for="(item) in goodsData" :key="item.user_id">
-									<router-link :to="{name:'goodsInfo', query:{ id: item.goods_id }}">
+									<nuxt-link :to="{name:'goodsInfo', query:{ id: item.goods_id }}">
 										<img :src="apiHead + '/mall/goods/thumb_image?width=100&height=100&goods_id=' + item.goods_id" />
 										<p>
 											<em>{{i18nCommon.symbol}}</em>
 											<em>{{item.shop_price}}</em>
 										</p>
-									</router-link>
+									</nuxt-link>
 								</li>
 							</ul>
 						</div>
@@ -205,11 +205,11 @@
 					<div class="coupon-etl">
 						<div class="ddlb-tit">
 							<h1>{{i18n.user_index.mycoupons}}</h1>
-							<router-link :to="{name:'coupon'}" class="u-view-all">{{i18n.user_index.view_more}}</router-link>
+							<nuxt-link :to="{name:'coupon'}" class="u-view-all">{{i18n.user_index.view_more}}</nuxt-link>
 						</div>
 						<div class="shop-sc-t">
 							<div class="coupon-bgimg" v-for="(item) in coupon" :key="item.id">
-								<router-link :to="item.use_type == 1 ? {name:'goodsInfo', query:{ id: item.goods_id }} : {name:'store', query:{ store_id: item.store_id , bool: 2}}">
+								<nuxt-link :to="item.use_type == 1 ? {name:'goodsInfo', query:{ id: item.goods_id }} : {name:'store', query:{ store_id: item.store_id , bool: 2}}">
 									<div class="cp-jal">
 										<h1>
 											<em class="li-fh">{{i18nCommon.symbol}}</em>
@@ -220,7 +220,7 @@
 									<div class="cp-jay">
 										<span>{{i18n.user_index.immediate_use}}</span>
 									</div>
-								</router-link>
+								</nuxt-link>
 							</div>
 						</div>
 					</div>

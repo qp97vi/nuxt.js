@@ -13,7 +13,7 @@
  <div>
      <top-bar></top-bar>
      <search-box></search-box>
-     <router-view></router-view>
+     <nuxt-child></nuxt-child>
  </div>
 </template>
 
