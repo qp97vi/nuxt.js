@@ -28,7 +28,7 @@
 						<span :class="seleType=='WAITRECEIVE' ? 'selected' : ''" @click="obliGation('WAITRECEIVE','40')">{{i18n.order_list.wait_receiving}}</span>
 					</li>
 					<li>
-						<nuxt-link :to="{ name: 'comment'}">{{i18n.order_list.comment}}</nuxt-link>
+						<nuxt-link :to="{ name: 'user/index/comment/id'}">{{i18n.order_list.comment}}</nuxt-link>
 					</li>
 				</ul>
 				<!-- 下面线条 -->
@@ -84,7 +84,7 @@
 							<span @click="obliGation('WAITRECEIVE','40')">{{i18n.order_list.wait_receiving}}</span>
 						</li>
 						<li>
-							<nuxt-link :to="{ name: 'comment',query:{is_comment:0}}">{{i18n.order_list.comment}}</nuxt-link>
+							<nuxt-link :to="{ name: 'user/index/comment/id',query:{is_comment:0}}">{{i18n.order_list.comment}}</nuxt-link>
 						</li>
 						<li>
 							<span @click="obliGation('FINISH')">{{i18n.order_list.off_stocks}}</span>
@@ -114,20 +114,20 @@
 									</span>
 									<span class="time-num">
 										{{i18n.order_list.seller}}：<em class="num" style="margin-right: 0px;"> {{item.store_name}}</em>
-										<a v-if="shop_basic.im_choose == 1" href="javascript:;" :user_id="user.user_id" :uname="user.nickname" :avatar="user.head_pic"
+										<a v-if="$store.state.shop_basic&&shop_basic.im_choose == 1" href="javascript:;" :user_id="user.user_id" :uname="user.nickname" :avatar="user.head_pic"
 										 sign="" :storeid="item.store_id" :client_host="location.host" :client_href="location.href" :goods_id="item.order_goods[0].goods_id"
 											:im_href="location.origin + '/im'" :ws_socket="getWssOrws() + '//' + location.host + '/ws'" 
 											 :order_id="item.order_id" :order_sn="item.order_sn" :add_time="item.add_time_detail"
 											 :full_address="item.address" :consignee="item.consignee + item.mobile" id="workerman-kefu" onclick="jump()">
 											<i class="ear"></i>
 										</a>
-										<a v-if="shop_basic.im_choose == 2" :href="'tencent://message/?uin=' + item.store_qq + '&amp;Site=TPshop商城&amp;Menu=yes'">
+										<a v-if="$store.state.shop_basic&&shop_basic.im_choose == 2" :href="'tencent://message/?uin=' + item.store_qq + '&amp;Site=TPshop商城&amp;Menu=yes'">
 											<i class="ear"></i>
 										</a>
 									</span>
 									<div class="paysoon">
 										<a class="ps_lj" href="javascript:;" @click="fob(item)" v-if="item.is_able_receive">{{i18n.order_list.receiving_affirm}}</a>
-										<nuxt-link class="ps_lj" :to="{name:'paymentOrder',query:{order_sn:item.order_sn}}" v-if="(item.pay_status==0 || item.pay_status == 2) && item.order_status == 0">{{i18n.order_list.immediate_payment}}</nuxt-link>
+										<nuxt-link class="ps_lj" :to="{name:'cart/paymentOrder/id',query:{order_sn:item.order_sn}}" v-if="(item.pay_status==0 || item.pay_status == 2) && item.order_status == 0">{{i18n.order_list.immediate_payment}}</nuxt-link>
 										<a class="consoorder" href="javascript:;" @click="setPiece(item)" v-if="item.is_able_cancel">{{i18n.order_list.cancellation_order}}</a>
 									</div>
 								</div>
@@ -157,10 +157,10 @@
 							<td class="sx3">
 								<span>x{{commit.goods_num}}</span><br>
 								<span v-if="(item.is_able_return) && commit.is_send > 0 && commit.unsend == 0">
-									<nuxt-link :to="{ name: 'return_goods_rec',query:{rec_id:commit.rec_id}}">{{i18n.order_list.apply_sales}}</nuxt-link>
+									<nuxt-link :to="{ name: 'order/index/return_goods_rec/id',query:{rec_id:commit.rec_id}}">{{i18n.order_list.apply_sales}}</nuxt-link>
 								</span>
 								<span v-if="commit.unsend == 1">
-									<nuxt-link :to="{ name: 'return_goods_info',query:{rec_id:commit.rec_id}}">{{i18n.order_list.after_sale}}</nuxt-link>
+									<nuxt-link :to="{ name: 'order/index/return_goods_info/id',query:{rec_id:commit.rec_id}}">{{i18n.order_list.after_sale}}</nuxt-link>
 								</span>
 							</td>
 							<!-- </span> -->
@@ -183,17 +183,17 @@
 								<div class="detail_or">
 									<p class="d_yzo">{{item.order_status_detail}}</p>
 									<p>
-										<nuxt-link :to="{name:'order_detail',query:{order_id:item.order_id}}">{{i18n.order_list.view_details}}</nuxt-link>
+										<nuxt-link :to="{name:'order/index/order_detail/id',query:{order_id:item.order_id}}">{{i18n.order_list.view_details}}</nuxt-link>
 									</p>
 								</div>
 							</td>
 							<td class="sx6" :rowspan="item.order_goods.length" v-if="index==0">
 								<div class="rbac">
 									<p class>
-										<nuxt-link :to="{name:'goodsInfo',query:{id:commit.goods_id}}">{{i18n.order_list.buy_again}}</nuxt-link>
+										<nuxt-link :to="{name:'goods/goodsInfo/id',query:{id:commit.goods_id}}">{{i18n.order_list.buy_again}}</nuxt-link>
 									</p>
 									<p class="inspect" v-if="item.is_able_comment">
-										<nuxt-link :to="{ name: 'comment_list',query:{order_id:item.order_id}}">{{i18n.order_list.evaluate}}</nuxt-link>
+										<nuxt-link :to="{ name: 'order/index/comment_list/id',query:{order_id:item.order_id}}">{{i18n.order_list.evaluate}}</nuxt-link>
 									</p>
 								</div>
 							</td>
@@ -323,7 +323,7 @@
 				dialogFormVisible: false,
 				formLabelWidth: "100px",
 				type: "", //类型
-				location:window.location,
+				location:"",
 				user: getUser(),
 			};
 		},
@@ -337,9 +337,15 @@
 				return this.$t('common')
 			}
 		},
+		created() {
+			if(process.client) {
+				this.location = window.location;
+			}
+			
+		},
 		methods: {
 			goods_details(commit){
-				this.$router.push({name:'goodsInfo',query:{id:commit.goods_id}})
+				this.$router.push({name:'goods/goodsInfo/id',query:{id:commit.goods_id}})
 			},
 			getWssOrws(){
 				return getWssOrws()
@@ -512,7 +518,7 @@
 				type: this.seleType,
 			};
 			this.pagingMethod(params);
-			if (!loadedImJs && this.shop_basic.im_choose == 1) {
+			if (!loadedImJs &&this.$store.state.shop_basic&& this.shop_basic.im_choose == 1) {
 				loadImJs(location.origin + '/im').then(() => {
 				  loadedImJs = true;
 				})

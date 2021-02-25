@@ -39,7 +39,7 @@
                 </li> -->
                 <!--给钱才能解开封印 -->
                 <li>
-                  <nuxt-link active-class="menu_check" :to="{ name: 'user/index/comment'}">{{i18n.index.myrating}}</nuxt-link>
+                  <nuxt-link active-class="menu_check" :to="{ name: 'user/index/comment/id'}">{{i18n.index.myrating}}</nuxt-link>
                 </li>
                 <li>
                   <nuxt-link active-class="menu_check"  :to="{ name: 'user/index/my_trial'}">试用单</nuxt-link>

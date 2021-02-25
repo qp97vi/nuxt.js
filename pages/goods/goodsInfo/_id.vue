@@ -1625,7 +1625,7 @@ export default {
         end_price: this.end_price,
       };
       this.$router.push({
-        name: "goodsList",
+       name: "goods/goodsList/id",
         query: newQuery,
       });
     },

@@ -16,7 +16,7 @@
     <div class="home-index-middle">
       <div class="w1224">
         <div class="g-crumbs">
-          <nuxt-link :to="{ name: 'user_index'}">{{i18n.my_mall}}</nuxt-link>
+          <nuxt-link :to="{ name: 'user'}">{{i18n.my_mall}}</nuxt-link>
           <i class="litt-xyb"></i>
           <nuxt-link :to="{ name: 'order_list'}">{{i18n.order_centre}}</nuxt-link>
           <i class="litt-xyb"></i>
@@ -62,7 +62,7 @@
                     {{i18n.call_at}}{{finally_pay_time | datefmtAll}}
                     <p>{{i18n.before_payment}}</p>
                   </h3>
-                  <nuxt-link class="ddn3" style="margin-top:20px;" :to="{name:'paymentOrder',query:{order_sn:orderDetailsData.order_sn}}">{{i18n.payment}}</nuxt-link>
+                  <nuxt-link class="ddn3" style="margin-top:20px;" :to="{name:'cart/paymentOrder/id',query:{order_sn:orderDetailsData.order_sn}}">{{i18n.payment}}</nuxt-link>
                 </div>
                 <div v-else>
                   <h1 class="ddn2">{{orderDetailsData.order_status_detail}}</h1>
@@ -226,7 +226,7 @@
                     <el-popover trigger="hover" placement="top" width="160">
                       <p>未支付/已取消，导致没有兑换码</p>
                       <div style="text-align: right; margin: 0" v-if="orderDetailsData.is_able_pay">
-                        <nuxt-link :to="{name:'paymentOrder',query:{order_sn:orderDetailsData.order_sn}}">
+                        <nuxt-link :to="{name:'cart/paymentOrder/id',query:{order_sn:orderDetailsData.order_sn}}">
                           <el-button type="danger" size="mini">
                             去支付
 
@@ -488,7 +488,7 @@
           <div class="rtipscont" style="opacity: 0; left: 0px;">
             <span class="arrowr-bg"></span>
             <span class="arrowr"></span>
-            <img @/static/images/qrcode.png" />
+            <img src="@/static/images/qrcode.png" />
             <p class="tiptext">
               {{i18n.scan}}
               <br />{{i18n.ahead}}
@@ -863,42 +863,42 @@ div.paydetail-box .pdetail dd {
   margin: 0 0 0 20px;
 }
 .y-comp2 {
-  background-image: url(../../../static/images/y-saea8bece45.png);
+  background-image: url(../../../../static/images/y-saea8bece45.png);
   background-position-x: -64px;
 }
 
 .y-comp3 {
-  background-image: url(../../../static/images/y-saea8bece45.png);
+  background-image: url(../../../../static/images/y-saea8bece45.png);
   background-position-x: -64px;
 }
 
 .y-comp4 {
-  background-image: url(../../../static/images/y-saea8bece45.png);
+  background-image: url(../../../../static/images/y-saea8bece45.png);
   background-position-x: -64px;
 }
 
 .y-comp5 {
-  background-image: url(../../../static/images/y-saea8bece45.png);
+  background-image: url(../../../../static/images/y-saea8bece45.png);
   background-position-x: -64px;
 }
 
 >>> .is-finish .y-comp2 {
-  background-image: url(../../../static/images/y-saea8bece45.png);
+  background-image: url(../../../../static/images/y-saea8bece45.png);
   background-position-x: 0px;
 }
 
 >>> .is-finish .y-comp3 {
-  background-image: url(../../../static/images/y-saea8bece45.png);
+  background-image: url(../../../../static/images/y-saea8bece45.png);
   background-position-x: 0px;
 }
 
 >>> .is-finish .y-comp4 {
-  background-image: url(../../../static/images/y-saea8bece45.png);
+  background-image: url(../../../../static/images/y-saea8bece45.png);
   background-position-x: 0px;
 }
 
 >>> .is-finish .y-comp5 {
-  background-image: url(../../../static/images/y-saea8bece45.png);
+  background-image: url(../../../../static/images/y-saea8bece45.png);
   background-position-x: 0px;
 }
 

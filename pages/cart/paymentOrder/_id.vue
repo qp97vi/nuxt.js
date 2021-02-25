@@ -21,7 +21,7 @@
 						<div class="fl">
 							<div class="logo pa-to-36 wi345">
 								<a href="/">
-									<img :src="shop_config.store_logo" alt style="max-width: 240px;max-height: 80px;" />
+									<img  v-if="$store.state.shop_config"  :src="apiHead+$store.state.shop_config.store_logo" alt style="max-width: 240px;max-height: 80px;" />
 								</a>
 							</div>
 						</div>

@@ -51,13 +51,13 @@ $Author: soubao-java 2020-07-22 $ */
             </el-dropdown>
           </li>
           <li data-v-2648786f class="u-msg">
-            <nuxt-link :to="{ name: 'message_notice' }">
+            <nuxt-link :to="{ name: 'user/index/message_notice' }"> 
               {{ i18n.TopInfo.news }}
               <span data-v-2648786f>{{ newsNub }}</span>
             </nuxt-link>
           </li>
           <li data-v-2648786f>
-            <nuxt-link :to="{ name: 'integralMall' }">{{
+            <nuxt-link :to="{ name: 'goods/integralMall' }">{{
               i18n.TopInfo.integral
             }}</nuxt-link>
           </li>
@@ -319,7 +319,7 @@ export default {
 </script>
 
 <style scoped>
-@import "../../static/css/myaccount.css";
+@import "@/static/css/myaccount.css";
 
 .mn-c-m {
   overflow-y: auto;

@@ -37,9 +37,9 @@
 							<!-- <span class="userinfo">{{i18n.index.welcometo}}{{shop_info.store_name || i18n.index.store}}！</span> -->
 						</p>
 						<div class="login_index" v-if="user">
-							<nuxt-link :to="{name:'user_index'}" target="_blank">{{i18n.index.member_center}}</nuxt-link>
-							<nuxt-link class="islogin add_newperson" :to="{name:'login'}" target="_blank">{{i18n.index.logout}}</nuxt-link>
-							<a class="islogin add_newperson" @click="quit()">{{i18n.index.logout}}</a>
+							<nuxt-link :to="{name:'user'}" target="_blank">{{i18n.index.member_center}}</nuxt-link>
+							<!-- <nuxt-link class="islogin add_newperson" :to="{name:'login'}" target="_blank">{{i18n.index.logout}}</nuxt-link> -->
+							<nuxt-link class="islogin add_newperson" :to="{name:'activity/coupon_list/id'}" target="_blank">{{i18n.index.couple_polite}}</nuxt-link>
 						</div>
 						<div class="login_index" v-else>
 							<nuxt-link :to="{name:'login'}" target="_blank">{{i18n.index.pleaselog}}</nuxt-link>
@@ -50,7 +50,7 @@
 						<div class="content box_ad_content">
 							<div class="gome_news">
 								<h2 class="gome_news_title">{{i18n.index.flash}}</h2>
-								<nuxt-link :to="{name:'article-detail'}" target="_blank">
+								<nuxt-link :to="{name:'article/index/detail/id'}" target="_blank">
 									{{i18n.index.more}}
 									<span></span>
 								</nuxt-link>
@@ -61,7 +61,7 @@
 										<div class="content-slide">
 											<div class="cont4-box">
 												<template v-for="(item,index) in articles">
-													<nuxt-link target="_blank" :to="{path:'/article/detail',query:{id:item.article_id}}" :key="index">
+													<nuxt-link target="_blank" :to="{name:'article/index/detail/id',query:{id:item.article_id}}" :key="index">
 														<p>{{item.title}}</p>
 													</nuxt-link>
 												</template>
@@ -194,7 +194,7 @@
 					<!--&lt;!&ndash;精品推荐&ndash;&gt;-->
 					<div class="goods_carousel conditions top_content" v-if="$store.state.shop_config && $store.state.shop_config.index_format_pc == 0">
 						<div class="top">
-							<nuxt-link :to="{name:'visit_log'}">
+							<nuxt-link :to="{name:'user/index/visit_log'}">
 								<p>{{i18n.index.recommendation}}</p>
 								<span>{{i18n.index.selection_goodthings}}</span>
 							</nuxt-link>
@@ -249,7 +249,7 @@
 					<!--领券中心-->
 					<div class="goods_carousel coupon top_content" v-if="$store.state.shop_config && $store.state.shop_config.index_format_pc == '0'">
 						<div class="top">
-							<nuxt-link :to="{name:'coupon_list'}">
+							<nuxt-link :to="{name:'activity/coupon_list/id'}">
 								<p>{{i18n.index.redemption_centre}}</p>
 								<img src="@/static/images/right.png" alt />
 							</nuxt-link>

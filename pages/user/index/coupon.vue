@@ -18,7 +18,7 @@
           <div class="sclq">
             <i class="top-up lq"></i>
             <span>
-              <nuxt-link :to="{name:'coupon_list'}">{{i18n.coupon.get_more_coupon}}</nuxt-link>
+              <nuxt-link :to="{name:'activity/coupon_list/id'}">{{i18n.coupon.get_more_coupon}}</nuxt-link>
             </span>
           </div>
         </div>

@@ -1054,7 +1054,8 @@
 	font-size:14px;
 	margin-right:40px;
 	padding:0 20px;
-	position:relative
+	position:relative;
+	box-sizing: content-box;
 }
 .cp-type-tit .type .ty-fir>li a {
 	vertical-align:middle
@@ -1089,7 +1090,8 @@
 	border:1px solid #CCCCCC;
 	padding:0 20px;
 	background:white;
-	z-index:2
+	z-index:2;
+	box-sizing: content-box;
 }
 .cp-type-tit .type .sec-ul li {
 	line-height:26px

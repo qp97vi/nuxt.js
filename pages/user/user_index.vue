@@ -107,7 +107,7 @@
 										</span>
 										<div class="paysoon">
 											<a class="ps_lj"  href="javascript:;" @click="fob(OrderFormData)" v-if="OrderFormData.shipping_status==1 && OrderFormData.order_status == 1" >{{i18n.user_index.goods_receipt}}</a>
-											<nuxt-link class="ps_lj" :to="{name:'paymentOrder',query:{order_sn:OrderFormData.order_sn}}">{{i18n.user_index.immediate_payment}}</nuxt-link>
+											<nuxt-link class="ps_lj" :to="{name:'cart/paymentOrder/id',query:{order_sn:OrderFormData.order_sn}}">{{i18n.user_index.immediate_payment}}</nuxt-link>
 											<a class="consoorder" href="javascript:;" @click="setPiece(OrderFormData)" v-if="(OrderFormData.order_status==0 || OrderFormData.order_status == 1) && OrderFormData.shipping_status == 0">{{i18n.user_index.cancellation_order}}</a>
 										</div>
 									</div>

@@ -82,7 +82,7 @@
                   </span>
                   <div class="paysoon">
                     <a class="ps_lj" href="javascript:;" @click="fob(item)" v-if="item.is_able_receive">{{i18n.order_list.receiving_affirm}}</a>
-                    <nuxt-link class="ps_lj" :to="{name:'paymentOrder',query:{order_sn:item.order_sn}}" v-if="(item.pay_status==0 || item.pay_status == 2) && item.order_status == 0">{{i18n.order_list.immediate_payment}}</nuxt-link>
+                    <nuxt-link class="ps_lj" :to="{name:'cart/paymentOrder/id',query:{order_sn:item.order_sn}}" v-if="(item.pay_status==0 || item.pay_status == 2) && item.order_status == 0">{{i18n.order_list.immediate_payment}}</nuxt-link>
                     <a class="consoorder" href="javascript:;" @click="setPiece(item)" v-if="item.is_able_cancel">{{i18n.order_list.cancellation_order}}</a>
                   </div>
                 </div>
