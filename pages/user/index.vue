@@ -16,10 +16,10 @@
     <div class="home-index-middle">
 		<div class="w1224">
 			<div class="g-crumbs">
-				<router-link :to="{ name: 'user_index'}">
+				<nuxt-link :to="{ name: 'user_index'}">
 				{{i18n.index.mymall}}
-				</router-link>
-				<span v-if="routerName!='user_index'">&nbsp;>&nbsp; {{$route.meta.title}}</span>
+				</nuxt-link>
+				<span v-if="routerName!='user_index'">&nbsp;>&nbsp; {{title}}</span>
 			</div>
 		</div>
       <div class="w1224">
@@ -32,17 +32,17 @@
                   <i class="account-acc1"></i>{{i18n.index.trading_center}}
                 </li>
                 <li>
-                  <router-link :class="routerName == 'user/index/order_list'?'menu_check':''" :to="{ name: 'user/index/order_list'}">{{i18n.index.myorder}}</router-link>
+                  <nuxt-link active-class="menu_check"  :to="{ name: 'user/index/order_list/id'}">{{i18n.index.myorder}}</nuxt-link>
                 </li>
                 <!-- <li>
-                  <router-link :class="routerName == 'virtual_list'?'menu_check':''" :to="{ name: 'virtual_list'}">虚拟订单</router-link>
+                  <nuxt-link active-class="menu_check" :class="routerName == 'virtual_list'?'menu_check':''" :to="{ name: 'virtual_list'}">虚拟订单</nuxt-link>
                 </li> -->
                 <!--给钱才能解开封印 -->
                 <li>
-                  <router-link :class="routerName == 'user/index/comment'?'menu_check':''" :to="{ name: 'user/index/comment'}">{{i18n.index.myrating}}</router-link>
+                  <nuxt-link active-class="menu_check" :to="{ name: 'user/index/comment'}">{{i18n.index.myrating}}</nuxt-link>
                 </li>
                 <li>
-                  <router-link :class="routerName == 'user/index/my_trial'?'menu_check':''" :to="{ name: 'user/index/my_trial'}">试用单</router-link>
+                  <nuxt-link active-class="menu_check"  :to="{ name: 'user/index/my_trial'}">试用单</nuxt-link>
                 </li>
               </ul>
               <ul>
@@ -50,13 +50,13 @@
                   <i class="account-acc2"></i>{{i18n.index.assethub}}
                 </li>
                 <li>
-                  <router-link :class="routerName == 'user/index/coupon'?'menu_check':''" :to="{ name: 'user/index/coupon'}">{{i18n.index.mycoupons}}</router-link>
+                  <nuxt-link active-class="menu_check"  :to="{ name: 'user/index/coupon'}">{{i18n.index.mycoupons}}</nuxt-link>
                 </li>
                 <li>
-                  <router-link :class="routerName == 'user/index/recharge'?'menu_check':''"  :to="{ name: 'user/index/recharge'}">{{i18n.index.account_balance}}</router-link>
+                  <nuxt-link active-class="menu_check"   :to="{ name: 'user/index/recharge'}">{{i18n.index.account_balance}}</nuxt-link>
                 </li>
                 <li>
-                  <router-link :class="routerName == 'user/index/account'?'menu_check':''" :to="{ name: 'user/index/account'}">{{i18n.index.myintegral}}</router-link>
+                  <nuxt-link active-class="menu_check"  :to="{ name: 'user/index/account'}">{{i18n.index.myintegral}}</nuxt-link>
                 </li>
               </ul>
               <ul>
@@ -64,11 +64,11 @@
                   <i class="account-acc3"></i>{{i18n.index.focus_center}}
                 </li>
                 <li>
-                  <router-link :class="routerName == 'user/index/goods_collect'?'menu_check':''" :to="{ name: 'user/index/goods_collect'}">{{i18n.index.myfavorite}}</router-link>
+                  <nuxt-link active-class="menu_check"  :to="{ name: 'user/index/goods_collect/id'}">{{i18n.index.myfavorite}}</nuxt-link>
                 </li>
                 <!--<li><a href="">曾经购买</a></li>-->
                 <li>
-                  <router-link :class="routerName == 'user/index/visit_log'?'menu_check':''" :to="{ name: 'user/index/visit_log'}">{{i18n.index.mytracks}}</router-link>
+                  <nuxt-link active-class="menu_check" :to="{ name: 'user/index/visit_log'}">{{i18n.index.mytracks}}</nuxt-link>
                 </li>
               </ul>
               <ul>
@@ -76,16 +76,16 @@
                   <i class="account-acc4"></i>{{i18n.index.personal_center}}
                 </li>
                 <li>
-                  <router-link :class="routerName == 'user/index/info'?'menu_check':''" :to="{ name: 'user/index/info'}">{{i18n.index.personal_details}}</router-link>
+                  <nuxt-link active-class="menu_check"  :to="{ name: 'user/index/info'}">{{i18n.index.personal_details}}</nuxt-link>
                 </li>
                 <!-- <li>
-                  <router-link :class="routerName == 'user/index/bind_auth'?'menu_check':''" :to="{ name: 'user/index/bind_auth'}">账号绑定</router-link>
+                  <nuxt-link active-class="menu_check" :to="{ name: 'user/index/bind_auth'}">账号绑定</nuxt-link>
                 </li> -->
                 <li>
-                  <router-link :class="routerName == 'user/index/address_list'?'menu_check':''" :to="{ name: 'user/index/address_list'}">{{i18n.index.address_administration}}</router-link>
+                  <nuxt-link active-class="menu_check"  :to="{ name: 'user/index/address_list'}">{{i18n.index.address_administration}}</nuxt-link>
                 </li>
                 <li>
-                  <router-link :class="routerName == 'user/index/safety_settings'?'menu_check':''" :to="{ name: 'user/index/safety_settings'}">{{i18n.index.security_settings}}</router-link>
+                  <nuxt-link active-class="menu_check"  :to="{ name: 'user/index/safety_settings'}">{{i18n.index.security_settings}}</nuxt-link>
                 </li>
               </ul>
               <ul>
@@ -93,10 +93,10 @@
                   <i class="account-acc5"></i>{{i18n.index.distribution_center}}
                 </li>
                 <li>
-                  <router-link :class="routerName == 'user/index/lower_list'?'menu_check':''" :to="{ name: 'user/index/lower_list'}">{{i18n.index.mypromotion}}</router-link>
+                  <nuxt-link active-class="menu_check"  :to="{ name: 'user/index/lower_list'}">{{i18n.index.mypromotion}}</nuxt-link>
                 </li>
                 <li>
-                  <router-link :class="routerName == 'user/index/income'?'menu_check':''"  :to="{ name: 'user/index/income'}">{{i18n.index.myearnings}}</router-link>
+                  <nuxt-link active-class="menu_check"   :to="{ name: 'user/index/income'}">{{i18n.index.myearnings}}</nuxt-link>
                 </li>
               </ul>
               <ul>
@@ -105,22 +105,22 @@
                 </li>
                 <!--<li><a href="">我的发票</a></li>-->
                 <li>
-                  <router-link  :class="routerName == 'user/index/return_goods_index'?'menu_check':''" :to="{ name: 'user/index/return_goods_index'}">{{i18n.index.refund_exchange}}</router-link>
+                  <nuxt-link active-class="menu_check"  :to="{ name: 'user/index/return_goods_index'}">{{i18n.index.refund_exchange}}</nuxt-link>
                 </li>
                 <li>
-                 <router-link :class="routerName == 'order/index/dispute'?'menu_check':''" :to="{ name: 'order/index/dispute'}">{{i18n.index.trade_complaints}}</router-link>
+                 <nuxt-link active-class="menu_check"  :to="{ name: 'order/index/dispute_info'}">{{i18n.index.trade_complaints}}</nuxt-link>
                 </li>
                 <li>
-                  <router-link :class="routerName == 'user/index/expose_list'?'menu_check':''" :to="{ name: 'user/index/expose_list'}">{{i18n.index.violation_report}}</router-link>
+                  <nuxt-link active-class="menu_check"  :to="{ name: 'user/index/expose_list'}">{{i18n.index.violation_report}}</nuxt-link>
                 </li>
 
                 <li>
-                 <router-link :class="routerName == 'user/index/consult_list'?'menu_check':''" :to="{ name: 'user/index/consult_list'}">{{i18n.index.search_record}}</router-link>
+                 <nuxt-link active-class="menu_check"  :to="{ name: 'user/index/consult_list'}">{{i18n.index.search_record}}</nuxt-link>
                 </li>
               </ul>
             </div>
           </div>
-          <router-view></router-view>
+          <nuxt-child></nuxt-child>
         </div>
       </div>
     </div>
@@ -133,13 +133,24 @@ import TopInfo from "@/components/TopInfo/index.vue";
 
 export default {
   data() {
-    return {};
+    return {
+		routerName:"",
+		title:"",
+	};
   },
-  created() {},
+  asyncData ({ params, route, error }) {   
+    console.log("路由信息",route)
+    return {
+      routerName: route.name
+    }
+  },
+  created() {
+	//   console.log("路由信息",this.$route)
+  },
+  mounted() {
+	  this.title = document.title;
+  },
   computed:{
-    routerName:function(){
-      return this.$route.name
-    },
     i18n () {  
   	  return this.$t('user')  
   	}
@@ -151,12 +162,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
 @import "@/static/css/myaccount.css";
 .home-index-middle {
   background: #f5f5f5;
 }
-.menu_check{
+.le-menu .menu_check{
     color: #e23435;
     font-weight: bold;
 }

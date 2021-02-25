@@ -86,25 +86,25 @@
           <i class="ico-business item-icon"></i>
           <h5 class="item-title">{{i18n.attract_plan}}</h5>
           <p class="item-des">{{i18n.attract_rule}}</p>
-		  <router-link class="item-btn" :to="{name:'help',query:{help_id: 1}}">{{i18n.view_investment_plan}}</router-link>
+		  <router-link class="item-btn" :to="{name:'article/index/help/id',query:{help_id: 1}}">{{i18n.view_investment_plan}}</router-link>
         </li>
         <li>
           <i class="ico-cooperation item-icon"></i>
           <h5 class="item-title">{{i18n.in_process}}</h5>
           <p class="item-des">{{i18n.view_notes}}</p>
-		  <router-link class="item-btn" :to="{name:'help',query:{help_id: 4}}">{{i18n.check_process}}</router-link>
+		  <router-link class="item-btn" :to="{name:'article/index/help/id',query:{help_id: 4}}">{{i18n.check_process}}</router-link>
         </li>
         <li>
           <i class="ico-standard item-icon"></i>
           <h5 class="item-title">{{i18n.inqualification}}</h5>
           <p class="item-des">{{i18n.standard_review}}</p>
-		  <router-link class="item-btn" :to="{name:'help',query:{help_id: 2}}">{{i18n.check_qualification}}</router-link>
+		  <router-link class="item-btn" :to="{name:'article/index/help/id',query:{help_id: 2}}">{{i18n.check_qualification}}</router-link>
         </li>
         <li style="margin-right: 0px;">
           <i class="ico-more item-icon"></i>
           <h5 class="item-title">{{i18n.tariff_standard}}</h5>
           <p class="item-des">{{i18n.check_category_rates}}</p>
-		  <router-link class="item-btn" :to="{name:'help',query:{help_id: 3}}">{{i18n.check_rates}}</router-link>
+		  <router-link class="item-btn" :to="{name:'article/index/help/id',query:{help_id: 3}}">{{i18n.check_rates}}</router-link>
         </li>
       </ul>
       <!-- <script>

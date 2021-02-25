@@ -253,7 +253,7 @@
         <p>1.{{i18n.return_goods_index.inreturn}}</p>
         <p>
           2. {{i18n.return_goods_index.examine}}&nbsp;
-          <router-link :to="{name:'detail'}">{{i18n.return_goods_index.sales_policy}};</router-link>
+          <router-link :to="{name:'article/index/detail/id'}">{{i18n.return_goods_index.sales_policy}};</router-link>
         </p>
       </div>
     </div>

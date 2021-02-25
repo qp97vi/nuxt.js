@@ -106,7 +106,7 @@
 						<div :class="complainTalk.talk_member_type == 'accuser' ? 'opposite_left myself_right p' : 'opposite_left  p'" v-for="complainTalk in complainTalkList" :key="complainTalk.talk_id">
 							<div class="sales_head p">
 								<div class="sales_head_logo">
-									<img class="" v-if="complainTalk.talk_member_type =='admin'" @/static/images/pers.png">
+									<img class="" v-if="complainTalk.talk_member_type =='admin'" src="@/static/images/pers.png">
 									<img class="" v-if="complainTalk.talk_member_type =='accused'" :src="storeData.store_avatar">
 									<img class="" v-if="complainTalk.talk_member_type =='accuser'" :src="userInfo.head_pic">
 								</div>
@@ -195,9 +195,9 @@
                 <span>{{complain.complain_content}}</span>
               </p>
               <ul class="suimg"></ul>
-			  <img v-if="complain.complain_state == 1" class="sbys" @/static/images/sbys.png" :alt="i18n.user_submits" />
-			  <img v-else-if="complain.complain_state == 4" class="sbys" @/static/images/sbys3.png" :alt="i18n.resolved" />
-              <img v-else class="sbys" @/static/images/sbys2.png" :alt="i18n.problem_solving" />
+			  <img v-if="complain.complain_state == 1" class="sbys" src="@/static/images/sbys.png" :alt="i18n.user_submits" />
+			  <img v-else-if="complain.complain_state == 4" class="sbys" src="@/static/images/sbys3.png" :alt="i18n.resolved" />
+              <img v-else class="sbys" src="@/static/images/sbys2.png" :alt="i18n.problem_solving" />
             </div>
             <div class="sh sheet1">
               <p>

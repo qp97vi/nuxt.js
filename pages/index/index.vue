@@ -86,7 +86,7 @@
 										</td>
 										<td>
 											<div class="access">
-												<nuxt-link :to="{name:'user/index/goods_collect'}" target="_blank">
+												<nuxt-link :to="{name:'user/index/goods_collect/id'}" target="_blank">
 													<i class="mycollect"></i>
 													<span>{{i18n.index.collect}}</span>
 												</nuxt-link>
@@ -94,7 +94,7 @@
 										</td>
 										<td class="lastcol">
 											<div class="access">
-												<nuxt-link :to="{name:'user/index/order_list'}" target="_blank">
+												<nuxt-link :to="{name:'user/index/order_list/id'}" target="_blank">
 													<i class="myorders"></i>
 													<span>{{i18n.index.indent}}</span> 
 												</nuxt-link>
@@ -120,7 +120,7 @@
 										</td>
 										<td class="lastcol">
 											<div class="access">
-												<nuxt-link :to="{name:'newjoin'}" target="_blank">
+												<nuxt-link :to="{name:'newjoin/index/newjoin_index'}" target="_blank">
 													<i class="seller_enter"></i>
 													<span>{{i18n.index.merchant_enter}}</span>
 												</nuxt-link>

@@ -15,11 +15,11 @@
       <div class="user-entry" v-if="userInfo != null">
         {{i18n.topBar.index3.shalom}}
         <span>
-          <router-link :to="{name:'user_index'}">{{userInfo.nickname}}</router-link>
+          <router-link :to="{name:'user'}">{{userInfo.nickname}}</router-link>
           <div class="nc-grade-mini" style="cursor:pointer;" onclick="javascript:go();">VO</div>
         </span>
         {{i18n.topBar.index3.welcome_back}}，
-          <router-link :to="{name:'user_index'}" :title="i18n.topBar.index3.home_page" :alt="i18n.topBar.index3.home_page">
+          <router-link :to="{name:'user'}" :title="i18n.topBar.index3.home_page" :alt="i18n.topBar.index3.home_page">
           <span>{{i18n.topBar.index3.shop}}</span>
         </router-link>
         <span>
@@ -74,13 +74,13 @@
         <dl :class="bool == 1 ?'hover':''" @mousemove="moveClass(1)" @mouseout="outClass()">
           <dt>
             <em class="ico_shop"></em>
-            <router-link :to="{name:'newjoin_index'}" :title="i18n.topBar.index3.business_management">{{i18n.topBar.index3.business_management}}</router-link>
+            <router-link :to="{name:'newjoin/index/newjoin_index'}" :title="i18n.topBar.index3.business_management">{{i18n.topBar.index3.business_management}}</router-link>
             <i></i>
           </dt>
           <dd>
             <ul>
               <li>
-                <router-link :to="{name:'newjoin_index'}" :title="i18n.topBar.index3.investmentin">{{i18n.topBar.index3.investmentin}}</router-link>
+                <router-link :to="{name:'newjoin/index/newjoin_index'}" :title="i18n.topBar.index3.investmentin">{{i18n.topBar.index3.investmentin}}</router-link>
               </li>
               <li>
                 <a href="http://jseller.tpsns.com" target="_blank" :title="i18n.topBar.index3.management_center">{{i18n.topBar.index3.merchant_login}}</a>
@@ -91,19 +91,19 @@
         <dl :class="bool == 2 ?'hover':''" @mousemove="moveClass(2)" @mouseout="outClass()">
           <dt>
             <em class="ico_order"></em>
-            <router-link :to="{name:'goods_collect'}" :title="i18n.topBar.index3.business_management">{{i18n.topBar.index3.myorder}}</router-link>
+            <router-link :to="{name:'user/index/goods_collect/id'}" :title="i18n.topBar.index3.business_management">{{i18n.topBar.index3.myorder}}</router-link>
             <i></i>
           </dt>
           <dd>
             <ul>
               <li>
-                <router-link :to="{name:'order_list',query:{type:'WAITPAY',leftPx:'14'}}">{{i18n.topBar.index3.pending_order}}</router-link>
+                <router-link :to="{name:'user/index/order_list/id',query:{type:'WAITPAY',leftPx:'14'}}">{{i18n.topBar.index3.pending_order}}</router-link>
               </li>
               <li>
-                <router-link :to="{name:'order_list',query:{type:'WAITRECEIVE',leftPx:'40'}}">{{i18n.topBar.index3.receipt_confirmed}}</router-link>
+                <router-link :to="{name:'user/index/order_list/id',query:{type:'WAITRECEIVE',leftPx:'40'}}">{{i18n.topBar.index3.receipt_confirmed}}</router-link>
               </li>
               <li>
-                <router-link :to="{name:'order_list',query:{type:'All',leftPx:'1'}}">{{i18n.topBar.index3.trade_evaluated}}</router-link>
+                <router-link :to="{name:'user/index/order_list/id',query:{type:'All',leftPx:'1'}}">{{i18n.topBar.index3.trade_evaluated}}</router-link>
               </li>
             </ul>
           </dd>
@@ -111,16 +111,16 @@
         <dl :class="bool == 3 ?'hover':''" @mousemove="moveClass(3)" @mouseout="outClass()">
           <dt>
             <em class="ico_store"></em>
-            <router-link :to="{name:'goods_collect'}" :title="i18n.topBar.index3.business_management">{{i18n.topBar.index3.myfavorite}}</router-link>
+            <router-link :to="{name:'user/index/goods_collect/id'}" :title="i18n.topBar.index3.business_management">{{i18n.topBar.index3.myfavorite}}</router-link>
             <i></i>
           </dt>
           <dd>
             <ul>
               <li>
-                <router-link :to="{name:'goods_collect',query:{tabBool:true}}">{{i18n.topBar.index3.goods_collection}}</router-link>
+                <router-link :to="{name:'user/index/goods_collect/id',query:{tabBool:true}}">{{i18n.topBar.index3.goods_collection}}</router-link>
               </li>
               <li>
-                <router-link :to="{name:'goods_collect',query:{tabBool:false}}">{{i18n.topBar.index3.collection}}</router-link>
+                <router-link :to="{name:'user/index/goods_collect/id',query:{tabBool:false}}">{{i18n.topBar.index3.collection}}</router-link>
               </li>
             </ul>
           </dd>
@@ -133,13 +133,13 @@
           <dd>
             <ul>
               <li>
-                <router-link :to="{name:'detail'}">{{i18n.topBar.index3.help_center}}</router-link>
+                <router-link :to="{name:'article/index/detail/id'}">{{i18n.topBar.index3.help_center}}</router-link>
               </li>
               <li>
-                <router-link :to="{name:'detail'}">{{i18n.topBar.index3.postsales_service}}</router-link>
+                <router-link :to="{name:'article/index/detail/id'}">{{i18n.topBar.index3.postsales_service}}</router-link>
               </li>
               <li>
-                <router-link :to="{name:'detail'}">{{i18n.topBar.index3.call_center}}</router-link>
+                <router-link :to="{name:'article/index/detail/id'}">{{i18n.topBar.index3.call_center}}</router-link>
               </li>
             </ul>
           </dd>

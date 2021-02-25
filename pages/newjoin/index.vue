@@ -21,11 +21,11 @@
       </div>
       <ul class="header-r children-a-100 clearfix">
         <li class="active">
-          <router-link :to="{ name: 'newjoin_index'}">{{i18n.enter_home}}</router-link>
+          <nuxt-link :to="{ name: 'newjoin/index/newjoin_index'}">{{i18n.enter_home}}</nuxt-link>
         </li>
       </ul>
     </div>
-    <router-view />
+    <nuxt-child />
   </div>
 </template>
 

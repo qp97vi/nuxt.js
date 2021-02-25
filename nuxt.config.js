@@ -23,7 +23,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-	  	{src:'@/plugins/element-ui',ssr:true,},
+	  	{src:'@/plugins/element-ui',ssr:false,},
 		{src:'@/plugins/vuex-persistedstate',ssr:false},
 		{src:'@/utils/md5.js',ssr:false},
 		{src:'@/i18n/index'},

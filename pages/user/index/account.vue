@@ -14,7 +14,7 @@
     <div class="menumain p">
       <div class="goodpiece">
         <h1>{{i18n.integral.i_integral}}</h1>
-		<router-link :to="{name:'detail'}">
+		<router-link :to="{name:'article/index/detail/id'}">
 		  <span class="co_blue">{{i18n.integral.help}}</span>
 		</router-link>
       </div>

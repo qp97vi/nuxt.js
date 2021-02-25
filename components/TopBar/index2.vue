@@ -16,7 +16,7 @@
         <div class="fl">
           <div class="fl ler" v-if="bool">
             <div class="fl ler">
-              <router-link :to="{name:'user_index'}">{{userInfo.nickname}}</router-link>
+              <router-link :to="{name:'user'}">{{userInfo.nickname}}</router-link>
             </div>
             <div class="fl ler">
               <router-link :to="{name:'message_notice'}">
@@ -76,15 +76,15 @@
         <div class="top-ri-header fr">
           <ul>
             <li>
-              <router-link :to="{ name: 'order_list'}">{{i18n.topBar.index2.myorder}}</router-link>
+              <router-link :to="{ name: 'user/index/order_list/id'}">{{i18n.topBar.index2.myorder}}</router-link>
             </li>
             <li class="spacer"></li>
             <li>
-              <router-link :to="{ name: 'visit_log'}">{{i18n.topBar.index2.browse}}</router-link>
+              <router-link :to="{ name: 'user/index/visit_log'}">{{i18n.topBar.index2.browse}}</router-link>
             </li>
             <li class="spacer"></li>
             <li>
-              <router-link :to="{ name: 'goods_collect'}">{{i18n.topBar.index2.goods_collect}}</router-link>
+              <router-link :to="{ name: 'user/index/goods_collect/id'}">{{i18n.topBar.index2.goods_collect}}</router-link>
             </li>
             <li class="spacer"></li>
             <li class="hover-ba-navdh">
@@ -97,7 +97,7 @@
                       <a href="http://jseller.tpsns.com" target="_blank">{{i18n.topBar.index2.business}}</a>
                     </li>
                     <li>
-                      <router-link :to="{ name: 'newjoin_index'}">{{i18n.topBar.index2.help}}</router-link>
+                      <router-link :to="{ name: 'newjoin/index/newjoin_index'}">{{i18n.topBar.index2.help}}</router-link>
                     </li>
                   </ul>
                 </div>
@@ -111,10 +111,10 @@
                 <div class="conta-hv-nav">
                   <ul>
                     <li>
-						<router-link :to="{ name: 'group_list'}">{{i18n.topBar.index2.group_purchase}}</router-link>
+						<router-link :to="{ name: 'activity/group_list/id'}">{{i18n.topBar.index2.group_purchase}}</router-link>
                     </li>
                     <li>
-						<router-link :to="{ name: 'flash_sale_list'}">{{i18n.topBar.index2.rush_purchase}}</router-link>
+						<router-link :to="{ name: 'activity/flash_sale_list/id'}">{{i18n.topBar.index2.rush_purchase}}</router-link>
                     </li>
                   </ul>
                 </div>
@@ -238,4 +238,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

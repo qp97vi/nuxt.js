@@ -128,6 +128,14 @@ export default {
 	  birthday: 0 //生日
     };
   },
+  head() {
+	  return {
+		   title: "个人信息",
+		   meta: [
+				{ hid: 'description', name: 'description', content: 'Home page description' }
+			],
+	  }
+  },
   computed:{
     i18n () {  
   	  return this.$t('user')  

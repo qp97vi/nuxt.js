@@ -13,9 +13,9 @@ import Config from '@/config'
 import i18n from '@/i18n/index.js'
 
 if(process.env.NODE_ENV === 'development'){
-	axios.defaults.baseURL = "https://j.tpsns.com/api"
+	axios.defaults.baseURL = "https://www.nicefood.com/api"
 }else{
-	axios.defaults.baseURL = "https://j.tpsns.com/api"
+	axios.defaults.baseURL = "https://www.nicefood.com/api"
 }
 Vue.prototype.apiHead = axios.defaults.baseURL //用于图片上传，注意开发环境和生产环境的区别
 
@@ -53,9 +53,9 @@ service.interceptors.response.use(
 				//重新登录
 				removeToken()
 				removeUser()
-				router.push({
-					name: "login",
-				})
+				// router.push({
+				// 	name: "login",
+				// })
 			}
 
 			if (res.status == 501) {
@@ -70,9 +70,9 @@ service.interceptors.response.use(
 				/*清除所有缓存*/
 				removeToken()
 				removeUser()
-				router.push({
-					name: "login",
-				})
+				// router.push({
+				// 	name: "login",
+				// })
 				return
 			}
 			// 未设置支付密码
@@ -88,9 +88,9 @@ service.interceptors.response.use(
 			if (error.response.status == 401) {
 				removeToken()
 				removeUser()
-				router.push({
-					name: "login",
-				})
+				// router.push({
+				// 	name: "login",
+				// })
 			}
 		}
 		return Promise.reject(error)

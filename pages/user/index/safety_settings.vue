@@ -14,7 +14,7 @@
     <div class="menumain">
       <div class="goodpiece">
         <h1>{{i18n.safety_settings.security_settings}}</h1>
-		<router-link :to="{name:'detail'}">
+		<router-link :to="{name:'article/index/detail/id'}">
           <span class="co_blue">{{i18n.safety_settings.help}}</span>
         </router-link>
       </div>

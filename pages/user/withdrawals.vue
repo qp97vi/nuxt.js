@@ -14,7 +14,7 @@
 		<div class="menumain p">
 			<div class="goodpiece">
 				<h1>{{i18n.withdrawals.withdraw_apply}}</h1>
-				<router-link :to="{name:'detail'}">
+				<router-link :to="{name:'article/index/detail/id'}">
 					<span class="co_blue">{{i18n.withdrawals.balance_statement}}</span>
 				</router-link>
 				<input type="hidden" id="openid" value />

@@ -73,19 +73,19 @@
 				<div class="top-ri-header fl">
 					<ul>
 						<li>
-							<router-link target="_blank" :to="{name:'order_list'}">{{i18n.topBar.index.order}}</router-link>
+							<router-link target="_blank" :to="{name:'user/index/order_list/id'}">{{i18n.topBar.index.order}}</router-link>
 						</li>
 						<li class="spacer"></li>
 						<li>
-							<router-link target="_blank" :to="{name:'account'}">{{i18n.topBar.index.account}}</router-link>
+							<router-link target="_blank" :to="{name:'user/index/account'}">{{i18n.topBar.index.account}}</router-link>
 						</li>
 						<li class="spacer"></li>
 						<li>
-							<router-link target="_blank" :to="{name:'coupon'}">{{i18n.topBar.index.coupon}}</router-link>
+							<router-link target="_blank" :to="{name:'user/index/coupon'}">{{i18n.topBar.index.coupon}}</router-link>
 						</li>
 						<li class="spacer"></li>
 						<li>
-							<router-link target="_blank" :to="{name:'goods_collect'}">{{i18n.topBar.index.goods_collect}}</router-link>
+							<router-link target="_blank" :to="{name:'user/index/goods_collect/id'}">{{i18n.topBar.index.goods_collect}}</router-link>
 						</li>
 						<li class="spacer"></li>
 						<li class="hover-ba-navdh">
@@ -98,7 +98,7 @@
 											<a :href="$store.state.sellerUrl" :title="i18n.topBar.index.business" target="_blank">{{i18n.topBar.index.business}}</a>
 										</li>
 										<li>
-											<router-link :to="{ name: 'newjoin_index'}">{{i18n.topBar.index.help}}</router-link>
+											<router-link :to="{ name: 'newjoin/index/newjoin_index'}">{{i18n.topBar.index.help}}</router-link>
 										</li>
 									</ul>
 								</div>

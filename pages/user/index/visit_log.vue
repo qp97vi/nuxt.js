@@ -147,7 +147,7 @@ export default {
   },
   head() {
 	  return {
-		   title: "我的足迹",
+		   title: "我的收藏",
 		   meta: [
 				{ hid: 'description', name: 'description', content: 'Home page description' }
 			],

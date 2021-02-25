@@ -306,6 +306,14 @@ export default {
       // userInfo:getUser(), //个人用户信息
     };
   },
+  head() {
+	  return {
+		   title: "我的足迹",
+		   meta: [
+				{ hid: 'description', name: 'description', content: 'Home page description' }
+			],
+	  }
+  },
   computed: {
   	i18n () {  
   	  return this.$t('user')  
