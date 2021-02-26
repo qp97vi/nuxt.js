@@ -430,9 +430,9 @@
 				});
 			}
 			sidebarRollChange();
-			// this.getTopBannerAds();
-			// this.getArticles();
-			// this.getGoodsByIsRecommend()
+			this.getTopBannerAds();
+			this.getArticles();
+			this.getGoodsByIsRecommend()
 			this.getGoodsByIsNew()
 			this.getCoupon()
 			if (getUser() != null) {
@@ -467,11 +467,6 @@
 						` ${this.$route.query.rediceUrl}/${this.$route.query.type}/${this.$route.query.parameter}?id=${item.ad_id}`
 				}
 			},
-			// test() {
-			// 	let that = this;
-			// 	that.recommendGoodsList = res.records
-			// 	that.recommendGoodsListSize = res.records.length
-			// },
 			quit() {
 				var _this = this;
 				exitLogin().then((res) => {

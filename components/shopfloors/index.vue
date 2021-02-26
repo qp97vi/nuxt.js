@@ -91,7 +91,16 @@ export default {
     created(){
         getfloors().then(res=>{
             this.floors=res
-        })
+        });
+        if(process.client) {
+            this.listenerFunction()
+        }
+        
+    },
+    beforeDestroy () {
+        if(process.client) {
+            document.removeEventListener("scroll", this.listenerFunction);
+        }
     },
     computed: {
         i18n () {  
@@ -166,35 +175,43 @@ export default {
           }, timer.times)
         },
         floorSrcollAddEventListener() {
-            var _this = this
-            let nav_item = document.getElementById('floorNavList').getElementsByClassName('nav-list-item'),
-            floor_item = document.getElementsByClassName('shopfloors')
-            var nav=document.getElementById('floorNavList')
-            window.onscroll = function() {
-                const window_scrollTop = document.documentElement.scrollTop || document.body.scrollTop
-                for (let i = 0; i < floor_item.length ; i++) {
-                    const floor_offsetTop = floor_item[i].offsetTop
-                    if (window_scrollTop >= floor_offsetTop-150) {
-                        for (let n = 0; n < nav_item.length; n++) {
-                        nav_item[n].className = 'nav-list-item ' + (i === n ? 'active' : '')
+               
+                var _this = this
+                let nav_item = document.getElementById('floorNavList').getElementsByClassName('nav-list-item'),
+                
+                floor_item = document.getElementsByClassName('shopfloors')
+                var nav=document.getElementById('floorNavList')
+                window.onscroll = function() {
+                    const window_scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+                    for (let i = 0; i < floor_item.length ; i++) {
+                        const floor_offsetTop = floor_item[i].offsetTop
+                        if (window_scrollTop >= floor_offsetTop-150) {
+                            for (let n = 0; n < nav_item.length; n++) {
+                            nav_item[n].className = 'nav-list-item ' + (i === n ? 'active' : '')
+                            }
                         }
                     }
-                }
-                // window_scrollTop>1200
-                if(window_scrollTop>700){
-                    nav.style.display="block"
-                }else{
-                    nav.style.display="none"
-                }
+                    // window_scrollTop>1200
+                    if(window_scrollTop>700){
+                        nav.style.display="block"
+                    }else{
+                        nav.style.display="none"
+                    }
             }
         },
         initPage() {
           var _this = this
           _this.floorSrcollAddEventListener()
-        }
+        },
+        listenerFunction(e) {
+            document.addEventListener('scroll', this.initPage, true);
+        },
     },
     mounted() {
-        this.initPage()
+        // if (process.client) {
+        //     this.initPage()
+        // }
+       
     }
 }
 </script>

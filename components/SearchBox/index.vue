@@ -17,7 +17,7 @@
 				<div class="header w1224">
 					<div class="ecsc-logo">
 						<a href="/" class="logo">
-							<!-- <img :src="shop_info.store_logo" style="max-width: 240px;max-height: 80px;width:100%;height:100%;" /> -->
+							<img v-if="$store.state.shop_config" :src="apiHead + $store.state.shop_config.store_logo" style="max-width: 240px;max-height: 80px;width:100%;height:100%;" />
 						</a>
 					</div>
 
@@ -119,7 +119,7 @@
 						<div class="dt">
 							<img src="../../static/images/nav_new.png" alt />
 							<a>{{i18n.SearchBox.all_categories}}</a>
-						</div>
+						</div> 
 						<!--全部商品分类-s-->
 						<div :style="{display:show}" class="dd">
 							<div class="cata-nav">
@@ -180,38 +180,38 @@
 						<ul>
 							<!-- 首页 -->
 							<li>
-								<nuxt-link :class="routerName == 'index'?'selected':''" :to="{ name: 'index'}">{{i18n.SearchBox.home_page}}</nuxt-link>
+								<nuxt-link active-class="selected" :to="{ name: 'index'}">{{i18n.SearchBox.home_page}}</nuxt-link>
 							</li>
 							<!-- 限时抢购 -->
 							<!-- <li>
-								<nuxt-link :class="routerName == 'activity/flash_sale_list/id'?'selected':''" :to="{ name: 'activity/flash_sale_list/id'}">{{i18n.SearchBox.flash_sale}}</nuxt-link>
+								<nuxt-link active-class="selected" :to="{ name: 'activity/flash_sale_list/id'}">{{i18n.SearchBox.flash_sale}}</nuxt-link>
 							</li> -->
 							<!-- 团购 --> 
 							<li>
-								<nuxt-link :class="routerName == 'activity/group_list/id'?'selected':''" :to="{ name: 'activity/group_list/id'}">{{i18n.SearchBox.group_purchase}}</nuxt-link>
+								<nuxt-link active-class="selected" :to="{ name: 'activity/group_list/id'}">{{i18n.SearchBox.group_purchase}}</nuxt-link>
 							</li>
 							<!-- 促销活动 -->
 							<li>
-								<nuxt-link :class="routerName == 'activity/promoteList/id'?'selected':''" :to="{ name: 'activity/promoteList/id'}">{{i18n.SearchBox.sales_promotion}}</nuxt-link>
+								<nuxt-link active-class="selected" :to="{ name: 'activity/promoteList/id'}">{{i18n.SearchBox.sales_promotion}}</nuxt-link>
 							</li>
 							<!-- 预售 -->
 							<li>
-								<nuxt-link :class="routerName == 'activity/pre_sell_list/id'?'selected':''" :to="{ name: 'activity/pre_sell_list/id'}">{{i18n.SearchBox.presell}}</nuxt-link>
+								<nuxt-link active-class="selected" :to="{ name: 'activity/pre_sell_list/id'}">{{i18n.SearchBox.presell}}</nuxt-link>
 							</li>
 							<!-- 店铺街 -->
 							<!-- <li>
-								<nuxt-link :class="routerName == 'index/street'?'selected':''" :to="{ name: 'index/street'}">{{i18n.SearchBox.depot_island}}</nuxt-link>
+								<nuxt-link active-class="selected" :to="{ name: 'index/street'}">{{i18n.SearchBox.depot_island}}</nuxt-link>
 							</li> -->
 							<!-- 积分商城 -->
 							<!-- <li>
-								<nuxt-link :class="routerName == 'goods/integralMall'?'selected':''" :to="{ name: 'goods/integralMall'}">{{i18n.SearchBox.integral}}</nuxt-link>
+								<nuxt-link active-class="selected" :to="{ name: 'goods/integralMall'}">{{i18n.SearchBox.integral}}</nuxt-link>
 							</li> -->
 							<!-- 试用中心 -->
 							<li>
-								<nuxt-link :class="routerName == 'trycenter'?'selected':''" :to="{ name: 'trycenter'}">试用中心</nuxt-link>
+								<nuxt-link active-class="selected" :to="{ name: 'trycenter'}">试用中心</nuxt-link>
 							</li>
 							<li>
-								<nuxt-link :class="routerName == 'publish_list'?'selected':''" :to="{ name: 'publish_list'}">动态列表</nuxt-link>
+								<nuxt-link active-class="selected" :to="{ name: 'publish_list'}">动态列表</nuxt-link>
 							</li>
 						
 							
@@ -342,14 +342,14 @@
 										<a href="javascript:void(0);" class="del js_delete" @click="delCart(cart.id)"></a>
 
 										<p class="i fl mr5">
-											<nuxt-link :to="{name:'goodsInfo',query:{id:cart.goods_id}}">
+											<nuxt-link :to="{name:'goods/goodsInfo/id',query:{id:cart.goods_id}}">
 												<img :src="apiHead + '/mall/goods/thumb_image?width=50&height=50&goods_id=' + cart.goods_id" height="50"
 												 width="50" alt :title="cart.goods_name" />
 											</nuxt-link>
 										</p>
 
 										<p class="n fl">
-											<nuxt-link :to="{name:'goodsInfo',query:{id:cart.goods_id}}">
+											<nuxt-link :to="{name:'goods/goodsInfo/id',query:{id:cart.goods_id}}">
 												{{cart.goods_name}} {{cart.spec_key_name}}</nuxt-link>
 										</p>
 										<p class="fl js_mini_num">* {{cart.goods_num}} 件</p>
@@ -401,8 +401,8 @@
 				timer: null,
 				shop_info: this.$store.state.shop_config,
 				words: this.$route.query.words || "",
-				// keywords: this.$store.state.shop_basic.hot_keywords.split("|"),
-				// searchType: parseInt(this.$route.query.searchType) || 1,
+				keywords: "",
+				searchType: "",
 				cartBill: {
 					//购物车列表
 					order: {},
@@ -412,13 +412,10 @@
 				},
 				goodsCategoryTree: [],
 				user: getUser(),
-				// shopList: this.$store.state.shop_list,
+				shopList: "",
 			};
 		},
 		computed: {
-			routerName() {
-				return this.$route.name;
-			},
 			i18n() {
 				return this.$t('components')
 			},
@@ -426,9 +423,22 @@
 				return this.$t('common')
 			}
 		},
+		asyncData({ params, route, error }) {
+			return {
+				searchType: route.query.searchType || 1
+			}
+
+		},
 		watch: {},
 		mounted() {
 			var that = this;
+			
+			if(that.$store.state.shop_basic) {
+				that.keywords = that.$store.state.shop_basic.hot_keywords.split("|");
+			}
+			if(that.$store.state.shop_list) {
+				that.shopList = that.$store.state.shop_list
+			}
 			bus.$on("getBill", that.getBill);
 			setTimeout(function() {
 				that.initDom();

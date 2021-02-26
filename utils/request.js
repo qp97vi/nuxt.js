@@ -13,9 +13,9 @@ import Config from '@/config'
 import i18n from '@/i18n/index.js'
 
 if(process.env.NODE_ENV === 'development'){
-	axios.defaults.baseURL = "https://j.tpsns.com/api"
+	axios.defaults.baseURL = "https://nicefood.com/api"
 }else{
-	axios.defaults.baseURL = "https://j.tpsns.com/api"
+	axios.defaults.baseURL = "https://nicefood.com/api"
 }
 Vue.prototype.apiHead = axios.defaults.baseURL //用于图片上传，注意开发环境和生产环境的区别
 

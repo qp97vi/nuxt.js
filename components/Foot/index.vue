@@ -63,9 +63,9 @@
 					</div>
 					<div class="right-contact-us">
 						<h3 class="title">{{i18n.foot.customer_hotline}}（9:00-22:00）</h3>
-						<span class="phone">{{$store.state.shop_config.phone}}</span>
+						<span class="phone" v-if="$store.state.shop_config">{{$store.state.shop_config.phone}}</span>
 						<h3 class="title">Email</h3>
-						<span class="phone">{{$store.state.shop_config.email}}</span>
+						<span class="phone" v-if="$store.state.shop_config">{{$store.state.shop_config.email}}</span>
 						<!-- 多语言暂时注释 -->
 						<!-- <p class="tips">{{i18n.foot.official_wechat}}</p>
 						<div class="qr-code-list clearfix">
@@ -82,11 +82,11 @@
 						<nuxt-link :to="{name:'detail',query:{id: 1}}" target="_blank">{{i18n.foot.business_process}}</nuxt-link>
 						<span>|</span>
 					</div>
-					<p v-if="$store.state.shop_config.store_entry_type == 0">
+					<p v-if="$store.state.shop_config&&$store.state.shop_config.store_entry_type == 0">
 						Copyright © 2016-2025 {{i18n.foot.search_leopard}}:
 						<a href="http://www.beian.miit.gov.cn">{{i18n.foot.case_number}}</a>
 					</p>
-					<p class="mod_copyright_auth" v-if="$store.state.shop_config.store_entry_type == 0">
+					<p class="mod_copyright_auth" v-if="$store.state.shop_config&&$store.state.shop_config.store_entry_type == 0">
 						<a class="mod_copyright_auth_ico mod_copyright_auth_ico_1" href target="_blank">{{i18n.foot.language_one}}</a>
 						<a class="mod_copyright_auth_ico mod_copyright_auth_ico_2" href target="_blank">{{i18n.foot.language_two}}</a>
 						<a class="mod_copyright_auth_ico mod_copyright_auth_ico_3" href target="_blank">{{i18n.foot.language_therr}}</a>
