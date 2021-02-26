@@ -12,59 +12,108 @@
 <template>
   <div>
     <top-bar></top-bar>
-    <search-box :sidebarShow='false'></search-box>
+    <search-box :sidebarShow="false"></search-box>
     <div class="nav-coumain">
       <div class="couponlistb">
         <div class="w1224">
           <div class="titl_chooi p">
             <div class="f-sort">
-              <a href="#" @click="changeType(1)" :class="type == 1 ? 'selted' : ''">{{i18n.defaults}}</a>
-              <a href="#" @click="changeType(2)" :class="type == 2 ? 'selted' : ''">{{i18n.coupon_list.fast_expire}}</a>
-              <a href="#" @click="changeType(3)" :class="type == 3 ? 'selted' : ''">{{i18n.coupon_list.maximum}}</a>
+              <a
+                href="#"
+                @click="changeType(1)"
+                :class="type == 1 ? 'selted' : ''"
+                >{{ i18n.defaults }}</a
+              >
+              <a
+                href="#"
+                @click="changeType(2)"
+                :class="type == 2 ? 'selted' : ''"
+                >{{ i18n.coupon_list.fast_expire }}</a
+              >
+              <a
+                href="#"
+                @click="changeType(3)"
+                :class="type == 3 ? 'selted' : ''"
+                >{{ i18n.coupon_list.maximum }}</a
+              >
             </div>
           </div>
           <div class="coupon-ticket p">
-            <div 
-			:class="coupon.is_get == 1 ? 'aldw-item aldw-useing' : (coupon.is_lead_end == 1 ? 'aldw-item aldw-gray' : 'aldw-item')" 
-			v-for="coupon in couponData" :key="coupon.id">
+            <div
+              :class="
+                coupon.is_get == 1
+                  ? 'aldw-item aldw-useing'
+                  : coupon.is_lead_end == 1
+                  ? 'aldw-item aldw-gray'
+                  : 'aldw-item'
+              "
+              v-for="coupon in couponData"
+              :key="coupon.id"
+            >
               <div class="q-type">
                 <div class="q-price p">
-                  <em>{{i18nCommon.symbol}}</em>
-                  <div class="num">{{coupon.money}}</div>
+                  <em>{{ i18nCommon.symbol }}</em>
+                  <div class="num">{{ coupon.money }}</div>
                   <div class="txt">
-                    <div class="typ-txt">{{coupon.name}}</div>
+                    <div class="typ-txt">{{ coupon.name }}</div>
                     <div class="limit">
-                      <span class="ftx-06">{{i18n.full}}{{coupon.condition}}{{i18n.usable}}</span>
+                      <span class="ftx-06"
+                        >{{ i18n.full }}{{ coupon.condition
+                        }}{{ i18n.usable }}</span
+                      >
                     </div>
                   </div>
                 </div>
                 <div class="q-range">
                   <div class="range-item">
-                    <p>{{coupon.limit_store}}</p>
+                    <p>{{ coupon.limit_store }}</p>
                   </div>
-                  <div class="range-item" v-if="coupon.use_type == 0">{{i18n.coupon_list.all_general}}</div>
-				  <div class="range-item" v-if="coupon.use_type == 1">{{i18n.coupon_list.assign_goods}}<span v-for="goods in coupon.goods_list" :key="goods.goods_id">{{goods.goods_name}}</span></div>
-				  <div class="range-item" v-if="coupon.use_type == 2">{{i18n.coupon_list.assign_type_goods}}:{{coupon.goods_category.name}}</div>
-                  <div class="range-item">{{coupon.use_start_time_desc}}-{{coupon.use_end_time_desc}}</div>
+                  <div class="range-item" v-if="coupon.use_type == 0">
+                    {{ i18n.coupon_list.all_general }}
+                  </div>
+                  <div class="range-item" v-if="coupon.use_type == 1">
+                    {{ i18n.coupon_list.assign_goods
+                    }}<span
+                      v-for="goods in coupon.goods_list"
+                      :key="goods.goods_id"
+                      >{{ goods.goods_name }}</span
+                    >
+                  </div>
+                  <div class="range-item" v-if="coupon.use_type == 2">
+                    {{ i18n.coupon_list.assign_type_goods }}:{{
+                      coupon.goods_category.name
+                    }}
+                  </div>
+                  <div class="range-item">
+                    {{ coupon.use_start_time_desc }}-{{
+                      coupon.use_end_time_desc
+                    }}
+                  </div>
                 </div>
               </div>
               <div class="q-opbtns">
-				<nuxt-link v-if="coupon.is_get == 0" :to="{name:'get_coupon',query:{id: coupon.id}}">
-					<b class="semi-circle"></b>
-					{{i18n.coupon_list.at_once_get}}
-				</nuxt-link>
-				<nuxt-link v-if="coupon.is_get == 1" :to="{name:'store',query:{store_id: coupon.store_id}}">
-					<b class="semi-circle"></b>
-					{{i18n.coupon_list.at_once_use}}
-				</nuxt-link>
-				<a v-if="coupon.is_lead_end == 1" href="javascript:void(0);">
-					<b class="semi-circle"></b>
-					{{i18n.coupon_list.now_already_get}}
-				</a>
+                <nuxt-link
+                  v-if="coupon.is_get == 0"
+                  :to="{ name: 'get_coupon', query: { id: coupon.id } }"
+                >
+                  <b class="semi-circle"></b>
+                  {{ i18n.coupon_list.at_once_get }}
+                </nuxt-link>
+                <nuxt-link
+                  v-if="coupon.is_get == 1"
+                  :to="{ name: 'store', query: { store_id: coupon.store_id } }"
+                >
+                  <b class="semi-circle"></b>
+                  {{ i18n.coupon_list.at_once_use }}
+                </nuxt-link>
+                <a v-if="coupon.is_lead_end == 1" href="javascript:void(0);">
+                  <b class="semi-circle"></b>
+                  {{ i18n.coupon_list.now_already_get }}
+                </a>
               </div>
               <div class="q-state">
                 <div v-if="coupon.is_lead_end == 1" class="btn-state"></div>
-				<div v-if="coupon.is_get == 1" class="btn-state geten"></div>
+                <div v-if="coupon.is_get == 1" class="btn-state geten"></div>
               </div>
             </div>
           </div>
@@ -91,67 +140,67 @@
 
 <script>
 import SearchBox from "@/components/SearchBox/index.vue";
-import { getCouponPage,userCoupons } from "@/utils/api.js";
+import { getCouponPage, userCoupons } from "@/utils/api.js";
 import TopBar from "@/components/TopBar/index.vue";
 import { getUser } from "@/utils/auth.js";
 export default {
   data() {
     return {
-		user: getUser(),
-		couponData: [],
-		currentPage: 1,
-		pageSize: 6,
-		total: 0,
-		type: 1, // 1、默认 2、即将过期 3、面额最大排序
-	};
+      user: getUser(),
+      couponData: [],
+      currentPage: 1,
+      pageSize: 6,
+      total: 0,
+      type: 1, // 1、默认 2、即将过期 3、面额最大排序
+    };
   },
   created() {
     this.pagingMethod();
   },
   methods: {
-	  pagingMethod() {
-		  var _this = this;
-		  getCouponPage({
-			  p: this.currentPage,
-			  size: this.pageSize,
-			  type: this.type
-		  }).then(res => {
-			  _this.couponData = res.records
-			  _this.total = res.total
-			  if (this.user) {
-				  this.userCouponList();
-			  }
-		  })
-	  },
-	  userCouponList() {
-		  var _this = this;
-		  userCoupons().then(res => {
-			  res.forEach(userCoupon => {
-				  _this.couponData.forEach(coupon => {
-					  if (coupon.id == userCoupon.cid) {
-						  coupon.is_get = 1;
-					  }
-				  })
-			  })
-		  })
-	  },
-	  changeType(type) {
-		  this.type = type;
-		  this.pagingMethod();
-	  }
+    pagingMethod() {
+      var _this = this;
+      getCouponPage({
+        p: this.currentPage,
+        size: this.pageSize,
+        type: this.type,
+      }).then((res) => {
+        _this.couponData = res.records;
+        _this.total = res.total;
+        if (this.user) {
+          this.userCouponList();
+        }
+      });
+    },
+    userCouponList() {
+      var _this = this;
+      userCoupons().then((res) => {
+        res.forEach((userCoupon) => {
+          _this.couponData.forEach((coupon) => {
+            if (coupon.id == userCoupon.cid) {
+              coupon.is_get = 1;
+            }
+          });
+        });
+      });
+    },
+    changeType(type) {
+      this.type = type;
+      this.pagingMethod();
+    },
   },
   computed: {
-  	i18n () {  
-  	  return this.$t('activity')  
+    i18n() {
+      return this.$t("activity");
     },
-    i18nCommon () {
-        return this.$t('common')  
-    } 
+    i18nCommon() {
+      return this.$t("common");
+    },
   },
   components: {
     SearchBox,
-    TopBar
-  }
+    TopBar,
+  },
 };
 </script>
 
