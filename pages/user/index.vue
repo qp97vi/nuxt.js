@@ -152,9 +152,12 @@ export default {
 		  })
 		  return false
 	  }
+    if(process.client) {
+       this.title = document.title;
+    }
   },
   mounted() {
-	  this.title = document.title;
+	 
   },
   computed:{
     i18n () {  

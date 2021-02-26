@@ -15,11 +15,11 @@
       <div class="user-entry" v-if="userInfo != null">
         {{i18n.topBar.index3.shalom}}
         <span>
-          <nuxt-link :to="{name:'user'}">{{userInfo.nickname}}</nuxt-link>
+          <nuxt-link :to="{name:'user/index/user_index'}">{{userInfo.nickname}}</nuxt-link>
           <div class="nc-grade-mini" style="cursor:pointer;" onclick="javascript:go();">VO</div>
         </span>
         {{i18n.topBar.index3.welcome_back}}，
-          <nuxt-link :to="{name:'user'}" :title="i18n.topBar.index3.home_page" :alt="i18n.topBar.index3.home_page">
+          <nuxt-link :to="{name:'user/index/user_index'}" :title="i18n.topBar.index3.home_page" :alt="i18n.topBar.index3.home_page">
           <span>{{i18n.topBar.index3.shop}}</span>
         </nuxt-link>
         <span>

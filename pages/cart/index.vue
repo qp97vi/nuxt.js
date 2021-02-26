@@ -338,6 +338,7 @@
 <script>
 	import TopBar from "@/components/TopBar/index.vue";
 	import Adv from "@/components/Adv/index.vue";
+	import { getUser } from "@/utils/auth.js";
 	import {
 		mapState
 	} from "vuex";
@@ -379,6 +380,12 @@
 			}
 		},
 		created() {
+			if(getUser()==null) {
+				this.$router.push({
+					name:"login"
+				})
+				return false
+			}
 			this._getCartBill()
 			this.getGuessYouLikeGoods()
 			this.getCollectionRecords()

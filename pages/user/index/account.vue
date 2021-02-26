@@ -168,7 +168,7 @@ export default {
       handleCurrent: 1, //第几页
       total: 0, //总共多少条数据
       integralClass: "", //类名切换
-      userInfo: getUser(), //用户信息
+      userInfo:"", //用户信息
       screenClass: "", //筛选类名切换
       value: '',  //时间
       order_sn:'',  //订单id
@@ -258,6 +258,9 @@ export default {
     }
   },
   created() {
+    if(process.client) {
+      this.userInfo =  getUser()
+    }
     var params = {
       p: 1,
       size: 10

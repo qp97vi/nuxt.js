@@ -64,14 +64,14 @@
 															<a href="javascript:void(0);" class="del js_delete"  @click="delCart(item.id)"></a>
 
 															<p class="i fl mr5">
-																<nuxt-link :to="{name:'goodsInfo',query:{id:item.goods_id}}">
+																<nuxt-link :to="{name:'goods/goodsInfo/id',query:{id:item.goods_id}}">
 																	<img :src="apiHead + '/mall/goods/thumb_image?width=50&height=50&goods_id=' + item.goods_id" height="50"
 																	 width="50" alt :title="item.goods_name" />
 																</nuxt-link>
 															</p>
 
 															<p class="n fl">
-																<nuxt-link :to="{name:'goodsInfo',query:{id:item.goods_id}}">
+																<nuxt-link :to="{name:'goods/goodsInfo/id',query:{id:item.goods_id}}">
 																	{{item.goods_name}} {{item.spec_key_name}}
 																</nuxt-link>
 															</p>
@@ -262,7 +262,7 @@
 						</a>
 					</div>
 					<div class="icon-tabe-chan massage">
-						<nuxt-link :to="{ name: 'message_notice'}">
+						<nuxt-link :to="{ name: 'user/index/message_notice'}">
 							<i class="share-side share-side1"></i>
 							<span class="tab-tip">{{i18n.SearchBox.news}}</span>
 						</nuxt-link>
@@ -270,14 +270,14 @@
 				</div>
 				<div class="sider-top-stra sider-midd-2">
 					<div class="icon-tabe-chan mmm">
-						<nuxt-link :to="{ name: 'goods_collect'}">
+						<nuxt-link :to="{ name: 'user/index/goods_collect/id'}">
 							<i class="share-side share-side1"></i>
 							<span class="tab-tip">{{i18n.SearchBox.collect}}</span>
 						</nuxt-link>
 						<!-- </a> -->
 					</div>
 					<div class="icon-tabe-chan hostry">
-						<nuxt-link :to="{ name: 'visit_log'}">
+						<nuxt-link :to="{ name: 'user/index/visit_log'}">
 							<i class="share-side share-side1"></i>
 							<span class="tab-tip">{{i18n.SearchBox.track}}</span>
 						</nuxt-link>
@@ -459,7 +459,7 @@
 				var that = this;
 				if (this.searchType == 1) {
 					that.$router.push({
-						name: "goodsList",
+						name: "goods/goodsList/id",
 						query: {
 							words: that.words,
 							searchType: that.searchType
@@ -467,7 +467,7 @@
 					});
 				} else if (this.searchType == 3) {
 					that.$router.push({
-						name: "goodsList",
+						name: "goods/goodsList/id",
 						query: {
 							words: that.words,
 							searchType: that.searchType
@@ -475,7 +475,7 @@
 					});
 				} else if (this.searchType == 4) {
 					that.$router.push({
-						name: "goodsList",
+						name: "goods/goodsList/id",
 						query: {
 							words: that.words,
 							searchType: that.searchType
@@ -494,7 +494,7 @@
 			toUserIndex() {
 				var that = this;
 				that.$router.push({
-					name: "user_index",
+					name: "user/index/user_index",
 				});
 			},
 			quit() {

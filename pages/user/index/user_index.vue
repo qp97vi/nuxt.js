@@ -330,6 +330,14 @@
 				total: 0 //优惠卷数量
 			};
 		},
+		head() {
+			return {
+				title: "个人中心",
+				meta: [
+						{ hid: 'description', name: 'description', content: 'Home page description' }
+					],
+			}
+		},
 		computed:{
 			i18n () { 
       			this.form.region = this.$t('user.virtual_list.cause_one')  

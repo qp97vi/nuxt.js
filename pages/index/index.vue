@@ -37,7 +37,7 @@
 							<!-- <span class="userinfo">{{i18n.index.welcometo}}{{shop_info.store_name || i18n.index.store}}！</span> -->
 						</p>
 						<div class="login_index" v-if="user">
-							<nuxt-link :to="{name:'user'}" target="_blank">{{i18n.index.member_center}}</nuxt-link>
+							<nuxt-link :to="{name:'user/index/user_index'}" target="_blank">{{i18n.index.member_center}}</nuxt-link>
 							<!-- <nuxt-link class="islogin add_newperson" :to="{name:'login'}" target="_blank">{{i18n.index.logout}}</nuxt-link> -->
 							<nuxt-link class="islogin add_newperson" :to="{name:'activity/coupon_list/id'}" target="_blank">{{i18n.index.couple_polite}}</nuxt-link>
 						</div>

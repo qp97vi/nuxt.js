@@ -15,7 +15,7 @@
 			<div class="w1224 pr">
 				<div class="fr">
 					<div class="ls-dlzc fl islogin" v-if="user">
-						<nuxt-link to="/user">{{nickname}}</nuxt-link>
+						<nuxt-link :to="{name:'user/index/user_index'}">{{nickname}}</nuxt-link>
 						<!-- <a class="red userinfo">{{user.nickname}}</a> -->
 						<a @click="quit()">{{i18n.topBar.index.quit}}</a>
 					</div>

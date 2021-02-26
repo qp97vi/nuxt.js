@@ -49,7 +49,7 @@
 									<el-input :placeholder="i18n.reg.verification_code" v-model="ruleForm.authCode" autocomplete="off"></el-input>
 									<img width="100" height="35" :src="verification_image" id="reflsh_code2" class="po-ab to0" style="margin:0px 10px;" />
 									<a>
-										<img @click="fleshVerify()" @/static/images/chg_image.png" class="ma-le-210 verifyImg" />
+										<img @click="fleshVerify()" src="@/static/images/chg_image.png" class="ma-le-210 verifyImg" />
 									</a>
 								</el-form-item>
 								<el-form-item>
@@ -98,7 +98,7 @@
 									<el-input :placeholder="i18n.reg.verification_code" v-model="emailForm.authCode" autocomplete="off"></el-input>
 									<img width="100" height="35" :src="verification_image" id="reflsh_code2" class="po-ab to0" style="margin:0px 10px;" />
 									<a>
-										<img @click="fleshVerify()" @/static/images/chg_image.png" class="ma-le-210 verifyImg" />
+										<img @click="fleshVerify()" src="@/static/images/chg_image.png" class="ma-le-210 verifyImg" />
 									</a>
 								</el-form-item>
 								<el-form-item>

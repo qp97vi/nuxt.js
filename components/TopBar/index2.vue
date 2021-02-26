@@ -16,7 +16,7 @@
         <div class="fl">
           <div class="fl ler" v-if="bool">
             <div class="fl ler">
-              <nuxt-link :to="{name:'user'}">{{userInfo.nickname}}</nuxt-link>
+              <nuxt-link :to="{name:'user/index/user_index'}">{{userInfo.nickname}}</nuxt-link>
             </div>
             <div class="fl ler">
               <nuxt-link :to="{name:'message_notice'}">

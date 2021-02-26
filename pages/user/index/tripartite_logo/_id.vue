@@ -224,7 +224,7 @@ export default {
 				setUser(res);
 				/*当前路由名是 绑定登录页面的路由就进入个人中心，不是就返回原网页*/
 				if(that.fromRouterName == 'tripartite_logo'){
-					that.$router.push({path:'user/user_index'});
+					that.$router.push({name:'user/index/user_index'});
 				} else {
 					that.$router.push({path:`${that.fromRouterfullPath}`});
 				}

@@ -450,7 +450,7 @@ export default {
     },
     jump(params) {
       /*跳转到绑定页面*/
-      let exportUrl = "/user/tripartite_logo?";
+      let exportUrl = "tripartite_logo/:id?";
       Object.keys(params).map((key) => {
         exportUrl += key + "=" + params[key] + "&";
       });
