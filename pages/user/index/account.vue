@@ -24,7 +24,7 @@
             <i class="kyjf"></i>{{i18n.integral.now_integral}}：
           </span>
           <span class="co">{{userInfo.pay_points}}</span>
-          <nuxt-link class="jfhg" :to="{name:'integralMall'}">{{i18n.integral.redemption}}</nuxt-link>
+          <nuxt-link class="jfhg" :to="{name:'goods/integralMall'}">{{i18n.integral.redemption}}</nuxt-link>
         </div>
         <div class="cuschan">
           <span class="kycha">

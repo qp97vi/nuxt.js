@@ -183,7 +183,7 @@
 								<div class="detail_or">
 									<p class="d_yzo">{{item.order_status_detail}}</p>
 									<p>
-										<nuxt-link :to="{name:'order/index/order_detail/id',query:{order_id:item.order_id}}">{{i18n.order_list.view_details}}</nuxt-link>
+										<nuxt-link :to="{name:'order/order_detail/id',query:{order_id:item.order_id}}">{{i18n.order_list.view_details}}</nuxt-link>
 									</p>
 								</div>
 							</td>

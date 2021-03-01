@@ -79,7 +79,7 @@
 			<div class="ddlb-ayh">
 				<div class="ddlb-tit">
 					<h1>{{i18n.user_index.myorder}}</h1>
-					<nuxt-link :to="{name:'order_list'}" class="u-view-all">{{i18n.user_index.view_allorders}}</nuxt-link>
+					<nuxt-link :to="{name:'user/index/order_list/id'}" class="u-view-all">{{i18n.user_index.view_allorders}}</nuxt-link>
 					<i class="u-sep"></i>
 				</div>
 				<div class="order-alone-li" v-if="OrderFormData != ''">
@@ -152,17 +152,17 @@
 									<div class="detail_or">
 										<p class="d_yzo">{{OrderFormData.order_status_detail}}</p>
 										<p>
-											<nuxt-link :to="{name:'order_detail',query:{order_id:item.order_id}}">{{i18n.user_index.view_details}}</nuxt-link>
+											<nuxt-link :to="{name:'order/order_detail/id',query:{order_id:item.order_id}}">{{i18n.user_index.view_details}}</nuxt-link>
 										</p>
 									</div>
 								</td>
 								<td class="sx6" rowspan="1">
 									<div class="rbac">
 										<p class>
-											<nuxt-link :to="{name:'goodsInfo', query:{ id: item.goods_id }}">{{i18n.user_index.buy_again}}</nuxt-link>
+											<nuxt-link :to="{name:'goods/goodsInfo/id', query:{ id: item.goods_id }}">{{i18n.user_index.buy_again}}</nuxt-link>
 										</p>
 										<p class="inspect" v-if="OrderFormData.order_status==2 && OrderFormData.order_status != 4">
-											<nuxt-link :to="{ name: 'comment_list',query:{order_id:OrderFormData.order_id}}">{{i18n.user_index.evaluate}}</nuxt-link>
+											<nuxt-link :to="{ name: 'order/index/comment_list/id',query:{order_id:OrderFormData.order_id}}">{{i18n.user_index.evaluate}}</nuxt-link>
 										</p>
 									</div>
 								</td>
@@ -184,12 +184,12 @@
 					<div class="coll-etl">
 						<div class="ddlb-tit">
 							<h1>{{i18n.user_index.myfavorite}}</h1>
-							<nuxt-link :to="{name:'goods_collect'}" class="u-view-all">{{i18n.user_index.view_more}}</nuxt-link>
+							<nuxt-link :to="{name:'user/index/goods_collect/id'}" class="u-view-all">{{i18n.user_index.view_more}}</nuxt-link>
 						</div>
 						<div class="shop-sc-t">
 							<ul>
 								<li v-for="(item) in goodsData" :key="item.user_id">
-									<nuxt-link :to="{name:'goodsInfo', query:{ id: item.goods_id }}">
+									<nuxt-link :to="{name:'goods/goodsInfo/id', query:{ id: item.goods_id }}">
 										<img :src="apiHead + '/mall/goods/thumb_image?width=100&height=100&goods_id=' + item.goods_id" />
 										<p>
 											<em>{{i18nCommon.symbol}}</em>
@@ -205,11 +205,11 @@
 					<div class="coupon-etl">
 						<div class="ddlb-tit">
 							<h1>{{i18n.user_index.mycoupons}}</h1>
-							<nuxt-link :to="{name:'coupon'}" class="u-view-all">{{i18n.user_index.view_more}}</nuxt-link>
+							<nuxt-link :to="{name:'user/index/coupon'}" class="u-view-all">{{i18n.user_index.view_more}}</nuxt-link>
 						</div>
 						<div class="shop-sc-t">
 							<div class="coupon-bgimg" v-for="(item) in coupon" :key="item.id">
-								<nuxt-link :to="item.use_type == 1 ? {name:'goodsInfo', query:{ id: item.goods_id }} : {name:'store', query:{ store_id: item.store_id , bool: 2}}">
+								<nuxt-link :to="item.use_type == 1 ? {name:'goods/goodsInfo/id', query:{ id: item.goods_id }} : {name:'store/index/id', query:{ store_id: item.store_id , bool: 2}}">
 									<div class="cp-jal">
 										<h1>
 											<em class="li-fh">{{i18nCommon.symbol}}</em>
@@ -307,7 +307,7 @@
 	export default {
 		data() {
 			return {
-				userInfo: getUser(), //用户信息
+				userInfo:"",
 				coupon: [], //优惠卷数据
 				goodsData: [], //收藏商品数据
 				OrderFormData: [], //我的订单数据
@@ -346,6 +346,9 @@
 			i18nCommon () {
 				return this.$t('common')  
 			}
+		},
+		created() {
+			this._getBaseInfo()
 		},
 		methods: {
 			_getBaseInfo() {

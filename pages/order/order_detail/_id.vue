@@ -863,42 +863,42 @@ div.paydetail-box .pdetail dd {
   margin: 0 0 0 20px;
 }
 .y-comp2 {
-  background-image: url(../../../../static/images/y-saea8bece45.png);
+  background-image: url(../../../static/images/y-saea8bece45.png);
   background-position-x: -64px;
 }
 
 .y-comp3 {
-  background-image: url(../../../../static/images/y-saea8bece45.png);
+  background-image: url(../../../static/images/y-saea8bece45.png);
   background-position-x: -64px;
 }
 
 .y-comp4 {
-  background-image: url(../../../../static/images/y-saea8bece45.png);
+  background-image: url(../../../static/images/y-saea8bece45.png);
   background-position-x: -64px;
 }
 
 .y-comp5 {
-  background-image: url(../../../../static/images/y-saea8bece45.png);
+  background-image: url(../../../static/images/y-saea8bece45.png);
   background-position-x: -64px;
 }
 
 >>> .is-finish .y-comp2 {
-  background-image: url(../../../../static/images/y-saea8bece45.png);
+  background-image: url(../../../static/images/y-saea8bece45.png);
   background-position-x: 0px;
 }
 
 >>> .is-finish .y-comp3 {
-  background-image: url(../../../../static/images/y-saea8bece45.png);
+  background-image: url(../../../static/images/y-saea8bece45.png);
   background-position-x: 0px;
 }
 
 >>> .is-finish .y-comp4 {
-  background-image: url(../../../../static/images/y-saea8bece45.png);
+  background-image: url(../../../static/images/y-saea8bece45.png);
   background-position-x: 0px;
 }
 
 >>> .is-finish .y-comp5 {
-  background-image: url(../../../../static/images/y-saea8bece45.png);
+  background-image: url(../../../static/images/y-saea8bece45.png);
   background-position-x: 0px;
 }
 
