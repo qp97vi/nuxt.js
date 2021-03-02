@@ -211,7 +211,7 @@
 								<nuxt-link active-class="selected" :to="{ name: 'trycenter/index/all_try'}">试用中心</nuxt-link>
 							</li>
 							<li>
-								<nuxt-link active-class="selected" :to="{ name: 'publish_list'}">动态列表</nuxt-link>
+								<nuxt-link active-class="selected" :to="{ name: 'publish/index/publish_list'}">动态列表</nuxt-link>
 							</li>
 						
 							

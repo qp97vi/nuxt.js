@@ -3,13 +3,13 @@
         <top-bar></top-bar>
         <search-box></search-box>
         <div class="w1224 main">
-            <router-link class="nav" :to="{name:'publish_list'}" :class="routerName == 'publish_list' ? 'action' : ''">
+            <router-link class="nav" :to="{name:'publish/index/publish_list'}" active-class="action">
                 <div><i class="el-icon-house"></i>首页</div>
             </router-link>
-            <router-link class="nav" :to="{name:'publish_recommend'}" :class="routerName == 'publish_recommend' ? 'action' : ''">
+            <router-link class="nav" :to="{name:'publish/index/publish_recommend'}" active-class="action">
                 <div>推荐</div>
             </router-link>
-            <!-- <router-link class="nav" :to="{name:'publish_attention'}" :class="routerName == 'publish_attention' ? 'action' : ''">
+            <!-- <router-link class="nav" :to="{name:'publish/index/publish_attention'}" active-class="action">
                 <div>关注</div>
             </router-link> -->
         </div>
